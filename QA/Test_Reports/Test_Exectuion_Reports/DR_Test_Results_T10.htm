@@ -1,0 +1,289 @@
+<html><body><table><tr BGCOLOR="#800000"><td><b><font color=white>Plan: Test Name</font></b></td>
+<td><b><font color=white>Plan: Description</font></b></td>
+<td><b><font color=white>Plan: Type</font></b></td>
+<td><b><font color=white>Status</font></b></td>
+<td><b><font color=white>Responsible Tester</font></b></td>
+<td><b><font color=white>Exec Date</font></b></td>
+<td><b><font color=white>Time</font></b></td>
+</tr>
+<tr bgcolor=mintcream><td>[1]03DR_VALIDATE_001&nbsp;</td>
+<td>This test case covers the situation where the configuration files that document router uses are set up to point at the typical values of recipients for NAV, secure email, and secure ftp. &nbsp;Then, just check that the channel is successfully deployed after these config settings are set.&nbsp;</td>
+<td>MANUAL&nbsp;</td>
+<td>Not Completed&nbsp;</td>
+<td>&nbsp;</td>
+<td>1/9/2012&nbsp;</td>
+<td>5:08:09 PM&nbsp;</td>
+</tr>
+<tr bgcolor=mintcream><td>[1]01DR_INSTALL_001&nbsp;</td>
+<td>This test case is mostly a prerequisite for other test cases. &nbsp;It checks to see that Document Router is showing up as a deployed channel in Mirth Connect.&nbsp;</td>
+<td>MANUAL&nbsp;</td>
+<td>Passed&nbsp;</td>
+<td>&nbsp;</td>
+<td>1/9/2012&nbsp;</td>
+<td>5:07:10 PM&nbsp;</td>
+</tr>
+<tr bgcolor=mintcream><td>[1]03DR_VALIDATE_002&nbsp;</td>
+<td>This test case covers the situation where a syntactically and semantically correct message is sent to the Semantic adapter with routing instructions set to have the Document Router send the source data as a CCDCDA on secure email.&nbsp;</td>
+<td>MANUAL&nbsp;</td>
+<td>Passed&nbsp;</td>
+<td>&nbsp;</td>
+<td>1/9/2012&nbsp;</td>
+<td>5:08:39 PM&nbsp;</td>
+</tr>
+<tr bgcolor=mintcream><td>[1]03DR_VALIDATE_003&nbsp;</td>
+<td>This test case covers the situation where a syntactically and semantically correct message is sent to the Semantic adapter with routing instructions set to have the Document Router send the source data as a CCDCDA on secure email to multiple recipients. &nbsp;Both recipients are configured in DR.&nbsp;</td>
+<td>MANUAL&nbsp;</td>
+<td>Passed&nbsp;</td>
+<td>&nbsp;</td>
+<td>1/9/2012&nbsp;</td>
+<td>5:09:15 PM&nbsp;</td>
+</tr>
+<tr bgcolor=mintcream><td>[1]03DR_VALIDATE_005&nbsp;</td>
+<td>This test case covers the situation where a syntactically and semantically correct message is sent to the Semantic adapter with routing instructions set to have the Document Router send the source data as a CCDCDA on secure ftp. &nbsp;Recipient is configured within Document Router&nbsp;</td>
+<td>MANUAL&nbsp;</td>
+<td>Passed&nbsp;</td>
+<td>&nbsp;</td>
+<td>1/9/2012&nbsp;</td>
+<td>5:57:59 PM&nbsp;</td>
+</tr>
+<tr bgcolor=mintcream><td>[1]03DR_VALIDATE_006&nbsp;</td>
+<td>This test case covers the situation where a syntactically and semantically correct message is sent to the Semantic adapter with routing instructions set to have the Document Router send the source data as a CCDCDA on secure ftp to multiple recipients. &nbsp;Both recipients are configured in DR.&nbsp;</td>
+<td>MANUAL&nbsp;</td>
+<td>Passed&nbsp;</td>
+<td>&nbsp;</td>
+<td>1/9/2012&nbsp;</td>
+<td>6:04:48 PM&nbsp;</td>
+</tr>
+<tr bgcolor=mintcream><td>[1]03DR_VALIDATE_004&nbsp;</td>
+<td>This test case covers the situation where a syntactically and semantically correct message is sent to the Semantic adapter with routing instructions set to have the Document Router send the source data as a CCDCDA on secure email. &nbsp;However, configuration file which contains each person's certificate should not be set up with the proper cert for the recipient.&nbsp;</td>
+<td>MANUAL&nbsp;</td>
+<td>Passed&nbsp;</td>
+<td>&nbsp;</td>
+<td>1/9/2012&nbsp;</td>
+<td>5:56:18 PM&nbsp;</td>
+</tr>
+<tr bgcolor=mintcream><td>[1]03DR_VALIDATE_007&nbsp;</td>
+<td>This test case covers the situation where a syntactically and semantically correct message is sent to the Semantic adapter with routing instructions set to have the Document Router send the source data as a CCDCDA on secure ftp to a single recipient. However, in this test case, the recipient's cert is not located in the configuration, so this test case should fail.&nbsp;</td>
+<td>MANUAL&nbsp;</td>
+<td>Passed&nbsp;</td>
+<td>&nbsp;</td>
+<td>1/9/2012&nbsp;</td>
+<td>6:07:54 PM&nbsp;</td>
+</tr>
+<tr bgcolor=mintcream><td>[1]03DR_VALIDATE_008&nbsp;</td>
+<td>This test case covers the situation where a syntactically and semantically correct message is sent to the Semantic adapter with routing instructions set to have the Document Router send the source data as a CCDCDA on XDS/NAV email to a single recipient. &nbsp;This recipient is configured.&nbsp;</td>
+<td>MANUAL&nbsp;</td>
+<td>Passed&nbsp;</td>
+<td>&nbsp;</td>
+<td>1/12/2012&nbsp;</td>
+<td>3:36:55 PM&nbsp;</td>
+</tr>
+<tr bgcolor=mintcream><td>[1]03DR_VALIDATE_009&nbsp;</td>
+<td>This test case covers the situation where a syntactically and semantically correct message is sent to the Semantic adapter with routing instructions set to have the Document Router send the source data as a CCDCDA on XDS/NAV email to multiple recipients. &nbsp;Both recipients are configured in DR.&nbsp;</td>
+<td>MANUAL&nbsp;</td>
+<td>Failed&nbsp;</td>
+<td>&nbsp;</td>
+<td>1/12/2012&nbsp;</td>
+<td>4:59:32 PM&nbsp;</td>
+</tr>
+<tr bgcolor=mintcream><td>[1]03DR_VALIDATE_010&nbsp;</td>
+<td>This test case covers the situation where a syntactically and semantically correct message is sent to the Semantic adapter with routing instructions set to have the Document Router send the source data as a CCDCDA on XDS/NAV email to a single recipient. However, in this test case, the recipient's cert is not located in the configuration, so this test case should fail.&nbsp;</td>
+<td>MANUAL&nbsp;</td>
+<td>Passed&nbsp;</td>
+<td>&nbsp;</td>
+<td>1/13/2012&nbsp;</td>
+<td>4:20:47 PM&nbsp;</td>
+</tr>
+<tr bgcolor=mintcream><td>[1]03DR_VALIDATE_011&nbsp;</td>
+<td>This test case covers the situation where a syntactically and semantically correct message is sent to the Semantic adapter with routing instructions set to have the Document Router send the source data as a CCDCDA on XDS/NAV email to one recipient, secure email to another, and secure ftp to the last. &nbsp;This should be three different endpoints. &nbsp;All destinations should be configured in Document Router.&nbsp;</td>
+<td>MANUAL&nbsp;</td>
+<td>No Run&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr bgcolor=mintcream><td>[1]03DR_VALIDATE_012&nbsp;</td>
+<td>This test case covers the situation where a syntactically and semantically correct message is sent to the Semantic adapter with routing instructions set to have the Document Router send the source data as a CCDCDA on XDS/NAV email to one recipient, secure email to another, and *UNCONFIGURED* secure ftp to the last. &nbsp;This should be three different endpoints.&nbsp;</td>
+<td>MANUAL&nbsp;</td>
+<td>No Run&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr bgcolor=mintcream><td>[1]03DR_VALIDATE_013&nbsp;</td>
+<td>This test case covers the situation where a syntactically and semantically correct message is sent to the Semantic adapter without routing instructions. &nbsp;Default configuration is set to have the Document Router send the source data as a CCDCDA on secure email to one recipient.&nbsp;</td>
+<td>MANUAL&nbsp;</td>
+<td>No Run&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr bgcolor=mintcream><td>[1]03DR_VALIDATE_014&nbsp;</td>
+<td>This test case covers the situation where a syntactically and semantically correct message is sent to the Semantic adapter without routing instructions. &nbsp;Default configuration is set to have the Document Router send the source data as a CCDCDA on secure email to one recipient which lacks a proper certificate in the config file.&nbsp;</td>
+<td>MANUAL&nbsp;</td>
+<td>No Run&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr bgcolor=mintcream><td>[1]03DR_VALIDATE_015&nbsp;</td>
+<td>This test case covers the situation where a syntactically and semantically correct message is sent to the Semantic adapter without routing instructions. &nbsp;Default configuration is set to have the Document Router send the source data as a CCDCDA on secure ftp to one recipient.&nbsp;</td>
+<td>MANUAL&nbsp;</td>
+<td>No Run&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr bgcolor=mintcream><td>[1]03DR_VALIDATE_017&nbsp;</td>
+<td>This test case covers the situation where a syntactically and semantically correct message is sent to the Semantic adapter without routing instructions. &nbsp;Default configuration is set to have the Document Router send the source data as a CCDCDA on NAV email to one recipient.&nbsp;</td>
+<td>MANUAL&nbsp;</td>
+<td>No Run&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr bgcolor=mintcream><td>[1]03DR_VALIDATE_016&nbsp;</td>
+<td>This test case covers the situation where a syntactically and semantically correct message is sent to the Semantic adapter without routing instructions. &nbsp;Default configuration is set to have the Document Router send the source data as a CCDCDA on secure ftp to one account which lacks a proper certificate in the config file.&nbsp;</td>
+<td>MANUAL&nbsp;</td>
+<td>No Run&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr bgcolor=mintcream><td>[1]03DR_VALIDATE_018&nbsp;</td>
+<td>This test case covers the situation where a syntactically and semantically correct message is sent to the Semantic adapter without routing instructions. &nbsp;Default configuration is set to have the Document Router send the source data as a CCDCDA on NAV email to one account which lacks a proper configuration in the config file.&nbsp;</td>
+<td>MANUAL&nbsp;</td>
+<td>No Run&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr bgcolor=mintcream><td>[1]03DR_VALIDATE_019&nbsp;</td>
+<td>This test case covers the situation where a syntactically and semantically correct message is sent to the Semantic adapter without routing instructions. &nbsp;Default configuration is set to have the Document Router send the source data as a CCDCDA to a valid Secure Email, a non-configured Secure FTP and valid XDS/NAV.&nbsp;</td>
+<td>MANUAL&nbsp;</td>
+<td>No Run&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr bgcolor=mintcream><td>[1]03DR_VALIDATE_020&nbsp;</td>
+<td>This test case covers the situation where a syntactically and semantically correct message is sent to the Semantic adapter with routing instructions. &nbsp;Default configuration is set to have the Document Router send the BASELINE EVALUATION NOTE source data as a CCDCDA on secure email&nbsp;</td>
+<td>MANUAL&nbsp;</td>
+<td>No Run&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr bgcolor=mintcream><td>[1]03DR_VALIDATE_021&nbsp;</td>
+<td>This test case covers the situation where a syntactically and semantically correct message is sent to the Semantic adapter with routing instructions. &nbsp;Default configuration is set to have the Document Router send the BASELINE EVALUATION NOTE source data as a HL7V2 on secure email&nbsp;</td>
+<td>MANUAL&nbsp;</td>
+<td>No Run&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr bgcolor=mintcream><td>[1]03DR_VALIDATE_022&nbsp;</td>
+<td>This test case covers the situation where a syntactically and semantically correct message is sent to the Semantic adapter with routing instructions. &nbsp;Default configuration is set to have the Document Router send the CLINICAL STAGING NOTE source data as a RIMITS on secure email.&nbsp;</td>
+<td>MANUAL&nbsp;</td>
+<td>No Run&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr bgcolor=mintcream><td>[1]03DR_VALIDATE_023&nbsp;</td>
+<td>This test case covers the situation where a syntactically and semantically correct message is sent to the Semantic adapter with routing instructions. &nbsp;Default configuration is set to have the Document Router send the CLINICAL STAGING NOTE source data as a HL7_V2_CLINICAL_NOTE on secure email.&nbsp;</td>
+<td>MANUAL&nbsp;</td>
+<td>No Run&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr bgcolor=mintcream><td>[1]03DR_VALIDATE_024&nbsp;</td>
+<td>This test case covers the situation where a syntactically and semantically correct message is sent to the Semantic adapter with routing instructions. &nbsp;Default configuration is set to have the Document Router send the CLINICAL STAGING NOTE source data as a CCDCDA, RIMITS, AND HL7_V2_CLINICAL_NOTE on secure email.&nbsp;</td>
+<td>MANUAL&nbsp;</td>
+<td>No Run&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr bgcolor=mintcream><td>[1]03DR_VALIDATE_025&nbsp;</td>
+<td>This test case covers the situation where a syntactically and semantically correct message is sent to the Semantic adapter with routing instructions. &nbsp;Default configuration is set to have the Document Router send the BASELINE EVALUATIONNOTE source data as a CCDCDA, RIMITS, AND HL7_V2_CLINICAL_NOTE on secure email.&nbsp;</td>
+<td>MANUAL&nbsp;</td>
+<td>No Run&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr bgcolor=mintcream><td>[1]03DR_VALIDATE_026&nbsp;</td>
+<td>This test case covers the situation where a syntactically and semantically correct message , with routing instructions, is sent to the Semantic adapter with a consolidated TRIM. &nbsp;Output is to secure email recipient as a CCD.&nbsp;</td>
+<td>MANUAL&nbsp;</td>
+<td>No Run&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr bgcolor=mintcream><td>[1]03DR_VALIDATE_027&nbsp;</td>
+<td>This test case covers the situation where a syntactically and semantically correct message , without routing instructions, is sent to the Semantic adapter with a consolidated TRIM. &nbsp;Output is to secure email recipient as a CCD.&nbsp;</td>
+<td>MANUAL&nbsp;</td>
+<td>No Run&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr bgcolor=mintcream><td>[1]01DR_MAIL_SETUP&nbsp;</td>
+<td>This test case is a prerequisite for many of the test cases in the Document router test set.&nbsp;</td>
+<td>MANUAL&nbsp;</td>
+<td>Passed&nbsp;</td>
+<td>&nbsp;</td>
+<td>1/9/2012&nbsp;</td>
+<td>5:07:36 PM&nbsp;</td>
+</tr>
+<tr bgcolor=mintcream><td>[1]03DR_VALIDATE_003a&nbsp;</td>
+<td>This test case covers the situation where a syntactically and semantically correct message is sent to the Semantic adapter with routing instructions set to have the Document Router send the source data as a CCDCDA on secure email to the same recipient multiple times. &nbsp;This recipient is configured in DR.&nbsp;</td>
+<td>MANUAL&nbsp;</td>
+<td>Passed&nbsp;</td>
+<td>&nbsp;</td>
+<td>1/9/2012&nbsp;</td>
+<td>5:46:51 PM&nbsp;</td>
+</tr>
+<tr bgcolor=mintcream><td>[1]03DR_VALIDATE_003b&nbsp;</td>
+<td>This test case covers the situation where a syntactically and semantically correct message is sent to the Semantic adapter with routing instructions set to have the Document Router send the source data as a CCDCDA on secure email to multiple recipients. &nbsp;One of the recipients is non-configured in DR.&nbsp;</td>
+<td>MANUAL&nbsp;</td>
+<td>Passed&nbsp;</td>
+<td>&nbsp;</td>
+<td>1/9/2012&nbsp;</td>
+<td>5:48:09 PM&nbsp;</td>
+</tr>
+<tr bgcolor=mintcream><td>[1]03DR_VALIDATE_006a&nbsp;</td>
+<td>This test case covers the situation where a syntactically and semantically correct message is sent to the Semantic adapter with routing instructions set to have the Document Router send the source data as a CCDCDA on secure ftp to multiple recipients. &nbsp;One of the recipients is not configured in DR.&nbsp;</td>
+<td>MANUAL&nbsp;</td>
+<td>Passed&nbsp;</td>
+<td>&nbsp;</td>
+<td>1/9/2012&nbsp;</td>
+<td>6:07:04 PM&nbsp;</td>
+</tr>
+<tr bgcolor=mintcream><td>[1]03DR_VALIDATE_009a&nbsp;</td>
+<td>This test case covers the situation where a syntactically and semantically correct message is sent to the Semantic adapter with routing instructions set to have the Document Router send the source data as a CCDCDA on XDS/NAV email to the same recipient multiple times.&nbsp;</td>
+<td>MANUAL&nbsp;</td>
+<td>Failed&nbsp;</td>
+<td>&nbsp;</td>
+<td>1/12/2012&nbsp;</td>
+<td>5:26:43 PM&nbsp;</td>
+</tr>
+<tr bgcolor=mintcream><td>[1]03DR_VALIDATE_009b&nbsp;</td>
+<td>This test case covers the situation where a syntactically and semantically correct message is sent to the Semantic adapter with routing instructions set to have the Document Router send the source data as a CCDCDA on XDS/NAV email to multiple recipients. &nbsp;Only one of the recipients is configured in DR.&nbsp;</td>
+<td>MANUAL&nbsp;</td>
+<td>Passed&nbsp;</td>
+<td>&nbsp;</td>
+<td>1/13/2012&nbsp;</td>
+<td>4:08:32 PM&nbsp;</td>
+</tr>
+<tr bgcolor=mintcream><td>[1]03DR_VALIDATE_028&nbsp;</td>
+<td>This test case covers the situation where a syntactically and semantically correct message , with routing instructions, is sent to the Semantic adapter with a consolidated TRIM. &nbsp;Output is to secure email recipient as a CCD. &nbsp;Additionally, a Baseline Evaluation Note is sent simultaneously.&nbsp;</td>
+<td>MANUAL&nbsp;</td>
+<td>No Run&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</table></body></html>

@@ -1,0 +1,54 @@
+The following are the list of queries and the discrepancies noted in terms of availability/unavailability of data elements under different data models
+
+Desired Elements:
+----------------------------
+
+1) Do we need dignoses history?
+2) Do we need patient deceased related information?
+3) Do we need performance evaluation and evaluated by info?
+
+
+PODS Moodel:
+---------------------
+Patient:
+1) Person - contains AD, postal address
+2) Person - contains telecomAddress, TEL
+3) Method of payment - couldnt find
+
+Provider:
+1) HealthCareProvider/PersonRole - contains Identifier
+2) HealthCareProvider/PersonRole - contains Name
+3) HealthCareProvider/PersonRole - contains postal Address, Telcom Address, do we need these?
+
+Diagnosis:
+1) can the cancer prognosis be one of the Performed Observation and its results?
+
+Pathology:
+1) If pathology is one of the performed observations, it contains Pathology Id, Pathology Cancer Diagnosis Reference, Histopathology Type, Pathology Observation - Pathology observation type, Pathology Observation - Pathology observation value, Pathology Observation - observation method, Pathology Observation - observed body site
+
+Vital Signs:
+1) Are the vital signs part of the observation result?
+
+Substance Administration:
+1) PerformedActivity has PerformedSubstanceAdministration
+
+Radition:
+1) Performed Radiation Administration - contains radition type, radiation date. It alos contains other details like route of administration, etc
+
+===========================================================================================
+
+PCO Model (demo pilot)
+-----------------------------------
+
+Performance:
+1) Seems to contain performace status identifier and scheme
+
+Vital signs:
+1) Vital signs comes out of box of tolven and can be pulled out of PCO model
+
+Surgery & Radiation:
+1) Surgery and radiation relation information seems to be available as part of procedures.
+
+Treatment Plan
+1) Name & Descirption could be part of the plan title
+

@@ -1,0 +1,944 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<trim xmlns="urn:tolven-org:trim:4.0">
+    <extends>patientAct</extends>
+    <name>obs/evn/onStudyEligibility</name>
+    <description>On-Study Eligibility Form</description>
+    <page>onStudyEligibility.xhtml</page>
+    <drilldown>onStudyEligibilityDD.xhtml</drilldown>
+    <menu>global:caseReportFormMenu</menu>
+    <tolvenEventId timestamp="20110913202458+0000" principal="sarah.davis@ucsfmedctr.org" application="echr" path="echr:patient-1079297:caseReportForm-2058239" id="2058239" accountId="47003"/>
+    <reference>http://wikihit.org/wiki/index.php</reference>
+    <application signatureRequired="true" name="echr">
+        <instance>echr:patient:caseReportForm</instance>
+        <wip>echr:activity:all</wip>
+    </application>
+    <act moodCode="EVN" classCode="OBS">
+        <bind phase="create" application="echr">
+            <placeholder bindAction="merge">
+                <path>echr:patient:caseReportForm</path>
+            </placeholder>
+        </bind>
+        <id>
+            <II>
+                <root>1.2.1.47003</root>
+                <extension>echr:patient-1079297:caseReportForm-2058238</extension>
+            </II>
+        </id>
+        <code>
+            <CD>
+                <code>OINT</code>
+                <codeSystemName>HL7</codeSystemName>
+                <codeSystemVersion>3.0</codeSystemVersion>
+            </CD>
+        </code>
+        <statusCode>active</statusCode>
+        <title>
+            <ST>On-Study Eligibility Form</ST>
+        </title>
+        <effectiveTime>
+            <label>Date patient was last known alive, or date of death</label>
+            <new function="now" datatype="TS"/>
+            <TS>
+                <value>20110913132458-0700</value>
+            </TS>
+        </effectiveTime>
+        <participation typeCode="SBJ" name="subject">
+            <role classCode="PAT">
+                <bind application="echr">
+                    <placeholder>
+                        <path>echr:patient</path>
+                    </placeholder>
+                </bind>
+                <bind application="ephr">
+                    <placeholder>
+                        <path>ephr:patient</path>
+                    </placeholder>
+                </bind>
+                <id>
+                    <II>
+                        <root>1.2.1.47003</root>
+                        <extension>echr:patient-1079297</extension>
+                    </II>
+                </id>
+                <player determinerCode="INSTANCE" classCode="PSN">
+                    <name>
+                        <label>Patient Name</label>
+                        <EN>
+                            <label>Legal Name</label>
+                            <use>L</use>
+                            <part>
+<label>First Name</label>
+<type>GIV</type>
+<ST>Roya</ST>
+                            </part>
+                            <part>
+<label>Middle Name</label>
+<type>GIV</type>
+<ST></ST>
+                            </part>
+                            <part>
+<label>Last Name</label>
+<type>FAM</type>
+<ST>Main</ST>
+                            </part>
+                        </EN>
+                    </name>
+                </player>
+            </role>
+        </participation>
+        <participation typeCode="ENT" name="dataEnterer">
+            <role classCode="ROL">
+                <id>
+                    <II>
+                        <root>1.2.1.47003</root>
+                        <extension>sarah.davis@ucsfmedctr.org</extension>
+                    </II>
+                </id>
+            </role>
+        </participation>
+        <relationship typeCode="PERT" direction="OUT" name="eligibilityChecklist">
+            <act moodCode="EVN" classCode="OBS">
+                <title>
+                    <ST>Eligibility Checklist</ST>
+                </title>
+                <observation>
+                    <value>
+                        <valueSet>eligibilityCheckListVS</valueSet>
+                        <SETCE>
+                            <displayName>Patient has no clinical or imaging evidence of distant metastasis </displayName>
+                            <code>C0183101</code>
+                            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                            <codeSystemVersion>2007AA</codeSystemVersion>
+                        </SETCE>
+                        <SETCE>
+                            <displayName>Patient has no uncontrolled or severe cardiovascular disease; pre-treatment ejection fraction (by nuclear imaging or echocardiography) must be ≥ 50%</displayName>
+                            <code>C0183102</code>
+                            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                            <codeSystemVersion>2007AA</codeSystemVersion>
+                        </SETCE>
+                        <SETCE>
+                            <displayName>Patient's lab values are within these limits</displayName>
+                            <code>C0183103</code>
+                            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                            <codeSystemVersion>2007AA</codeSystemVersion>
+                        </SETCE>
+                    </value>
+                </observation>
+            </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="eligibilityChecklistLabValues">
+            <act moodCode="EVN" classCode="OBS">
+                <title>
+                    <ST>Lab Values</ST>
+                </title>
+                <observation>
+                    <value>
+                        <valueSet>labValuesVS</valueSet>
+                        <SETCE>
+                            <displayName>Leukocytes ≥ 3000/µL</displayName>
+                            <code>C0547040</code>
+                            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                            <codeSystemVersion>2007AA</codeSystemVersion>
+                        </SETCE>
+                        <SETCE>
+                            <displayName>Absolute Neutrophil count ≥ 1500/µL</displayName>
+                            <code>C1299392</code>
+                            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                            <codeSystemVersion>2007AA</codeSystemVersion>
+                        </SETCE>
+                        <SETCE>
+                            <displayName>Platelets ≥ 100,000/µL</displayName>
+                            <code>C0547041</code>
+                            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                            <codeSystemVersion>2007AA</codeSystemVersion>
+                        </SETCE>
+                        <SETCE>
+                            <displayName>Total Bilirubin within institutional normal limits, unless patient has Gilbert's disease, for which Bilirubin must be ≤ 2.0 x ULN</displayName>
+                            <code>C1299393</code>
+                            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                            <codeSystemVersion>2007AA</codeSystemVersion>
+                        </SETCE>
+                        <SETCE>
+                            <displayName>AST (SGOT)/ALT (SGPT) ≤ 1.5 x institutional ULN</displayName>
+                            <code>C0547042</code>
+                            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                            <codeSystemVersion>2007AA</codeSystemVersion>
+                        </SETCE>
+                        <SETCE>
+                            <displayName>Creatinine &lt; 1.5 x institutional ULN</displayName>
+                            <code>C0547043</code>
+                            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                            <codeSystemVersion>2007AA</codeSystemVersion>
+                        </SETCE>
+                    </value>
+                </observation>
+            </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="investigationalAgentCheckList">
+            <act moodCode="EVN" classCode="OBS">
+                <title>
+                    <ST>Investigational Agent Specific Eligibility Criteria</ST>
+                </title>
+                <observation>
+                    <value>
+                        <valueSet>investigationalAgentCheckList</valueSet>
+                        <SETCE>
+                            <displayName>Patient has a urinary protein quantitative value of ≤ 30 mg/dL in urnalysis or ≤ 1+ on dipstick (if criteria cannot be met a 24-hour urine collection can be done to calculate total protein excretion and must be &lt; 1000 mg)</displayName>
+                            <code>3092950000</code>
+                            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                        </SETCE>
+                        <SETCE>
+                            <displayName>Patient has a diastolic blood pressure &lt; 100 mm Hg and systolic bllod pressure &lt; 160 mm Hg on at least one of three sequential blood pressure determinations performed during their clinic visit or within the week during the screening process. (Investigator can at their discretion exclude a patient with a diastolic blood pressure ≥ 90 mm Hg but &lt; 100 mm Hg or with systolic blood pressure ≥ 140 mm Hg but &lt; 160 mm Hg who has a prior history of poorly controlled hypertension or lack of compliance with management)</displayName>
+                            <code>3092950001</code>
+                            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                        </SETCE>
+                        <SETCE>
+                            <displayName>Patient has PTT or APTT  ≤ 1.5 x ULN per institutional laboratory range and INR ≤ 1.5</displayName>
+                            <code>3092950002</code>
+                            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                        </SETCE>
+                        <SETCE>
+                            <displayName>Patient has no history of deep venous thrombosis (DVT), arterial thromboembolism, or pulmonary thromboembolism within 12 months prior to screening</displayName>
+                            <code>3092950003</code>
+                            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                        </SETCE>
+                        <SETCE>
+                            <displayName>Patient has no history of hypertensive crisis or hypertensive encephalopathy within 6 months prior to screening</displayName>
+                            <code>3092950004</code>
+                            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                        </SETCE>
+                        <SETCE>
+                            <displayName>Patient has no history of clinically significant bleeding within 6 months prior to screening</displayName>
+                            <code>3092950005</code>
+                            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                        </SETCE>
+                        <SETCE>
+                            <displayName>Patient has not been treated with immune modulators such as systemic cyclosporine or tacrolimus within 30 days prior to study treatment</displayName>
+                            <code>3092950006</code>
+                            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                        </SETCE>
+                        <SETCE>
+                            <displayName>Patient has had no major surgery within 28 days prior to enrollment in the screeing phase or has a persistent open wound</displayName>
+                            <code>3092950007</code>
+                            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                        </SETCE>
+                        <SETCE>
+                            <displayName>Patient has had no minor surgical procedure within 3 days prior to screening (placement of tunneled central venous access device is acceptable)</displayName>
+                            <code>3092950008</code>
+                            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                        </SETCE>
+                        <SETCE>
+                            <displayName>Patient has no serious non-healing wound, ulcer (including gastrointestinal), or bone fracture</displayName>
+                            <code>3092950009</code>
+                            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                        </SETCE>
+                        <SETCE>
+                            <displayName>Patient is not taking a therapeutic anticoagulant (e.g. warfarin or LMWH)</displayName>
+                            <code>30929500010</code>
+                            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                        </SETCE>
+                        <SETCE>
+                            <displayName>Patient has no history of abdominal fistula, GI perforation, or intra-abdominal abcess within 6 months prior to screening</displayName>
+                            <code>30929500011</code>
+                            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                        </SETCE>
+                    </value>
+                </observation>
+            </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="preEligibilityChecklist">
+            <act moodCode="EVN" classCode="OBS">
+                <title>
+                    <ST>Pre-eligibility Checklist (completed in the Pre-Eligibility Wizard)</ST>
+                </title>
+                <observation>
+                    <value>
+                        <valueSet>checkList</valueSet>
+                        <SETCE>
+                            <displayName>Patient has histologically confirmed new primary adenocarcinoma of the female breast confirmed by core needle, fine needle aspirate, or incisional biopsy</displayName>
+                            <code>C0183101</code>
+                            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                            <codeSystemVersion>2007AA</codeSystemVersion>
+                        </SETCE>
+                        <SETCE>
+                            <displayName>Patient has clinically or radiologically measureable or non-measurable disease in breast defined as longest diameter ≥ 2.5cm</displayName>
+                            <code>C0183102</code>
+                            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                            <codeSystemVersion>2007AA</codeSystemVersion>
+                        </SETCE>
+                        <SETCE>
+                            <displayName>Patient has not had prior cytoxic regimens for this malignancy</displayName>
+                            <code>C0183103</code>
+                            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                            <codeSystemVersion>2007AA</codeSystemVersion>
+                        </SETCE>
+                        <SETCE>
+                            <displayName>Patient has not had other investigational agents within 30 days of study enrollment</displayName>
+                            <code>C0183104</code>
+                            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                            <codeSystemVersion>2007AA</codeSystemVersion>
+                        </SETCE>
+                        <SETCE>
+                            <displayName>Patient has not had prior RT to the ipsilateral breast for this malignancy</displayName>
+                            <code>C0183105</code>
+                            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                            <codeSystemVersion>2007AA</codeSystemVersion>
+                        </SETCE>
+                        <SETCE>
+                            <displayName>Patient is 18 years or older</displayName>
+                            <code>C0183106</code>
+                            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                            <codeSystemVersion>2007AA</codeSystemVersion>
+                        </SETCE>
+                        <SETCE>
+                            <displayName>Patient is non-pregnant and non-lactating</displayName>
+                            <code>C0183107</code>
+                            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                            <codeSystemVersion>2007AA</codeSystemVersion>
+                        </SETCE>
+                        <SETCE>
+                            <displayName>Patient has not had ferromagnetic prostheses that are not compatible with an MRI machine</displayName>
+                            <code>C0183108</code>
+                            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                            <codeSystemVersion>2007AA</codeSystemVersion>
+                        </SETCE>
+                        <SETCE>
+                            <displayName>Patient is willing to have core biopsy</displayName>
+                            <code>C0183109</code>
+                            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                            <codeSystemVersion>2007AA</codeSystemVersion>
+                        </SETCE>
+                        <SETCE>
+                            <displayName>Patient is willing to have study MRI</displayName>
+                            <code>C0183110</code>
+                            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                            <codeSystemVersion>2007AA</codeSystemVersion>
+                        </SETCE>
+                        <SETCE>
+                            <displayName>Patient is eligible to be screened for the study</displayName>
+                            <code>C0183111</code>
+                            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                            <codeSystemVersion>2007AA</codeSystemVersion>
+                        </SETCE>
+                    </value>
+                </observation>
+            </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="methodOfDetection">
+            <act moodCode="EVN" classCode="OBS">
+                <code>
+                    <CD>
+                        <code>373573001 | clinical finding present | : 246090004 | associated finding | = 254838004 | carcinoma of breast | : 418775008 | finding method | =</code>
+                        <codeSystem>2.16.840.1.113883.6.5</codeSystem>
+                        <codeSystemName>SNOMED CT</codeSystemName>
+                        <codeSystemVersion>January 2009</codeSystemVersion>
+                        <translation>
+                            <code>QUEST123</code>
+                            <codeSystem>2.16.840.1.113883.6.5</codeSystem>
+                            <codeSystemName>JIRA</codeSystemName>
+                            <codeSystemVersion>January 2009</codeSystemVersion>
+                        </translation>
+                    </CD>
+                </code>
+                <title>
+                    <ST>Method of Detection</ST>
+                </title>
+                <observation>
+                    <value>
+                        <label>How was the patient's cancer first detected?</label>
+                        <valueSet>detectionMethod</valueSet>
+                        <CE>
+                            <displayName>Self exam</displayName>
+                            <code>409979009 | breast self-examination |</code>
+                            <codeSystem>2.16.840.1.113883.6.5</codeSystem>
+                            <codeSystemName>SNOMED CT</codeSystemName>
+                            <codeSystemVersion>January 2009</codeSystemVersion>
+                        </CE>
+                    </value>
+                    <value>
+                        <ST></ST>
+                    </value>
+                </observation>
+                <relationship typeCode="PERT" direction="OUT" name="isMammogram">
+                    <act moodCode="EVN" classCode="OBS">
+                        <title>
+                            <ST>Is mass palpable?</ST>
+                        </title>
+                        <observation>
+                            <value>
+<valueSet>palpableStatus</valueSet>
+                            </value>
+                        </observation>
+                    </act>
+                </relationship>
+                <relationship typeCode="PERT" direction="OUT" name="isMRI">
+                    <act moodCode="EVN" classCode="OBS">
+                        <title>
+                            <ST>Is mass palpable?</ST>
+                        </title>
+                        <observation>
+                            <value>
+<valueSet>palpableStatus</valueSet>
+                            </value>
+                        </observation>
+                    </act>
+                </relationship>
+            </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="massFirstIdentified">
+            <act moodCode="EVN" classCode="OBS">
+                <title>
+                    <ST>Date the mass was first identified</ST>
+                </title>
+                <observation>
+                    <value>
+                        <label>(If a specific date is not given, provide the best estimated date)</label>
+                        <TS>
+                            <value>20100115</value>
+                        </TS>
+                    </value>
+                </observation>
+            </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="mammogramTimePrior">
+            <act moodCode="EVN" classCode="OBS">
+                <title>
+                    <ST>Has the patient had a screening mammogram at any time prior to detection of the mass?</ST>
+                </title>
+                <observation>
+                    <value>
+                        <valueSet>yesNoValues</valueSet>
+                        <CE>
+                            <displayName>Yes</displayName>
+                            <code>C1299392</code>
+                            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                            <codeSystemVersion>2007AA</codeSystemVersion>
+                        </CE>
+                    </value>
+                    <value>
+                        <label>If yes, what was the date of the most recent normal or negative screening mammogram?</label>
+                        <TS>
+                            <value>20070315</value>
+                        </TS>
+                    </value>
+                </observation>
+            </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="ECOGScore">
+            <act moodCode="EVN" classCode="OBS">
+                <code>
+                    <CD>
+                        <code>423740007 | ECOG performance status |</code>
+                        <codeSystem>2.16.840.1.113883.6.5</codeSystem>
+                        <codeSystemName>SNOMED CT</codeSystemName>
+                        <codeSystemVersion>January 2009</codeSystemVersion>
+                        <translation>
+                            <code>TBD</code>
+                            <codeSystem>2.16.840.1.113883.3.26.2</codeSystem>
+                            <codeSystemName>caDSR</codeSystemName>
+                            <codeSystemVersion>2.1</codeSystemVersion>
+                        </translation>
+                    </CD>
+                </code>
+                <title>
+                    <ST>ECOG</ST>
+                </title>
+                <observation>
+                    <value>
+                        <label>ECOG: </label>
+                        <valueSet>ECOGValues</valueSet>
+                        <CE>
+                            <displayName>0-Asymptomatic</displayName>
+                            <code>425389002</code>
+                            <codeSystem>2.16.840.1.113883.6.5</codeSystem>
+                            <codeSystemName>SNOMED CT</codeSystemName>
+                            <codeSystemVersion>January 2009</codeSystemVersion>
+                        </CE>
+                    </value>
+                </observation>
+            </act>
+        </relationship>
+        <relationship typeCode="APND" direction="IN" name="registrationInfo">
+            <act moodCode="EVN" classCode="OBS">
+                <observation>
+                    <value>
+                        <label>Study ID</label>
+                        <ST>91641</ST>
+                    </value>
+                    <value>
+                        <label>Patient initials</label>
+                        <ST>RM</ST>
+                    </value>
+                    <value>
+                        <label>Patient DOB/Age</label>
+                        <ST>6/7/1977 - 34 Years</ST>
+                    </value>
+                    <value>
+                        <label>Patient Gender</label>
+                        <ST>Female</ST>
+                    </value>
+                    <value>
+                        <label>Race</label>
+                        <ST>White</ST>
+                    </value>
+                    <value>
+                        <label>Ethnicity</label>
+                        <ST>Not Hispanic or Latino</ST>
+                    </value>
+                    <value>
+                        <label>Country of Birth</label>
+                        <ST></ST>
+                    </value>
+                    <value>
+                        <label>Institution</label>
+                        <ST>UCSF</ST>
+                    </value>
+                </observation>
+            </act>
+        </relationship>
+        <relationship typeCode="APND" direction="IN" name="poolAccount">
+            <act moodCode="EVN" classCode="OBS">
+                <observation>
+                    <value>
+                        <label>Account ID</label>
+                        <ST>62000</ST>
+                    </value>
+                    <value>
+                        <label>Account Name</label>
+                        <ST>I-SPY 2 Data Coordinating Center</ST>
+                    </value>
+                    <value>
+                        <label>Account Email</label>
+                        <ST>ispy2monitoring@ccsainc.com</ST>
+                    </value>
+                    <value>
+                        <label>Account User</label>
+                        <ST></ST>
+                    </value>
+                    <value>
+                        <label>Comment TimeStamp</label>
+                        <ST></ST>
+                    </value>
+                </observation>
+            </act>
+        </relationship>
+        <relationship typeCode="APND" direction="IN" name="patientAccount">
+            <act moodCode="EVN" classCode="OBS">
+                <observation>
+                    <value>
+                        <label>Account Email</label>
+                        <ST>sarah.davis@ucsfmedctr.org</ST>
+                    </value>
+                    <value>
+                        <label>Account User</label>
+                        <ST>sarah</ST>
+                    </value>
+                    <value>
+                        <label>Comments</label>
+                        <ST></ST>
+                    </value>
+                    <value>
+                        <label>Comment TimeStamp</label>
+                        <ST>Tue Sep 13 13:25:00 PDT 2011</ST>
+                    </value>
+                </observation>
+            </act>
+        </relationship>
+        <compute>
+            <type>org.tolven.process.CRFPrior</type>
+            <property name="enabled">
+                <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:boolean">false</value>
+            </property>
+            <property name="action">
+                <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">onStudyEligibility</value>
+            </property>
+            <property name="path">
+                <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">echr:patient:procedures:active</value>
+            </property>
+            <property name="template">
+                <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">path/onStudyProcedureTemplate</value>
+            </property>
+            <property name="longTermTherapyList">
+                <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">echr:patient:therapiesReceived:all</value>
+            </property>
+        </compute>
+        <compute>
+            <type>org.tolven.process.RetrieveRegistrationDetails</type>
+            <property name="enabled">
+                <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:boolean">false</value>
+            </property>
+        </compute>
+    </act>
+    <valueSet name="yesNoValues">
+        <CE>
+            <displayName>No</displayName>
+            <code>C0547040</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+            <codeSystemVersion>2007AA</codeSystemVersion>
+        </CE>
+        <CE>
+            <displayName>Yes</displayName>
+            <code>C1299392</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+            <codeSystemVersion>2007AA</codeSystemVersion>
+        </CE>
+    </valueSet>
+    <valueSet name="labValuesVS">
+        <CE>
+            <displayName>Leukocytes ≥ 3000/µL</displayName>
+            <code>C0547040</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+            <codeSystemVersion>2007AA</codeSystemVersion>
+        </CE>
+        <CE>
+            <displayName>Absolute Neutrophil count ≥ 1500/µL</displayName>
+            <code>C1299392</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+            <codeSystemVersion>2007AA</codeSystemVersion>
+        </CE>
+        <CE>
+            <displayName>Platelets ≥ 100,000/µL</displayName>
+            <code>C0547041</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+            <codeSystemVersion>2007AA</codeSystemVersion>
+        </CE>
+        <CE>
+            <displayName>Total Bilirubin within institutional normal limits, unless patient has Gilbert's disease, for which Bilirubin must be ≤ 2.0 x ULN</displayName>
+            <code>C1299393</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+            <codeSystemVersion>2007AA</codeSystemVersion>
+        </CE>
+        <CE>
+            <displayName>AST (SGOT)/ALT (SGPT) ≤ 1.5 x institutional ULN</displayName>
+            <code>C0547042</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+            <codeSystemVersion>2007AA</codeSystemVersion>
+        </CE>
+        <CE>
+            <displayName>Creatinine &lt; 1.5 x institutional ULN</displayName>
+            <code>C0547043</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+            <codeSystemVersion>2007AA</codeSystemVersion>
+        </CE>
+    </valueSet>
+    <valueSet name="eligibilityCheckListVS">
+        <CE>
+            <displayName>Patient has no clinical or imaging evidence of distant metastasis </displayName>
+            <code>C0183101</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+            <codeSystemVersion>2007AA</codeSystemVersion>
+        </CE>
+        <CE>
+            <displayName>Patient has no uncontrolled or severe cardiovascular disease; pre-treatment ejection fraction (by nuclear imaging or echocardiography) must be ≥ 50%</displayName>
+            <code>C0183102</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+            <codeSystemVersion>2007AA</codeSystemVersion>
+        </CE>
+        <CE>
+            <displayName>Patient's lab values are within these limits</displayName>
+            <code>C0183103</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+            <codeSystemVersion>2007AA</codeSystemVersion>
+        </CE>
+    </valueSet>
+    <valueSet name="preEligibilityCheckListVS">
+        <CE>
+            <displayName>Patient has histologically confirmed new primary adenocarcinoma of the female breast confirmed by core needle, fine needle aspirate, or incisional biopsy</displayName>
+            <code>C0183101</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+            <codeSystemVersion>2007AA</codeSystemVersion>
+        </CE>
+        <CE>
+            <displayName>Patient has clinically or radiologically measureable or non-measurable disease in breast defined as longest diameter ≥ 2.5cm</displayName>
+            <code>C0183102</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+            <codeSystemVersion>2007AA</codeSystemVersion>
+        </CE>
+        <CE>
+            <displayName>Patient has not had prior cytoxic regimens for this malignancy</displayName>
+            <code>C0183103</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+            <codeSystemVersion>2007AA</codeSystemVersion>
+        </CE>
+        <CE>
+            <displayName>Patient has not had other investigational agents within 30 days of study enrollment</displayName>
+            <code>C0183104</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+            <codeSystemVersion>2007AA</codeSystemVersion>
+        </CE>
+        <CE>
+            <displayName>Patient has not had prior RT to the ipsilateral breast for this malignancy</displayName>
+            <code>C0183105</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+            <codeSystemVersion>2007AA</codeSystemVersion>
+        </CE>
+        <CE>
+            <displayName>Patient is 18 years or older</displayName>
+            <code>C0183106</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+            <codeSystemVersion>2007AA</codeSystemVersion>
+        </CE>
+        <CE>
+            <displayName>Patient is non-pregnant and non-lactating</displayName>
+            <code>C0183107</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+            <codeSystemVersion>2007AA</codeSystemVersion>
+        </CE>
+        <CE>
+            <displayName>Patient has not had ferromagnetic prostheses that are not compatible with an MRI machine</displayName>
+            <code>C0183108</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+            <codeSystemVersion>2007AA</codeSystemVersion>
+        </CE>
+        <CE>
+            <displayName>Patient is willing to have core biopsy</displayName>
+            <code>C0183109</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+            <codeSystemVersion>2007AA</codeSystemVersion>
+        </CE>
+        <CE>
+            <displayName>Patient is willing to have study MRI</displayName>
+            <code>C0183110</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+            <codeSystemVersion>2007AA</codeSystemVersion>
+        </CE>
+        <CE>
+            <displayName>Patient is eligible to be screened for the study</displayName>
+            <code>C0183111</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+            <codeSystemVersion>2007AA</codeSystemVersion>
+        </CE>
+    </valueSet>
+    <valueSet name="detectionMethod">
+        <CE>
+            <displayName>Self exam</displayName>
+            <code>409979009 | breast self-examination |</code>
+            <codeSystem>2.16.840.1.113883.6.5</codeSystem>
+            <codeSystemName>SNOMED CT</codeSystemName>
+            <codeSystemVersion>January 2009</codeSystemVersion>
+        </CE>
+        <CE>
+            <displayName>Clinical exam</displayName>
+            <code>5880005 | physical examination procedure |</code>
+            <codeSystem>2.16.840.1.113883.6.5</codeSystem>
+            <codeSystemName>SNOMED CT</codeSystemName>
+            <codeSystemVersion>January 2009</codeSystemVersion>
+        </CE>
+        <CE>
+            <displayName>Screening mammogram</displayName>
+            <code>24623002 | screening mammography |</code>
+            <codeSystem>2.16.840.1.113883.6.5</codeSystem>
+            <codeSystemName>SNOMED CT</codeSystemName>
+            <codeSystemVersion>January 2009</codeSystemVersion>
+        </CE>
+        <CE>
+            <displayName>Screening MRI</displayName>
+            <code>C1299396</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+            <codeSystemVersion>2007AA</codeSystemVersion>
+        </CE>
+        <CE>
+            <displayName>Unknown</displayName>
+            <code>69466000 | unknown procedure | 69466000</code>
+            <codeSystem>2.16.840.1.113883.6.5</codeSystem>
+            <codeSystemName>SNOMED CT</codeSystemName>
+            <codeSystemVersion>January 2009</codeSystemVersion>
+        </CE>
+        <CE>
+            <displayName>Other</displayName>
+            <code>74964007 | other |</code>
+            <codeSystem>2.16.840.1.113883.6.5</codeSystem>
+            <codeSystemName>SNOMED CT</codeSystemName>
+            <codeSystemVersion>January 2009</codeSystemVersion>
+        </CE>
+    </valueSet>
+    <valueSet name="palpableStatus">
+        <CE>
+            <displayName>No</displayName>
+            <code>C0547040</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+            <codeSystemVersion>2007AA</codeSystemVersion>
+        </CE>
+        <CE>
+            <displayName>Yes</displayName>
+            <code>C1299392</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+            <codeSystemVersion>2007AA</codeSystemVersion>
+        </CE>
+        <CE>
+            <displayName>Unknown</displayName>
+            <code>C1299393</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+            <codeSystemVersion>2007AA</codeSystemVersion>
+        </CE>
+    </valueSet>
+    <valueSet name="negativePositiveValues">
+        <CE>
+            <displayName>Negative</displayName>
+            <code>260385009 | negative |</code>
+            <codeSystem>2.16.840.1.113883.6.5</codeSystem>
+            <codeSystemName>SNOMED CT</codeSystemName>
+            <codeSystemVersion>January 2009</codeSystemVersion>
+        </CE>
+        <CE>
+            <displayName>Positive</displayName>
+            <code>10828004 | positive |</code>
+            <codeSystem>2.16.840.1.113883.6.5</codeSystem>
+            <codeSystemName>SNOMED CT</codeSystemName>
+            <codeSystemVersion>January 2009</codeSystemVersion>
+        </CE>
+        <CE>
+            <displayName>Indeterminate</displayName>
+            <code>82334004 | indeterminate |</code>
+            <codeSystem>2.16.840.1.113883.6.5</codeSystem>
+            <codeSystemName>SNOMED CT</codeSystemName>
+            <codeSystemVersion>January 2009</codeSystemVersion>
+        </CE>
+    </valueSet>
+    <valueSet name="ECOGValues">
+        <null type="UNK">
+            <label>select</label>
+        </null>
+        <CE>
+            <displayName>0-Asymptomatic</displayName>
+            <code>425389002</code>
+            <codeSystem>2.16.840.1.113883.6.5</codeSystem>
+            <codeSystemName>SNOMED CT</codeSystemName>
+            <codeSystemVersion>January 2009</codeSystemVersion>
+            <translation>
+                <code>TBD</code>
+                <codeSystem>2.16.840.1.113883.3.26.2</codeSystem>
+                <codeSystemName>caDSR</codeSystemName>
+                <codeSystemVersion>2.1</codeSystemVersion>
+            </translation>
+        </CE>
+        <CE>
+            <displayName>1-Symptomatic but ambulatory</displayName>
+            <code>289903006</code>
+            <codeSystem>2.16.840.1.113883.6.5</codeSystem>
+            <codeSystemName>SNOMED CT</codeSystemName>
+            <codeSystemVersion>January 2009</codeSystemVersion>
+            <translation>
+                <code>TBD</code>
+                <codeSystem>2.16.840.1.113883.3.26.2</codeSystem>
+                <codeSystemName>caDSR</codeSystemName>
+                <codeSystemVersion>2.1</codeSystemVersion>
+            </translation>
+        </CE>
+        <CE>
+            <displayName>2-Symptomatic, &lt; 50% in bed</displayName>
+            <code>422894000</code>
+            <codeSystem>2.16.840.1.113883.6.5</codeSystem>
+            <codeSystemName>SNOMED CT</codeSystemName>
+            <codeSystemVersion>January 2009</codeSystemVersion>
+            <translation>
+                <code>TBD</code>
+                <codeSystem>2.16.840.1.113883.3.26.2</codeSystem>
+                <codeSystemName>caDSR</codeSystemName>
+                <codeSystemVersion>2.1</codeSystemVersion>
+            </translation>
+        </CE>
+        <CE>
+            <displayName>3-Symptomatic, ≥ 50% in bed</displayName>
+            <code>423053003</code>
+            <codeSystem>2.16.840.1.113883.6.5</codeSystem>
+            <codeSystemName>SNOMED CT</codeSystemName>
+            <codeSystemVersion>January 2009</codeSystemVersion>
+            <translation>
+                <code>TBD</code>
+                <codeSystem>2.16.840.1.113883.3.26.2</codeSystem>
+                <codeSystemName>caDSR</codeSystemName>
+                <codeSystemVersion>2.1</codeSystemVersion>
+            </translation>
+        </CE>
+        <CE>
+            <displayName>4-Bedbound</displayName>
+            <code>423237006</code>
+            <codeSystem>2.16.840.1.113883.6.5</codeSystem>
+            <codeSystemName>SNOMED CT</codeSystemName>
+            <codeSystemVersion>January 2009</codeSystemVersion>
+            <translation>
+                <code>TBD</code>
+                <codeSystem>2.16.840.1.113883.3.26.2</codeSystem>
+                <codeSystemName>caDSR</codeSystemName>
+                <codeSystemVersion>2.1</codeSystemVersion>
+            </translation>
+        </CE>
+        <CE>
+            <displayName>5-Death</displayName>
+            <code>423409001</code>
+            <codeSystem>2.16.840.1.113883.6.5</codeSystem>
+            <codeSystemName>SNOMED CT</codeSystemName>
+            <codeSystemVersion>January 2009</codeSystemVersion>
+            <translation>
+                <code>TBD</code>
+                <codeSystem>2.16.840.1.113883.3.26.2</codeSystem>
+                <codeSystemName>caDSR</codeSystemName>
+                <codeSystemVersion>2.1</codeSystemVersion>
+            </translation>
+        </CE>
+    </valueSet>
+    <valueSet name="investigationalAgentCheckList">
+        <CE>
+            <displayName>Patient has a urinary protein quantitative value of ≤ 30 mg/dL in urnalysis or ≤ 1+ on dipstick (if criteria cannot be met a 24-hour urine collection can be done to calculate total protein excretion and must be &lt; 1000 mg)</displayName>
+            <code>3092950000</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+        </CE>
+        <CE>
+            <displayName>Patient has a diastolic blood pressure &lt; 100 mm Hg and systolic bllod pressure &lt; 160 mm Hg on at least one of three sequential blood pressure determinations performed during their clinic visit or within the week during the screening process. (Investigator can at their discretion exclude a patient with a diastolic blood pressure ≥ 90 mm Hg but &lt; 100 mm Hg or with systolic blood pressure ≥ 140 mm Hg but &lt; 160 mm Hg who has a prior history of poorly controlled hypertension or lack of compliance with management)</displayName>
+            <code>3092950001</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+        </CE>
+        <CE>
+            <displayName>Patient has PTT or APTT  ≤ 1.5 x ULN per institutional laboratory range and INR ≤ 1.5</displayName>
+            <code>3092950002</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+        </CE>
+        <CE>
+            <displayName>Patient has no history of deep venous thrombosis (DVT), arterial thromboembolism, or pulmonary thromboembolism within 12 months prior to screening</displayName>
+            <code>3092950003</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+        </CE>
+        <CE>
+            <displayName>Patient has no history of hypertensive crisis or hypertensive encephalopathy within 6 months prior to screening</displayName>
+            <code>3092950004</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+        </CE>
+        <CE>
+            <displayName>Patient has no history of clinically significant bleeding within 6 months prior to screening</displayName>
+            <code>3092950005</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+        </CE>
+        <CE>
+            <displayName>Patient has not been treated with immune modulators such as systemic cyclosporine or tacrolimus within 30 days prior to study treatment</displayName>
+            <code>3092950006</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+        </CE>
+        <CE>
+            <displayName>Patient has had no major surgery within 28 days prior to enrollment in the screeing phase or has a persistent open wound</displayName>
+            <code>3092950007</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+        </CE>
+        <CE>
+            <displayName>Patient has had no minor surgical procedure within 3 days prior to screening (placement of tunneled central venous access device is acceptable)</displayName>
+            <code>3092950008</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+        </CE>
+        <CE>
+            <displayName>Patient has no serious non-healing wound, ulcer (including gastrointestinal), or bone fracture</displayName>
+            <code>3092950009</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+        </CE>
+        <CE>
+            <displayName>Patient is not taking a therapeutic anticoagulant (e.g. warfarin or LMWH)</displayName>
+            <code>30929500010</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+        </CE>
+        <CE>
+            <displayName>Patient has no history of abdominal fistula, GI perforation, or intra-abdominal abcess within 6 months prior to screening</displayName>
+            <code>30929500011</code>
+            <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+        </CE>
+    </valueSet>
+    <valueSet name="inEligibleAgents"/>
+</trim>

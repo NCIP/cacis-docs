@@ -1,0 +1,28 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cac="http://cacis.nci.nih.gov">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <caCISRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://cacis.nci.nih.gov" userName="source_system_user">
+      <routingInstructions>
+        <exchangeDocument exchangeFormat="RIMITS">
+          <recipient>
+            <secureEmailAddress url="mailto:cacissecureemailrecipient@gmail.com"/>
+          </recipient>
+        </exchangeDocument>
+      </routingInstructions>
+      <sourceData>
+        <trim xmlns="urn:tolven-org:trim:4.0">
+          <extends>patientAct</extends>
+          <name>reg/evn/preStudyNote</name>
+          <description>Baseline Evaluation Note</description>
+		  ..
+		  ..
+		  ..
+		  ..
+		  ..
+		 
+        </trim>
+      </sourceData>
+      <clinicalMetaData documentType="CLINICAL_NOTE" siteIdRoot="2.3.4.0" patientIdRoot="2.3.4.1" studyIdRoot="2.3.4.2" studyIdExtension="study_4" siteIdExtension="site_4" patientIdExtension="patient_4"/>
+    </caCISRequest>
+  </soapenv:Body>
+</soapenv:Envelope>

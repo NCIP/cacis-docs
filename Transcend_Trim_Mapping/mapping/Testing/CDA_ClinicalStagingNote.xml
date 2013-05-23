@@ -1,0 +1,2360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="urn:hl7-org:v3 http://caehrorg.jira.com/svn/CACIS/trunk/technical_artifacts/schema/CDA.xsd">
+   <realmCode code="US"/>
+   <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.1" assigningAuthorityName="IHE PCC"/>
+   <id root="1.2.1.173000" extension="echr:patient-1823431:clinicalNote-1833315"/>
+   <code code="11542-8" codeSystem="2.16.840.1.113883.6.1"
+         displayName="Subsequent visit evaluation note"/>
+   <title>Clinical Staging</title>
+   <effectiveTime value="20110722104303-0700"/>
+   <confidentialityCode code="N"/>
+   <languageCode code="en-US"/>
+   <recordTarget>
+      <patientRole>
+         <id root="1.2.1.173000" extension="echr:patient-1823431"/>
+         <addr nullFlavor="NI"/>
+         <telecom nullFlavor="NI"/>
+         <patient>
+            <name use="L">
+               <given>Happy</given>
+               <given/>
+               <family>Birthday</family>
+            </name>
+            <administrativeGenderCode nullFlavor="NI"/>
+            <birthTime nullFlavor="NI"/>
+         </patient>
+      </patientRole>
+   </recordTarget>
+   <author>
+      <time nullFlavor="NI"/>
+      <assignedAuthor>
+         <id root="1.2.1.173000" extension="sarah.davis@ucsfmedctr.org"/>
+         <addr nullFlavor="NI"/>
+         <telecom nullFlavor="NI"/>
+         <assignedPerson>
+            <name nullFlavor="NI"/>
+         </assignedPerson>
+      </assignedAuthor>
+   </author>
+   <custodian>
+      <assignedCustodian>
+         <representedCustodianOrganization>
+            <id root="2.16.840.1.113883.3.26.1.7" extension="TranscendTolven"/>
+            <name nullFlavor="NI"/>
+            <telecom nullFlavor="NI"/>
+            <addr nullFlavor="NI"/>
+         </representedCustodianOrganization>
+      </assignedCustodian>
+   </custodian>
+   <componentOf>
+      <encompassingEncounter>
+         <id nullFlavor="NI"/>
+         <code code="ONC" displayName="oncology" codeSystem="2.16.840.1.113883.5.4">
+            <originalText>Final Staging</originalText>
+         </code>
+         <effectiveTime value="20110722104303-0700"/>
+      </encompassingEncounter>
+   </componentOf>
+   <component>
+      <structuredBody>
+         <component>
+            <section>
+               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.28" assigningAuthorityName="IHE PCC"/>
+               <templateId root="2.16.840.1.113883.3.88.11.83.122" assigningAuthorityName="HITSP C83"/>
+               <id nullFlavor="NI"/>
+               <code code="30954-2" displayName="Relevant diagnostic tests/laboratory data"
+                     codeSystem="2.16.840.1.113883.6.1"
+                     codeSystemName="LOINC"/>
+               <title>Diagnostic Results</title>
+               <text/>
+               <entry typeCode="DRIV">
+                  <organizer classCode="CLUSTER" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.10.20.1.32" assigningAuthorityName="CCD"/>
+                     <id nullFlavor="NI"/>
+                     <code code="258232002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                           displayName="cancer staging">
+                        <originalText>Staging Status</originalText>
+                     </code>
+                     <statusCode code="completed"/>
+                     <component typeCode="COMP">
+                        <observation classCode="OBS" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE"/>
+                           <id nullFlavor="NI"/>
+                           <code xsi:type="CD" code="5880005" codeSystem="2.16.840.1.113883.6.96"
+                                 codeSystemName="SNOMED-CT"
+                                 displayName="physical examination procedure">
+                              <originalText>Physical Exam</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e279"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime nullFlavor="NI"/>
+                           <value xsi:type="CD" code="385658003" codeSystem="2.16.840.1.113883.6.96"
+                                  codeSystemName="SNOMED-CT"
+                                  displayName="done">
+                              <originalText>Done</originalText>
+                           </value>
+                        </observation>
+                     </component>
+                     <component typeCode="COMP">
+                        <observation classCode="OBS" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE"/>
+                           <id nullFlavor="NI"/>
+                           <code xsi:type="CD" nullFlavor="OTH">
+                              <originalText>Breast Imaging</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e303"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime nullFlavor="NI"/>
+                           <value xsi:type="CD" code="385658003" codeSystem="2.16.840.1.113883.6.96"
+                                  codeSystemName="SNOMED-CT"
+                                  displayName="done">
+                              <originalText>Done</originalText>
+                           </value>
+                        </observation>
+                     </component>
+                     <component typeCode="COMP">
+                        <observation classCode="OBS" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE"/>
+                           <id nullFlavor="NI"/>
+                           <code xsi:type="CD" nullFlavor="OTH">
+                              <originalText>Diagnostic Index Biopsy</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e327"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime nullFlavor="NI"/>
+                           <value xsi:type="CD" code="385658003" codeSystem="2.16.840.1.113883.6.96"
+                                  codeSystemName="SNOMED-CT"
+                                  displayName="done">
+                              <originalText>Done</originalText>
+                           </value>
+                        </observation>
+                     </component>
+                     <component typeCode="COMP">
+                        <observation classCode="OBS" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE"/>
+                           <id nullFlavor="NI"/>
+                           <code xsi:type="CD" nullFlavor="OTH">
+                              <originalText>Metastatic workup</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e351"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime nullFlavor="NI"/>
+                           <value xsi:type="CD" code="385658003" codeSystem="2.16.840.1.113883.6.96"
+                                  codeSystemName="SNOMED-CT"
+                                  displayName="done">
+                              <originalText>Done</originalText>
+                           </value>
+                        </observation>
+                     </component>
+                     <component typeCode="COMP">
+                        <observation classCode="OBS" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE"/>
+                           <id nullFlavor="NI"/>
+                           <code xsi:type="CD" nullFlavor="OTH">
+                              <originalText>Additional diagnostic workup</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e375"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime nullFlavor="NI"/>
+                           <value xsi:type="CD" code="385658003" codeSystem="2.16.840.1.113883.6.96"
+                                  codeSystemName="SNOMED-CT"
+                                  displayName="done">
+                              <originalText>Done</originalText>
+                           </value>
+                        </observation>
+                     </component>
+                  </organizer>
+               </entry>
+               <entry typeCode="DRIV">
+                  <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                     <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                     <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE"/>
+                     <id nullFlavor="NI"/>
+                     <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                     <text>
+                        <reference value="d8e1632"/>
+                     </text>
+                     <statusCode code="completed"/>
+                     <effectiveTime>
+                        <low nullFlavor="UNK"/>
+                     </effectiveTime>
+                     <value xsi:type="CD" code="128462008" codeSystem="2.16.840.1.113883.6.96"
+                            codeSystemName="SNOMED-CT"
+                            displayName="secondary malignant neoplastic disease">
+                        <originalText>Evidence of metastasis</originalText>
+                     </value>
+                  </observation>
+               </entry>
+               <entry>
+                  <organizer classCode="CLUSTER" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.10.20.1.32" assigningAuthorityName="CCD"/>
+                     <id nullFlavor="NI"/>
+                     <code code="94222008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                           displayName="secondary malignant neoplasm of bone">
+                        <originalText>Metastatic Work-up: Bone</originalText>
+                     </code>
+                     <statusCode code="completed"/>
+                     <component>
+                        <observation classCode="OBS" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE"/>
+                           <id nullFlavor="NI"/>
+                           <code xsi:type="CD" nullFlavor="OTH">
+                              <originalText>PET CT</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e1688"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime>
+                              <low nullFlavor="UNK"/>
+                           </effectiveTime>
+                           <value xsi:type="CD" nullFlavor="OTH">
+                              <originalText>Negative</originalText>
+                           </value>
+                        </observation>
+                     </component>
+                     <component>
+                        <observation classCode="OBS" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE"/>
+                           <id nullFlavor="NI"/>
+                           <code xsi:type="CD" code="86273004" codeSystem="2.16.840.1.113883.6.96"
+                                 codeSystemName="SNOMED-CT"
+                                 displayName="biopsy">
+                              <originalText>Biopsy</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e1886"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime>
+                              <low nullFlavor="UNK"/>
+                           </effectiveTime>
+                           <value xsi:type="CD" nullFlavor="OTH">
+                              <originalText>Not performed</originalText>
+                           </value>
+                        </observation>
+                     </component>
+                  </organizer>
+               </entry>
+               <entry>
+                  <organizer classCode="CLUSTER" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.10.20.1.32" assigningAuthorityName="CCD"/>
+                     <id nullFlavor="NI"/>
+                     <code code="94225005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                           displayName="secondary malignant neoplasm of brain">
+                        <originalText>Metastatic Work-up: Brain</originalText>
+                     </code>
+                     <statusCode code="completed"/>
+                     <component>
+                        <observation classCode="OBS" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE"/>
+                           <id nullFlavor="NI"/>
+                           <code xsi:type="CD" nullFlavor="OTH">
+                              <originalText>PET CT</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e1934"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime>
+                              <low nullFlavor="UNK"/>
+                           </effectiveTime>
+                           <value xsi:type="CD" nullFlavor="OTH">
+                              <originalText>Negative</originalText>
+                           </value>
+                        </observation>
+                     </component>
+                     <component>
+                        <observation classCode="OBS" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE"/>
+                           <id nullFlavor="NI"/>
+                           <code xsi:type="CD" code="86273004" codeSystem="2.16.840.1.113883.6.96"
+                                 codeSystemName="SNOMED-CT"
+                                 displayName="biopsy">
+                              <originalText>Biopsy</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e2108"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime>
+                              <low nullFlavor="UNK"/>
+                           </effectiveTime>
+                           <value xsi:type="CD" nullFlavor="OTH">
+                              <originalText>Not performed</originalText>
+                           </value>
+                        </observation>
+                     </component>
+                  </organizer>
+               </entry>
+               <entry>
+                  <organizer classCode="CLUSTER" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.10.20.1.32" assigningAuthorityName="CCD"/>
+                     <id nullFlavor="NI"/>
+                     <code code="94381002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                           displayName="secondary malignant neoplasm of liver">
+                        <originalText>Metastatic Work-up: Liver</originalText>
+                     </code>
+                     <statusCode code="completed"/>
+                     <component>
+                        <observation classCode="OBS" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE"/>
+                           <id nullFlavor="NI"/>
+                           <code xsi:type="CD" nullFlavor="OTH">
+                              <originalText>PET CT</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e2156"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime>
+                              <low nullFlavor="UNK"/>
+                           </effectiveTime>
+                           <value xsi:type="CD" nullFlavor="OTH">
+                              <originalText>Inconclusive</originalText>
+                           </value>
+                        </observation>
+                     </component>
+                     <component>
+                        <observation classCode="OBS" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE"/>
+                           <id nullFlavor="NI"/>
+                           <code xsi:type="CD" code="86273004" codeSystem="2.16.840.1.113883.6.96"
+                                 codeSystemName="SNOMED-CT"
+                                 displayName="biopsy">
+                              <originalText>Biopsy</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e2330"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime>
+                              <low nullFlavor="UNK"/>
+                           </effectiveTime>
+                           <value xsi:type="CD" nullFlavor="OTH">
+                              <originalText>Unable to perform</originalText>
+                           </value>
+                        </observation>
+                     </component>
+                  </organizer>
+               </entry>
+               <entry>
+                  <organizer classCode="CLUSTER" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.10.20.1.32" assigningAuthorityName="CCD"/>
+                     <id nullFlavor="NI"/>
+                     <code code="94253005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                           displayName="secondary malignant neoplasm of chest wall">
+                        <originalText>Metastatic Work-up: Chest(including Lung)</originalText>
+                     </code>
+                     <statusCode code="completed"/>
+                     <component>
+                        <observation classCode="OBS" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE"/>
+                           <id nullFlavor="NI"/>
+                           <code xsi:type="CD" nullFlavor="OTH">
+                              <originalText>PET CT</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e2378"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime>
+                              <low nullFlavor="UNK"/>
+                           </effectiveTime>
+                           <value xsi:type="CD" nullFlavor="OTH">
+                              <originalText>Negative</originalText>
+                           </value>
+                        </observation>
+                     </component>
+                     <component>
+                        <observation classCode="OBS" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE"/>
+                           <id nullFlavor="NI"/>
+                           <code xsi:type="CD" code="86273004" codeSystem="2.16.840.1.113883.6.96"
+                                 codeSystemName="SNOMED-CT"
+                                 displayName="biopsy">
+                              <originalText>Biopsy</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e2552"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime>
+                              <low nullFlavor="UNK"/>
+                           </effectiveTime>
+                           <value xsi:type="CD" nullFlavor="OTH">
+                              <originalText>Not performed</originalText>
+                           </value>
+                        </observation>
+                     </component>
+                  </organizer>
+               </entry>
+               <entry typeCode="DRIV">
+                  <procedure classCode="PROC" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.10.20.1.29" assigningAuthorityName="CCD"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19" assigningAuthorityName="IHE"/>
+                     <templateId root="2.16.840.1.113883.3.88.11.83.17" assigningAuthorityName="HITSP"/>
+                     <id nullFlavor="NI"/>
+                     <code code="396487001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                           displayName="sentinel lymph node biopsy">
+                        <originalText>Sentinel nodes</originalText>
+                        <qualifier>
+                           <name code="272741003" displayName="laterality" codeSystem="2.16.840.1.113883.6.96"
+                                 codeSystemName="SNOMED CT"/>
+                           <value code="7771000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                  displayName="left">
+                              <originalText>Left</originalText>
+                           </value>
+                        </qualifier>
+                        <qualifier>
+                           <name code="405813007" displayName="procedure site - Direct"
+                                 codeSystem="2.16.840.1.113883.6.96"
+                                 codeSystemName="SNOMED CT">
+                              <originalText>Location</originalText>
+                           </name>
+                           <value code="68171009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                  displayName="axillary lymph node structure">
+                              <originalText>Axillary (lymph node)</originalText>
+                           </value>
+                        </qualifier>
+                     </code>
+                     <text>
+                        <reference value="d8e4705"/>
+                     </text>
+                     <statusCode code="completed"/>
+                     <effectiveTime xsi:type="IVL_TS">
+                        <low nullFlavor="UNK"/>
+                        <high nullFlavor="UNK"/>
+                     </effectiveTime>
+                     <entryRelationship typeCode="COMP">
+                        <procedure classCode="PROC" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.29" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19" assigningAuthorityName="IHE"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.17" assigningAuthorityName="HITSP"/>
+                           <id nullFlavor="NI"/>
+                           <code code="284427004" displayName="examination of lymph nodes"
+                                 codeSystem="2.16.840.1.113883.6.96"
+                                 codeSystemName="SNOMED CT"/>
+                           <text>
+                              <reference nullFlavor="NI"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime xsi:type="IVL_TS">
+                              <low nullFlavor="UNK"/>
+                              <high nullFlavor="UNK"/>
+                           </effectiveTime>
+                           <methodCode code="117617002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                       displayName="immunohistochemistry procedure">
+                              <originalText>Method of detection: IHC only</originalText>
+                           </methodCode>
+                           <entryRelationship typeCode="REFR">
+                              <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                                 <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                                 <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
+                                 <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                                 <id nullFlavor="NI"/>
+                                 <code xsi:type="CD" code="252105006" codeSystem="2.16.840.1.113883.6.96"
+                                       codeSystemName="SNOMED-CT"
+                                       displayName="number of metastases">
+                                    <originalText>positive</originalText>
+                                 </code>
+                                 <text>
+                                    <reference value="d8e4765"/>
+                                 </text>
+                                 <statusCode code="completed"/>
+                                 <effectiveTime nullFlavor="UNK"/>
+                                 <value xsi:type="INT" value="1"/>
+                              </observation>
+                           </entryRelationship>
+                           <entryRelationship typeCode="REFR">
+                              <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                                 <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                                 <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
+                                 <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                                 <id nullFlavor="NI"/>
+                                 <code xsi:type="CD" code="444411008" codeSystem="2.16.840.1.113883.6.96"
+                                       codeSystemName="SNOMED-CT"
+                                       displayName="number of sentinel lymph nodes examined">
+                                    <originalText>examined</originalText>
+                                 </code>
+                                 <text>
+                                    <reference value="d8e4787"/>
+                                 </text>
+                                 <statusCode code="completed"/>
+                                 <effectiveTime nullFlavor="UNK"/>
+                                 <value xsi:type="INT" value="2"/>
+                              </observation>
+                           </entryRelationship>
+                           <entryRelationship typeCode="REFR">
+                              <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                                 <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                                 <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
+                                 <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                                 <id nullFlavor="NI"/>
+                                 <code xsi:type="CD" code="252987004" displayName="tumor cells"
+                                       codeSystem="2.16.840.1.113883.6.96"
+                                       codeSystemName="SNOMED CT">
+                                    <qualifier>
+                                       <name code="246458004" displayName="distribution pattern"
+                                             codeSystem="2.16.840.1.113883.6.96"
+                                             codeSystemName="SNOMED CT"/>
+                                    </qualifier>
+                                 </code>
+                                 <text>
+                                    <reference value="d8e4838"/>
+                                 </text>
+                                 <statusCode code="completed"/>
+                                 <effectiveTime nullFlavor="UNK"/>
+                                 <value xsi:type="CD" nullFlavor="UNK">
+                                    <originalText>Not Reported</originalText>
+                                 </value>
+                              </observation>
+                           </entryRelationship>
+                           <entryRelationship typeCode="REFR">
+                              <observation classCode="OBS" moodCode="EVN" nullFlavor="NI">
+                                 <templateId root="2.16.840.1.113883.10.20.1.28" assigningAuthorityName="CCD"/>
+                                 <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5" assigningAuthorityName="IHE PCC"/>
+                                 <id nullFlavor="NI"/>
+                                 <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                 <text>
+                                    <reference value="d8e4905"/>
+                                 </text>
+                                 <statusCode code="completed"/>
+                                 <effectiveTime>
+                                    <low nullFlavor="UNK"/>
+                                 </effectiveTime>
+                                 <value xsi:type="CD" nullFlavor="OTH">
+                                    <originalText>Extranodal extention: Not reported</originalText>
+                                 </value>
+                              </observation>
+                           </entryRelationship>
+                        </procedure>
+                     </entryRelationship>
+                  </procedure>
+               </entry>
+               <entry typeCode="DRIV">
+                  <observation classCode="OBS" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
+                     <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                     <id nullFlavor="NI"/>
+                     <code xsi:type="CD" code="252105006" displayName="number of metastases"
+                           codeSystem="2.16.840.1.113883.6.96"
+                           codeSystemName="SNOMED CT">
+                        <originalText>Total positive nodes</originalText>
+                        <qualifier>
+                           <name code="272741003" displayName="laterality" codeSystem="2.16.840.1.113883.6.96"
+                                 codeSystemName="SNOMED CT"/>
+                           <value code="7771000" displayName="left" codeSystem="2.16.840.1.113883.6.96"
+                                  codeSystemName="SNOMED-CT"/>
+                        </qualifier>
+                        <qualifier>
+                           <name code="116686009" displayName="has specimen" codeSystem="2.16.840.1.113883.6.96"
+                                 codeSystemName="SNOMED CT"/>
+                           <value code="309079007" displayName="lymph node biopsy sample"
+                                  codeSystem="2.16.840.1.113883.6.96"
+                                  codeSystemName="SNOMED-CT"/>
+                        </qualifier>
+                     </code>
+                     <text>
+                        <reference value="d8e5231"/>
+                     </text>
+                     <statusCode code="completed"/>
+                     <effectiveTime nullFlavor="UNK"/>
+                     <value xsi:type="INT" value="1"/>
+                  </observation>
+               </entry>
+               <entry typeCode="DRIV">
+                  <observation classCode="OBS" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
+                     <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                     <id nullFlavor="NI"/>
+                     <code xsi:type="CD" code="252105006" displayName="number of metastases"
+                           codeSystem="2.16.840.1.113883.6.96"
+                           codeSystemName="SNOMED CT">
+                        <originalText>Total positive nodes</originalText>
+                        <qualifier>
+                           <name code="272741003" displayName="laterality" codeSystem="2.16.840.1.113883.6.96"
+                                 codeSystemName="SNOMED CT"/>
+                           <value code="24028007" displayName="right" codeSystem="2.16.840.1.113883.6.96"
+                                  codeSystemName="SNOMED-CT"/>
+                        </qualifier>
+                        <qualifier>
+                           <name code="116686009" displayName="has specimen" codeSystem="2.16.840.1.113883.6.96"
+                                 codeSystemName="SNOMED CT"/>
+                           <value code="309079007" displayName="lymph node biopsy sample"
+                                  codeSystem="2.16.840.1.113883.6.96"
+                                  codeSystemName="SNOMED-CT"/>
+                        </qualifier>
+                     </code>
+                     <text>
+                        <reference value="d8e5739"/>
+                     </text>
+                     <statusCode code="completed"/>
+                     <effectiveTime nullFlavor="UNK"/>
+                     <value xsi:type="INT" value="0"/>
+                  </observation>
+               </entry>
+               <entry typeCode="DRIV">
+                  <observation classCode="OBS" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
+                     <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                     <id nullFlavor="NI"/>
+                     <code code="444025001" displayName="number of lymph nodes examined"
+                           codeSystem="2.16.840.1.113883.6.96"
+                           codeSystemName="SNOMED CT">
+                        <originalText>Total examined nodes</originalText>
+                        <qualifier>
+                           <name code="272741003" displayName="laterality" codeSystem="2.16.840.1.113883.6.96"
+                                 codeSystemName="SNOMED CT"/>
+                           <value code="7771000" displayName="left" codeSystem="2.16.840.1.113883.6.96"
+                                  codeSystemName="SNOMED-CT"/>
+                        </qualifier>
+                     </code>
+                     <text>
+                        <reference value="d8e5249"/>
+                     </text>
+                     <statusCode code="completed"/>
+                     <effectiveTime nullFlavor="UNK"/>
+                     <value xsi:type="INT" value="2"/>
+                  </observation>
+               </entry>
+               <entry typeCode="DRIV">
+                  <observation classCode="OBS" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
+                     <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                     <id nullFlavor="NI"/>
+                     <code code="444025001" displayName="number of lymph nodes examined"
+                           codeSystem="2.16.840.1.113883.6.96"
+                           codeSystemName="SNOMED CT">
+                        <originalText>Total examined nodes</originalText>
+                        <qualifier>
+                           <name code="272741003" displayName="laterality" codeSystem="2.16.840.1.113883.6.96"
+                                 codeSystemName="SNOMED CT"/>
+                           <value code="24028007" displayName="right" codeSystem="2.16.840.1.113883.6.96"
+                                  codeSystemName="SNOMED-CT"/>
+                        </qualifier>
+                     </code>
+                     <text>
+                        <reference value="d8e5757"/>
+                     </text>
+                     <statusCode code="completed"/>
+                     <effectiveTime nullFlavor="UNK"/>
+                     <value xsi:type="INT" value="0"/>
+                  </observation>
+               </entry>
+            </section>
+         </component>
+         <component>
+            <section>
+               <templateId root="2.16.840.1.113883.10.20.1.12" assigningAuthorityName="CCD"/>
+               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.13.2.11" assigningAuthorityName="IHE"/>
+               <templateId root="2.16.840.1.113883.3.88.11.83.145" assigningAuthorityName="HITSP"/>
+               <code code="47519-4" codeSystem="2.16.840.1.113883.6.1"
+                     displayName="History of procedures"/>
+               <title>Procedures</title>
+               <text/>
+               <entry>
+                  <procedure classCode="PROC" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.10.20.1.29" assigningAuthorityName="CCD"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19" assigningAuthorityName="IHE"/>
+                     <templateId root="2.16.840.1.113883.3.88.11.83.17" assigningAuthorityName="HITSP"/>
+                     <id nullFlavor="NI"/>
+                     <code code="47079000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                           displayName="ultrasonography of breast">
+                        <originalText>Breast Studies: Ultrasound</originalText>
+                     </code>
+                     <text>
+                        <reference value="d8e3188"/>
+                     </text>
+                     <statusCode code="completed"/>
+                     <effectiveTime>
+                        <low value="20110704000000-0700"/>
+                     </effectiveTime>
+                     <entryRelationship typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <id nullFlavor="NI"/>
+                           <code code="248529005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                 displayName="lump size">
+                              <originalText>Size</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e3221"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime nullFlavor="UNK"/>
+                           <value xsi:type="ST">3.0 x 3.0 cm</value>
+                        </observation>
+                     </entryRelationship>
+                     <entryRelationship typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <id nullFlavor="NI"/>
+                           <code nullFlavor="OTH">
+                              <originalText>Finding</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e3278"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime nullFlavor="UNK"/>
+                           <value xsi:type="CD" nullFlavor="OTH">
+                              <originalText>High suspicion</originalText>
+                           </value>
+                        </observation>
+                     </entryRelationship>
+                     <entryRelationship typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <id nullFlavor="NI"/>
+                           <code code="272741003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                 displayName="laterality">
+                              <originalText>Laterality</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e3310"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime nullFlavor="UNK"/>
+                           <value xsi:type="CD" code="7771000" codeSystem="2.16.840.1.113883.6.96"
+                                  codeSystemName="SNOMED-CT"
+                                  displayName="left">
+                              <originalText>Left</originalText>
+                           </value>
+                        </observation>
+                     </entryRelationship>
+                     <entryRelationship typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <id nullFlavor="NI"/>
+                           <code code="443772002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                 displayName="clockface position of tumor">
+                              <originalText>location</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e3341"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime nullFlavor="UNK"/>
+                           <value xsi:type="ST">outer quandrant</value>
+                        </observation>
+                     </entryRelationship>
+                  </procedure>
+               </entry>
+               <entry>
+                  <procedure classCode="PROC" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.10.20.1.29" assigningAuthorityName="CCD"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19" assigningAuthorityName="IHE"/>
+                     <templateId root="2.16.840.1.113883.3.88.11.83.17" assigningAuthorityName="HITSP"/>
+                     <id nullFlavor="NI"/>
+                     <code code="71651007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                           displayName="mammography">
+                        <originalText>Breast Studies: Mammogram</originalText>
+                     </code>
+                     <text>
+                        <reference value="d8e3362"/>
+                     </text>
+                     <statusCode code="completed"/>
+                     <effectiveTime>
+                        <low value="20110627000000-0700"/>
+                     </effectiveTime>
+                     <entryRelationship typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <id nullFlavor="NI"/>
+                           <code code="248529005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                 displayName="lump size">
+                              <originalText>Size</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e3395"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime nullFlavor="UNK"/>
+                           <value xsi:type="ST">2.0 x 2.0 cm</value>
+                        </observation>
+                     </entryRelationship>
+                     <entryRelationship typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <id nullFlavor="NI"/>
+                           <code nullFlavor="OTH">
+                              <originalText>Finding</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e3452"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime nullFlavor="UNK"/>
+                           <value xsi:type="CD" nullFlavor="OTH">
+                              <originalText>Spiculated mass</originalText>
+                           </value>
+                        </observation>
+                     </entryRelationship>
+                     <entryRelationship typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <id nullFlavor="NI"/>
+                           <code nullFlavor="OTH">
+                              <originalText>BIRADS</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e3484"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime nullFlavor="UNK"/>
+                           <value xsi:type="ST">5</value>
+                        </observation>
+                     </entryRelationship>
+                     <entryRelationship typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <id nullFlavor="NI"/>
+                           <code nullFlavor="OTH">
+                              <originalText>Present on prior exam</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e3503"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime nullFlavor="UNK"/>
+                           <value xsi:type="CD" nullFlavor="OTH">
+                              <originalText>No</originalText>
+                           </value>
+                        </observation>
+                     </entryRelationship>
+                     <entryRelationship typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <id nullFlavor="NI"/>
+                           <code nullFlavor="OTH">
+                              <originalText>Change from prior exam</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e3533"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime nullFlavor="UNK"/>
+                           <value xsi:type="CD" nullFlavor="OTH">
+                              <originalText>Yes</originalText>
+                           </value>
+                        </observation>
+                     </entryRelationship>
+                     <entryRelationship typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <id nullFlavor="NI"/>
+                           <code nullFlavor="OTH">
+                              <originalText>Yrs. Stable</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e3563"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime nullFlavor="UNK"/>
+                           <value xsi:type="ST">0</value>
+                        </observation>
+                     </entryRelationship>
+                  </procedure>
+               </entry>
+               <entry>
+                  <procedure classCode="PROC" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.10.20.1.29" assigningAuthorityName="CCD"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19" assigningAuthorityName="IHE"/>
+                     <templateId root="2.16.840.1.113883.3.88.11.83.17" assigningAuthorityName="HITSP"/>
+                     <id nullFlavor="NI"/>
+                     <code code="241615005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                           displayName="MRI of breast">
+                        <originalText>Breast Studies: Breast MRI</originalText>
+                     </code>
+                     <text>
+                        <reference value="d8e3587"/>
+                     </text>
+                     <statusCode code="completed"/>
+                     <effectiveTime>
+                        <low value="20110713000000-0700"/>
+                     </effectiveTime>
+                     <entryRelationship typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <id nullFlavor="NI"/>
+                           <code code="248529005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                 displayName="lump size">
+                              <originalText>Size</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e3620"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime nullFlavor="UNK"/>
+                           <value xsi:type="ST">4.0 x 4.0 cm</value>
+                        </observation>
+                     </entryRelationship>
+                     <entryRelationship typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <id nullFlavor="NI"/>
+                           <code nullFlavor="OTH">
+                              <originalText>Finding</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e3673"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime nullFlavor="UNK"/>
+                           <value xsi:type="CD" nullFlavor="OTH">
+                              <originalText>High suspicion</originalText>
+                           </value>
+                        </observation>
+                     </entryRelationship>
+                     <entryRelationship typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <id nullFlavor="NI"/>
+                           <code code="272741003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                 displayName="laterality">
+                              <originalText>Laterality</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e3705"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime nullFlavor="UNK"/>
+                           <value xsi:type="CD" code="7771000" codeSystem="2.16.840.1.113883.6.96"
+                                  codeSystemName="SNOMED-CT"
+                                  displayName="left">
+                              <originalText>Left</originalText>
+                           </value>
+                        </observation>
+                     </entryRelationship>
+                     <entryRelationship typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <id nullFlavor="NI"/>
+                           <code code="443772002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                 displayName="clockface position of tumor">
+                              <originalText>location</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e3736"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime nullFlavor="UNK"/>
+                           <value xsi:type="ST">outer quandarnt</value>
+                        </observation>
+                     </entryRelationship>
+                  </procedure>
+               </entry>
+               <entry>
+                  <procedure classCode="PROC" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.10.20.1.29" assigningAuthorityName="CCD"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19" assigningAuthorityName="IHE"/>
+                     <templateId root="2.16.840.1.113883.3.88.11.83.17" assigningAuthorityName="HITSP"/>
+                     <id nullFlavor="NI"/>
+                     <code nullFlavor="OTH">
+                        <originalText>Breast Studies: Other - thermography</originalText>
+                     </code>
+                     <text>
+                        <reference value="d8e3757"/>
+                     </text>
+                     <statusCode code="completed"/>
+                     <effectiveTime>
+                        <low value="20110718000000-0700"/>
+                     </effectiveTime>
+                     <entryRelationship typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <id nullFlavor="NI"/>
+                           <code code="248529005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                 displayName="lump size">
+                              <originalText>Size</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e3802"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime nullFlavor="UNK"/>
+                           <value xsi:type="ST">2.0 x 2.0 cm</value>
+                        </observation>
+                     </entryRelationship>
+                     <entryRelationship typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <id nullFlavor="NI"/>
+                           <code nullFlavor="OTH">
+                              <originalText>Finding</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e3859"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime nullFlavor="UNK"/>
+                           <value xsi:type="ST">finding text box</value>
+                        </observation>
+                     </entryRelationship>
+                     <entryRelationship typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <id nullFlavor="NI"/>
+                           <code code="272741003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                 displayName="laterality">
+                              <originalText>Laterality</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e3877"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime nullFlavor="UNK"/>
+                           <value xsi:type="CD" code="7771000" codeSystem="2.16.840.1.113883.6.96"
+                                  codeSystemName="SNOMED-CT"
+                                  displayName="left">
+                              <originalText>Left</originalText>
+                           </value>
+                        </observation>
+                     </entryRelationship>
+                     <entryRelationship typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <id nullFlavor="NI"/>
+                           <code code="443772002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                 displayName="clockface position of tumor">
+                              <originalText>location</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e3908"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime nullFlavor="UNK"/>
+                           <value xsi:type="ST">location text box</value>
+                        </observation>
+                     </entryRelationship>
+                  </procedure>
+               </entry>
+               <entry>
+                  <procedure classCode="PROC" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.10.20.1.29" assigningAuthorityName="CCD"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19" assigningAuthorityName="IHE"/>
+                     <templateId root="2.16.840.1.113883.3.88.11.83.17" assigningAuthorityName="HITSP"/>
+                     <id nullFlavor="NI"/>
+                     <code code="71651007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                           displayName="mammography">
+                        <originalText>Right Breast Studies: Mammogram</originalText>
+                     </code>
+                     <text>
+                        <reference value="d8e3955"/>
+                     </text>
+                     <statusCode code="completed"/>
+                     <effectiveTime>
+                        <low value="20110627000000-0700"/>
+                     </effectiveTime>
+                     <entryRelationship typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <id nullFlavor="NI"/>
+                           <code code="248529005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                 displayName="lump size">
+                              <originalText>Size</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e3988"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime nullFlavor="UNK"/>
+                           <value xsi:type="ST">0.0 x 0.0 cm</value>
+                        </observation>
+                     </entryRelationship>
+                     <entryRelationship typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <id nullFlavor="NI"/>
+                           <code nullFlavor="OTH">
+                              <originalText>Finding</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e4045"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime nullFlavor="UNK"/>
+                           <value xsi:type="CD" nullFlavor="NI"/>
+                        </observation>
+                     </entryRelationship>
+                     <entryRelationship typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <id nullFlavor="NI"/>
+                           <code nullFlavor="OTH">
+                              <originalText>BIRADS</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e4062"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime nullFlavor="UNK"/>
+                           <value xsi:type="ST">1</value>
+                        </observation>
+                     </entryRelationship>
+                     <entryRelationship typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <id nullFlavor="NI"/>
+                           <code nullFlavor="OTH">
+                              <originalText>Present on prior exam</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e4081"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime nullFlavor="UNK"/>
+                           <value xsi:type="CD" nullFlavor="OTH">
+                              <originalText>No</originalText>
+                           </value>
+                        </observation>
+                     </entryRelationship>
+                     <entryRelationship typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <id nullFlavor="NI"/>
+                           <code nullFlavor="OTH">
+                              <originalText>Change from prior exam</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e4111"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime nullFlavor="UNK"/>
+                           <value xsi:type="CD" nullFlavor="OTH">
+                              <originalText>No</originalText>
+                           </value>
+                        </observation>
+                     </entryRelationship>
+                     <entryRelationship typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <id nullFlavor="NI"/>
+                           <code nullFlavor="OTH">
+                              <originalText>Yrs. Stable</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e4141"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime nullFlavor="UNK"/>
+                           <value xsi:type="CD" nullFlavor="NI"/>
+                        </observation>
+                     </entryRelationship>
+                  </procedure>
+               </entry>
+               <entry>
+                  <procedure classCode="PROC" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.10.20.1.29" assigningAuthorityName="CCD"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19" assigningAuthorityName="IHE"/>
+                     <templateId root="2.16.840.1.113883.3.88.11.83.17" assigningAuthorityName="HITSP"/>
+                     <id nullFlavor="NI"/>
+                     <code code="241615005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                           displayName="MRI of breast">
+                        <originalText>Right Breast Studies: Breast MRI</originalText>
+                     </code>
+                     <text>
+                        <reference value="d8e4164"/>
+                     </text>
+                     <statusCode code="completed"/>
+                     <effectiveTime>
+                        <low value="20110713000000-0700"/>
+                     </effectiveTime>
+                     <entryRelationship typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <id nullFlavor="NI"/>
+                           <code code="248529005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                 displayName="lump size">
+                              <originalText>Size</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e4197"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime nullFlavor="UNK"/>
+                           <value xsi:type="ST">2.0 x 2.0 cm</value>
+                        </observation>
+                     </entryRelationship>
+                     <entryRelationship typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <id nullFlavor="NI"/>
+                           <code nullFlavor="OTH">
+                              <originalText>Finding</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e4250"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime nullFlavor="UNK"/>
+                           <value xsi:type="CD" nullFlavor="OTH">
+                              <originalText>Low suspicion</originalText>
+                           </value>
+                        </observation>
+                     </entryRelationship>
+                     <entryRelationship typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <id nullFlavor="NI"/>
+                           <code code="272741003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                 displayName="laterality">
+                              <originalText>Laterality</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e4282"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime nullFlavor="UNK"/>
+                           <value xsi:type="CD" code="24028007" codeSystem="2.16.840.1.113883.6.96"
+                                  codeSystemName="SNOMED-CT"
+                                  displayName="right">
+                              <originalText>Right</originalText>
+                           </value>
+                        </observation>
+                     </entryRelationship>
+                     <entryRelationship typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                           <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
+                           <templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83"/>
+                           <id nullFlavor="NI"/>
+                           <code code="443772002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                 displayName="clockface position of tumor">
+                              <originalText>location</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e4313"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime nullFlavor="UNK"/>
+                           <value xsi:type="ST">central breast</value>
+                        </observation>
+                     </entryRelationship>
+                  </procedure>
+               </entry>
+               <entry typeCode="DRIV">
+                  <procedure classCode="PROC" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.10.20.1.29" assigningAuthorityName="CCD"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19" assigningAuthorityName="IHE"/>
+                     <templateId root="2.16.840.1.113883.3.88.11.83.17" assigningAuthorityName="HITSP"/>
+                     <id root="1.2.1.173000"
+                         extension="echr:patient-1823431:clinicalNote-1833315:sugicalProcedure-1833318"/>
+                     <code code="387736007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                           displayName="fine needle aspiration of breast">
+                        <originalText>FNA</originalText>
+                        <qualifier>
+                           <name code="272741003" displayName="laterality" codeSystem="2.16.840.1.113883.6.96"
+                                 codeSystemName="SNOMED CT">
+                              <originalText>laterality</originalText>
+                           </name>
+                           <value code="7771000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                  displayName="left">
+                              <originalText>Left</originalText>
+                           </value>
+                        </qualifier>
+                     </code>
+                     <text>
+                        <reference value="d8e4497"/>
+                     </text>
+                     <statusCode code="completed"/>
+                     <effectiveTime value="20110718000000-0700"/>
+                     <targetSiteCode code="68171009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                     displayName="axillary lymph node structure">
+                        <originalText>Axillary (lymph node)</originalText>
+                     </targetSiteCode>
+                     <performer typeCode="PRF">
+                        <assignedEntity>
+                           <id nullFlavor="NI"/>
+                           <addr nullFlavor="NI"/>
+                           <telecom nullFlavor="NI"/>
+                        </assignedEntity>
+                     </performer>
+                  </procedure>
+               </entry>
+               <entry typeCode="DRIV">
+                  <procedure classCode="PROC" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.10.20.1.29" assigningAuthorityName="CCD"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19" assigningAuthorityName="IHE"/>
+                     <templateId root="2.16.840.1.113883.3.88.11.83.17" assigningAuthorityName="HITSP"/>
+                     <id nullFlavor="NI"/>
+                     <code code="234253006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                           displayName="excision of group of lymph nodes">
+                        <originalText>Prior Procedure: Sentinel Lymph Node Dissection</originalText>
+                        <qualifier>
+                           <name code="272741003" displayName="laterality" codeSystem="2.16.840.1.113883.6.96"
+                                 codeSystemName="SNOMED CT">
+                              <originalText>laterality</originalText>
+                           </name>
+                           <value code="7771000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                  displayName="left">
+                              <originalText>Left</originalText>
+                           </value>
+                        </qualifier>
+                     </code>
+                     <text>
+                        <reference value="d8e4371"/>
+                     </text>
+                     <statusCode code="completed"/>
+                     <effectiveTime value="20110721"/>
+                     <targetSiteCode code="UNK" codeSystem="2.16.840.1.113883.5.1008"
+                                     codeSystemName="HL7 nullFlavor">
+                        <originalText>Unknown/Not indicated</originalText>
+                     </targetSiteCode>
+                     <performer>
+                        <assignedEntity>
+                           <id nullFlavor="NI"/>
+                           <addr nullFlavor="NI"/>
+                           <telecom nullFlavor="NI"/>
+                           <assignedPerson>
+                              <name use="L">Dr. Surgeon Jr.</name>
+                           </assignedPerson>
+                        </assignedEntity>
+                     </performer>
+                  </procedure>
+               </entry>
+               <entry typeCode="DRIV">
+                  <procedure classCode="PROC" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.10.20.1.29" assigningAuthorityName="CCD"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19" assigningAuthorityName="IHE"/>
+                     <templateId root="2.16.840.1.113883.3.88.11.83.17" assigningAuthorityName="HITSP"/>
+                     <id nullFlavor="NI"/>
+                     <code code="64368001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                           displayName="partial mastectomy">
+                        <originalText>Prior Procedure: Partial Mastectomy</originalText>
+                        <qualifier>
+                           <name code="272741003" displayName="laterality" codeSystem="2.16.840.1.113883.6.96"
+                                 codeSystemName="SNOMED CT">
+                              <originalText>laterality</originalText>
+                           </name>
+                           <value code="24028007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                  displayName="right">
+                              <originalText>Right</originalText>
+                           </value>
+                        </qualifier>
+                     </code>
+                     <text>
+                        <reference value="d8e4428"/>
+                     </text>
+                     <statusCode code="completed"/>
+                     <effectiveTime value="20110715"/>
+                     <targetSiteCode code="181134008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                     displayName="entire upper outer quadrant of breast">
+                        <originalText>Upper outer quadrant (breast)</originalText>
+                     </targetSiteCode>
+                     <performer>
+                        <assignedEntity>
+                           <id nullFlavor="NI"/>
+                           <addr nullFlavor="NI"/>
+                           <telecom nullFlavor="NI"/>
+                           <assignedPerson>
+                              <name use="L">Dr. Surgeon</name>
+                           </assignedPerson>
+                        </assignedEntity>
+                     </performer>
+                  </procedure>
+               </entry>
+            </section>
+         </component>
+         <component>
+            <section>
+               <templateId root="2.16.840.1.113883.3.88.11.83.103" assigningAuthorityName="HITSP/C83"/>
+               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.6" assigningAuthorityName="IHE PCC"/>
+               <templateId root="2.16.840.1.113883.10.20.1.11" assigningAuthorityName="HL7 CCD"/>
+               <code code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+                     displayName="Problem list"/>
+               <title>Problems</title>
+               <text/>
+               <entry typeCode="DRIV">
+                  <act classCode="ACT" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.10.20.1.27" assigningAuthorityName="CCD"/>
+                     <id nullFlavor="NI"/>
+                     <code nullFlavor="NA"/>
+                     <statusCode code="new"/>
+                     <effectiveTime>
+                        <low value="20110722000000-0700"/>
+                     </effectiveTime>
+                     <performer typeCode="PRF">
+                        <assignedEntity>
+                           <id nullFlavor="NI"/>
+                           <addr nullFlavor="NI"/>
+                           <telecom nullFlavor="NI"/>
+                        </assignedEntity>
+                     </performer>
+                     <entryRelationship typeCode="SUBJ" inversionInd="false">
+                        <observation classCode="OBS" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.28" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5" assigningAuthorityName="IHE PCC"/>
+                           <id nullFlavor="NI"/>
+                           <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                           <statusCode code="completed"/>
+                           <effectiveTime>
+                              <low value="20110722000000-0700"/>
+                           </effectiveTime>
+                           <value xsi:type="CD" code="408643008" codeSystem="2.16.840.1.113883.6.96"
+                                  codeSystemName="SNOMED-CT"
+                                  displayName="invasive ductal carcinoma of breast">
+                              <originalText>Invasive cancer</originalText>
+                           </value>
+                           <entryRelationship typeCode="REFR">
+                              <observation classCode="OBS" moodCode="EVN">
+                                 <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status">
+                                    <originalText>Status</originalText>
+                                 </code>
+                                 <statusCode code="completed"/>
+                                 <value xsi:type="CD" code="89100005" codeSystem="2.16.840.1.113883.6.96"
+                                        codeSystemName="SNOMED-CT"
+                                        displayName="final diagnosis">
+                                    <originalText>Final</originalText>
+                                 </value>
+                              </observation>
+                           </entryRelationship>
+                           <entryRelationship typeCode="COMP">
+                              <observation classCode="OBS" moodCode="EVN">
+                                 <code codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" code="371508000"
+                                       displayName="Tumor stage">
+                                    <originalText>Staging</originalText>
+                                 </code>
+                                 <statusCode code="completed"/>
+                                 <value xsi:type="CD" code="261614003" codeSystem="2.16.840.1.113883.6.96"
+                                        codeSystemName="SNOMED-CT"
+                                        displayName="Stage 2A">
+                                    <originalText>Stage IIA</originalText>
+                                 </value>
+                              </observation>
+                           </entryRelationship>
+                        </observation>
+                     </entryRelationship>
+                  </act>
+               </entry>
+               <entry typeCode="DRIV">
+                  <act classCode="ACT" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.3.88.11.83.7" assigningAuthorityName="HITSP C83"/>
+                     <templateId root="2.16.840.1.113883.10.20.1.27" assigningAuthorityName="CCD"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1" assigningAuthorityName="IHE PCC"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2" assigningAuthorityName="IHE PCC"/>
+                     <id nullFlavor="NI"/>
+                     <code nullFlavor="NA">
+                        <originalText>Staging</originalText>
+                     </code>
+                     <statusCode code="active"/>
+                     <effectiveTime>
+                        <low nullFlavor="UNK"/>
+                     </effectiveTime>
+                     <entryRelationship typeCode="SUBJ" inversionInd="false">
+                        <observation classCode="OBS" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.28" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5" assigningAuthorityName="IHE PCC"/>
+                           <id nullFlavor="NI"/>
+                           <code code="78873005" displayName="T category" codeSystem="2.16.840.1.113883.6.96"
+                                 codeSystemName="SNOMED CT">
+                              <originalText>T</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e5828"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime>
+                              <low nullFlavor="UNK"/>
+                           </effectiveTime>
+                           <value xsi:type="CD" nullFlavor="NI">
+                              <originalText>T2</originalText>
+                           </value>
+                        </observation>
+                     </entryRelationship>
+                     <entryRelationship typeCode="SUBJ" inversionInd="false">
+                        <observation classCode="OBS" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.28" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5" assigningAuthorityName="IHE PCC"/>
+                           <id nullFlavor="NI"/>
+                           <code code="277206009" displayName="N category" codeSystem="2.16.840.1.113883.6.96"
+                                 codeSystemName="SNOMED CT">
+                              <originalText>N</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e5837"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime>
+                              <low nullFlavor="UNK"/>
+                           </effectiveTime>
+                           <value xsi:type="CD" nullFlavor="NI">
+                              <originalText>N2</originalText>
+                           </value>
+                        </observation>
+                     </entryRelationship>
+                     <entryRelationship typeCode="SUBJ" inversionInd="false">
+                        <observation classCode="OBS" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.28" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5" assigningAuthorityName="IHE PCC"/>
+                           <id nullFlavor="NI"/>
+                           <code code="277208005" displayName="M category" codeSystem="2.16.840.1.113883.6.96"
+                                 codeSystemName="SNOMED CT">
+                              <originalText>M</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e5846"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime>
+                              <low nullFlavor="UNK"/>
+                           </effectiveTime>
+                           <value xsi:type="CD" nullFlavor="NI">
+                              <originalText/>
+                           </value>
+                        </observation>
+                     </entryRelationship>
+                     <entryRelationship typeCode="SUBJ" inversionInd="false">
+                        <observation classCode="OBS" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.28" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5" assigningAuthorityName="IHE PCC"/>
+                           <id nullFlavor="NI"/>
+                           <code code="246197003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                 displayName="mobility">
+                              <originalText>Mobility Status</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e5854"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime>
+                              <low nullFlavor="UNK"/>
+                           </effectiveTime>
+                           <value xsi:type="CD" nullFlavor="NI">
+                              <originalText>Fixed</originalText>
+                           </value>
+                        </observation>
+                     </entryRelationship>
+                     <entryRelationship typeCode="SUBJ" inversionInd="false">
+                        <observation classCode="OBS" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.28" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5" assigningAuthorityName="IHE PCC"/>
+                           <id nullFlavor="NI"/>
+                           <code code="399390009" displayName="tumor-node-metastasis (TNM) stage grouping"
+                                 codeSystem="2.16.840.1.113883.6.96"
+                                 codeSystemName="SNOMED CT">
+                              <originalText>Calculated Stage: </originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e5826"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime>
+                              <low nullFlavor="UNK"/>
+                           </effectiveTime>
+                           <value xsi:type="CD" nullFlavor="OTH">
+                              <originalText>Stage IV</originalText>
+                           </value>
+                        </observation>
+                     </entryRelationship>
+                     <entryRelationship typeCode="SUBJ" inversionInd="false">
+                        <observation classCode="OBS" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.28" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5" assigningAuthorityName="IHE PCC"/>
+                           <id nullFlavor="NI"/>
+                           <code code="399390009" displayName="tumor-node-metastasis (TNM) stage grouping"
+                                 codeSystem="2.16.840.1.113883.6.96"
+                                 codeSystemName="SNOMED CT">
+                              <originalText>Adjudicated Stage:</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e5912"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime>
+                              <low nullFlavor="UNK"/>
+                           </effectiveTime>
+                           <value xsi:type="CD" code="261614003" codeSystem="2.16.840.1.113883.6.96"
+                                  codeSystemName="SNOMED-CT"
+                                  displayName="Stage 2A">
+                              <originalText>Stage IIA</originalText>
+                           </value>
+                           <performer typeCode="PRF">
+                              <assignedEntity>
+                                 <id root="1.2.1.173000"/>
+                                 <addr nullFlavor="NI"/>
+                                 <telecom nullFlavor="NI"/>
+                                 <assignedPerson>
+                                    <name use="L">Other surgeon text box</name>
+                                 </assignedPerson>
+                              </assignedEntity>
+                           </performer>
+                        </observation>
+                     </entryRelationship>
+                     <entryRelationship typeCode="SUBJ" inversionInd="false">
+                        <observation classCode="OBS" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.28" assigningAuthorityName="CCD"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5" assigningAuthorityName="IHE PCC"/>
+                           <id nullFlavor="NI"/>
+                           <code code="396645007" displayName="status of extension by tumor"
+                                 codeSystem="2.16.840.1.113883.6.96"
+                                 codeSystemName="SNOMED CT">
+                              <originalText>If patient diagnosed with T4 at baseline, indicate current status of T4 tumor:</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e6016"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime>
+                              <low nullFlavor="UNK"/>
+                           </effectiveTime>
+                           <value xsi:type="CD" code="369902006" codeSystem="2.16.840.1.113883.6.96"
+                                  codeSystemName="SNOMED-CT"
+                                  displayName="t4: Breast tumor of any size with direct extension to chest wall or skin">
+                              <originalText>Skin and chest wall</originalText>
+                           </value>
+                        </observation>
+                     </entryRelationship>
+                  </act>
+               </entry>
+            </section>
+         </component>
+         <component>
+            <section>
+               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.24" assigningAuthorityName="IHE PCC"/>
+               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.9.15" assigningAuthorityName="IHE PCC"/>
+               <templateId root="2.16.840.1.113883.3.88.11.83.118" assigningAuthorityName="HITSP C83"/>
+               <templateId root="2.16.840.1.113883.10.20.2.10"
+                           assigningAuthorityName="HL7HistoryAndPhysicalNote"/>
+               <id nullFlavor="UNK"/>
+               <code code="29545-1" displayName="PHYSICAL EXAMINATION"
+                     codeSystem="2.16.840.1.113883.6.1"
+                     codeSystemName="LOINC">
+                  <originalText>Physical Exam</originalText>
+               </code>
+               <title>Physical exam</title>
+               <text/>
+               <component>
+                  <section>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.9.28" assigningAuthorityName="IHE"/>
+                     <id nullFlavor="NI"/>
+                     <code code="10193-1" displayName="Physical Findings - Breasts"
+                           codeSystem="2.16.840.1.113883.6.1"
+                           codeSystemName="LOINC"/>
+                     <text/>
+                     <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.29" assigningAuthorityName="CCD"/>
+                           <id nullFlavor="NI"/>
+                           <code code="46662001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                 displayName="examination of breast">
+                              <originalText>Breast Exam</originalText>
+                           </code>
+                           <text>
+                              <reference value="d8e403"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime value="20110722104303-0700"/>
+                           <entryRelationship typeCode="SUBJ">
+                              <observation classCode="OBS" moodCode="EVN">
+                                 <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                                 <id nullFlavor="NI"/>
+                                 <code code="364377005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                       displayName="appearance of nipple">
+                                    <originalText>Nipple Characteristics</originalText>
+                                 </code>
+                                 <statusCode code="completed"/>
+                                 <value xsi:type="CD" code="290118000" codeSystem="2.16.840.1.113883.6.96"
+                                        codeSystemName="SNOMED-CT"
+                                        displayName="nipple normal">
+                                    <originalText>Everted</originalText>
+                                 </value>
+                              </observation>
+                           </entryRelationship>
+                           <entryRelationship typeCode="SUBJ">
+                              <observation classCode="OBS" moodCode="EVN">
+                                 <templateId root="2.16.840.1.113883.10.20.1.28" assigningAuthorityName="CCD"/>
+                                 <id nullFlavor="NI"/>
+                                 <code code="54302000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                       displayName="discharge from nipple">
+                                    <originalText>Nipple discharge</originalText>
+                                 </code>
+                                 <statusCode code="completed"/>
+                                 <value xsi:type="ST">discharge text box</value>
+                              </observation>
+                           </entryRelationship>
+                           <entryRelationship typeCode="SUBJ">
+                              <observation classCode="OBS" moodCode="EVN">
+                                 <templateId root="2.16.840.1.113883.10.20.1.28" assigningAuthorityName="CCD"/>
+                                 <id nullFlavor="NI"/>
+                                 <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                 <statusCode code="completed"/>
+                                 <value xsi:type="CD" code="170859004" displayName="skin symptom changes"
+                                        codeSystem="2.16.840.1.113883.6.96"
+                                        codeSystemName="SNOMED-CT">
+                                    <originalText>Skin changes</originalText>
+                                 </value>
+                                 <entryRelationship typeCode="SUBJ">
+                                    <observation classCode="OBS" moodCode="EVN">
+                                       <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                                       <id nullFlavor="NI"/>
+                                       <code code="246116008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                             displayName="lesion size">
+                                          <originalText>Dimension</originalText>
+                                       </code>
+                                       <statusCode code="completed"/>
+                                       <value xsi:type="ST">1 x 4 cm</value>
+                                    </observation>
+                                 </entryRelationship>
+                                 <entryRelationship typeCode="SUBJ">
+                                    <observation classCode="OBS" moodCode="EVN">
+                                       <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                                       <id nullFlavor="NI"/>
+                                       <code code="364528001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                             displayName="skin observable">
+                                          <originalText>o'clock/distance from nipple</originalText>
+                                       </code>
+                                       <statusCode code="completed"/>
+                                       <value xsi:type="ST">2 o'clock about 2cm from nipple</value>
+                                    </observation>
+                                 </entryRelationship>
+                                 <entryRelationship typeCode="SUBJ">
+                                    <observation classCode="OBS" moodCode="EVN">
+                                       <templateId root="2.16.840.1.113883.10.20.1.28" assigningAuthorityName="CCD"/>
+                                       <id nullFlavor="NI"/>
+                                       <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                       <statusCode code="completed"/>
+                                       <value xsi:type="CD" code="248818003" codeSystem="2.16.840.1.113883.6.96"
+                                              codeSystemName="SNOMED-CT"
+                                              displayName="ulceration of breast">
+                                          <originalText>Ulceration</originalText>
+                                       </value>
+                                    </observation>
+                                 </entryRelationship>
+                                 <entryRelationship typeCode="SUBJ">
+                                    <observation classCode="OBS" moodCode="EVN">
+                                       <templateId root="2.16.840.1.113883.10.20.1.28" assigningAuthorityName="CCD"/>
+                                       <id nullFlavor="NI"/>
+                                       <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                       <statusCode code="completed"/>
+                                       <value xsi:type="CD" code="290074005" codeSystem="2.16.840.1.113883.6.96"
+                                              codeSystemName="SNOMED-CT"
+                                              displayName="nodule of skin of breast">
+                                          <originalText>Nodular</originalText>
+                                       </value>
+                                    </observation>
+                                 </entryRelationship>
+                                 <entryRelationship typeCode="SUBJ">
+                                    <observation classCode="OBS" moodCode="EVN">
+                                       <templateId root="2.16.840.1.113883.10.20.1.28" assigningAuthorityName="CCD"/>
+                                       <id nullFlavor="NI"/>
+                                       <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                       <statusCode code="completed"/>
+                                       <value xsi:type="CD" code="247441003" codeSystem="2.16.840.1.113883.6.96"
+                                              codeSystemName="SNOMED-CT"
+                                              displayName="erythema">
+                                          <originalText>Erythema</originalText>
+                                       </value>
+                                    </observation>
+                                 </entryRelationship>
+                                 <entryRelationship typeCode="SUBJ">
+                                    <observation classCode="OBS" moodCode="EVN">
+                                       <templateId root="2.16.840.1.113883.10.20.1.28" assigningAuthorityName="CCD"/>
+                                       <id nullFlavor="NI"/>
+                                       <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                       <statusCode code="completed"/>
+                                       <value xsi:type="CD" code="267038008" codeSystem="2.16.840.1.113883.6.96"
+                                              codeSystemName="SNOMED-CT"
+                                              displayName="edema">
+                                          <originalText>Edema</originalText>
+                                       </value>
+                                    </observation>
+                                 </entryRelationship>
+                                 <entryRelationship typeCode="SUBJ">
+                                    <observation classCode="OBS" moodCode="EVN">
+                                       <templateId root="2.16.840.1.113883.10.20.1.28" assigningAuthorityName="CCD"/>
+                                       <id nullFlavor="NI"/>
+                                       <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                       <statusCode code="completed"/>
+                                       <value xsi:type="CD" code="87386002" codeSystem="2.16.840.1.113883.6.96"
+                                              codeSystemName="SNOMED-CT"
+                                              displayName="Peau d'orange surface of breast">
+                                          <originalText>Peau d'Orange</originalText>
+                                       </value>
+                                    </observation>
+                                 </entryRelationship>
+                              </observation>
+                           </entryRelationship>
+                        </act>
+                     </entry>
+                     <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.29" assigningAuthorityName="CCD"/>
+                           <id nullFlavor="NI"/>
+                           <code code="46662001" displayName="examination of breast"
+                                 codeSystem="2.16.840.1.113883.6.96"
+                                 codeSystemName="SNOMED-CT">
+                              <originalText>Breast Findings</originalText>
+                              <qualifier>
+                                 <name code="272741003" displayName="laterality" codeSystem="2.16.840.1.113883.6.96"
+                                       codeSystemName="SNOMED CT"/>
+                                 <value code="7771000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                        displayName="left">
+                                    <originalText>Left</originalText>
+                                 </value>
+                              </qualifier>
+                           </code>
+                           <text>
+                              <reference value="d8e446"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime value="20110722"/>
+                           <entryRelationship typeCode="COMP">
+                              <observation classCode="OBS" moodCode="EVN">
+                                 <templateId root="2.16.840.1.113883.10.20.1.28" assigningAuthorityName="CCD"/>
+                                 <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                 <statusCode code="completed"/>
+                                 <value xsi:type="CD" code="89164003" codeSystem="2.16.840.1.113883.6.96"
+                                        codeSystemName="SNOMED-CT"
+                                        displayName="breast mass">
+                                    <originalText>Mass</originalText>
+                                 </value>
+                                 <entryRelationship typeCode="SUBJ">
+                                    <observation classCode="OBS" moodCode="EVN">
+                                       <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                                       <id nullFlavor="NI"/>
+                                       <code code="248529005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                             displayName="lump size">
+                                          <originalText>size</originalText>
+                                       </code>
+                                       <statusCode code="completed"/>
+                                       <value xsi:type="ST">4.0 x 4.1 cm</value>
+                                    </observation>
+                                 </entryRelationship>
+                                 <entryRelationship typeCode="SUBJ">
+                                    <observation classCode="OBS" moodCode="EVN">
+                                       <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                                       <id nullFlavor="NI"/>
+                                       <code code="443772002" displayName="clockface position of tumor"
+                                             codeSystem="2.16.840.1.113883.6.96"
+                                             codeSystemName="SNOMED-CT">
+                                          <originalText>location</originalText>
+                                       </code>
+                                       <statusCode code="completed"/>
+                                       <value xsi:type="ST">4 o'clock</value>
+                                    </observation>
+                                 </entryRelationship>
+                                 <entryRelationship typeCode="SUBJ">
+                                    <observation classCode="OBS" moodCode="EVN">
+                                       <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                                       <id nullFlavor="NI"/>
+                                       <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                       <statusCode code="completed"/>
+                                       <value xsi:type="CD" code="163485008" codeSystem="2.16.840.1.113883.6.96"
+                                              codeSystemName="SNOMED-CT"
+                                              displayName="O/E - breast lump hard">
+                                          <originalText>Firm</originalText>
+                                       </value>
+                                    </observation>
+                                 </entryRelationship>
+                                 <entryRelationship typeCode="SUBJ">
+                                    <observation classCode="OBS" moodCode="EVN">
+                                       <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                                       <id nullFlavor="NI"/>
+                                       <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                       <statusCode code="completed"/>
+                                       <value xsi:type="CD" code="163491005" codeSystem="2.16.840.1.113883.6.96"
+                                              codeSystemName="SNOMED-CT"
+                                              displayName="O/E - breast lump tethering">
+                                          <originalText>Fixed</originalText>
+                                       </value>
+                                    </observation>
+                                 </entryRelationship>
+                                 <entryRelationship typeCode="SUBJ">
+                                    <observation classCode="OBS" moodCode="EVN">
+                                       <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                                       <id nullFlavor="NI"/>
+                                       <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                       <statusCode code="completed"/>
+                                       <value xsi:type="CD" code="163614007" codeSystem="2.16.840.1.113883.6.96"
+                                              codeSystemName="SNOMED-CT"
+                                              displayName="O/E - suspicious">
+                                          <originalText>Suspicious</originalText>
+                                       </value>
+                                    </observation>
+                                 </entryRelationship>
+                                 <entryRelationship typeCode="SUBJ">
+                                    <procedure classCode="PROC" moodCode="EVN">
+                                       <templateId root="2.16.840.1.113883.10.20.1.29" assigningAuthorityName="CCD"/>
+                                       <id nullFlavor="NI"/>
+                                       <code code="122548005" displayName="biopsy of breast"
+                                             codeSystem="2.16.840.1.113883.6.96"
+                                             codeSystemName="SNOMED CT">
+                                          <originalText>biopsy done</originalText>
+                                       </code>
+                                       <text>
+                                          <reference value="d8e684"/>
+                                       </text>
+                                       <statusCode code="completed"/>
+                                    </procedure>
+                                 </entryRelationship>
+                                 <entryRelationship typeCode="SUBJ">
+                                    <observation classCode="OBS" moodCode="EVN">
+                                       <templateId root="2.16.840.1.113883.10.20.1.28" assigningAuthorityName="CCD"/>
+                                       <id nullFlavor="NI"/>
+                                       <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                       <statusCode code="completed"/>
+                                       <value xsi:type="CD" code="426291003"
+                                              displayName="radiographic image correlates with tumor pathology finding"
+                                              codeSystem="2.16.840.1.113883.6.96"
+                                              codeSystemName="SNOMED-CT">
+                                          <originalText>imaging correlation</originalText>
+                                       </value>
+                                    </observation>
+                                 </entryRelationship>
+                              </observation>
+                           </entryRelationship>
+                        </act>
+                     </entry>
+                     <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.29" assigningAuthorityName="CCD"/>
+                           <id nullFlavor="NI"/>
+                           <code code="46662001" displayName="examination of breast"
+                                 codeSystem="2.16.840.1.113883.6.96"
+                                 codeSystemName="SNOMED-CT">
+                              <originalText>Breast Findings</originalText>
+                              <qualifier>
+                                 <name code="272741003" displayName="laterality" codeSystem="2.16.840.1.113883.6.96"
+                                       codeSystemName="SNOMED CT"/>
+                                 <value code="24028007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                        displayName="right">
+                                    <originalText>Right</originalText>
+                                 </value>
+                              </qualifier>
+                           </code>
+                           <text>
+                              <reference value="d8e746"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime value="20110722"/>
+                           <entryRelationship typeCode="COMP">
+                              <observation classCode="OBS" moodCode="EVN">
+                                 <templateId root="2.16.840.1.113883.10.20.1.28" assigningAuthorityName="CCD"/>
+                                 <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                 <statusCode code="completed"/>
+                                 <value xsi:type="CD" code="125148006" codeSystem="2.16.840.1.113883.6.96"
+                                        codeSystemName="SNOMED-CT"
+                                        displayName="abnormal density">
+                                    <originalText>Density</originalText>
+                                 </value>
+                                 <entryRelationship typeCode="SUBJ">
+                                    <observation classCode="OBS" moodCode="EVN">
+                                       <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                                       <id nullFlavor="NI"/>
+                                       <code code="248529005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                             displayName="lump size">
+                                          <originalText>size</originalText>
+                                       </code>
+                                       <statusCode code="completed"/>
+                                       <value xsi:type="ST">2.0 x 3.3 cm</value>
+                                    </observation>
+                                 </entryRelationship>
+                                 <entryRelationship typeCode="SUBJ">
+                                    <observation classCode="OBS" moodCode="EVN">
+                                       <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                                       <id nullFlavor="NI"/>
+                                       <code code="443772002" displayName="clockface position of tumor"
+                                             codeSystem="2.16.840.1.113883.6.96"
+                                             codeSystemName="SNOMED-CT">
+                                          <originalText>location</originalText>
+                                       </code>
+                                       <statusCode code="completed"/>
+                                       <value xsi:type="ST">6:00</value>
+                                    </observation>
+                                 </entryRelationship>
+                                 <entryRelationship typeCode="SUBJ">
+                                    <observation classCode="OBS" moodCode="EVN">
+                                       <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                                       <id nullFlavor="NI"/>
+                                       <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                       <statusCode code="completed"/>
+                                       <value xsi:type="CD" code="445055004" codeSystem="2.16.840.1.113883.6.96"
+                                              codeSystemName="SNOMED-CT"
+                                              displayName="rubbery subcutaneous tissue">
+                                          <originalText>Rubbery</originalText>
+                                       </value>
+                                    </observation>
+                                 </entryRelationship>
+                                 <entryRelationship typeCode="SUBJ">
+                                    <observation classCode="OBS" moodCode="EVN">
+                                       <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                                       <id nullFlavor="NI"/>
+                                       <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                       <statusCode code="completed"/>
+                                       <value xsi:type="CD" code="163492003" codeSystem="2.16.840.1.113883.6.96"
+                                              codeSystemName="SNOMED-CT"
+                                              displayName="O/E - breast lump not tethered">
+                                          <originalText>Mobile</originalText>
+                                       </value>
+                                    </observation>
+                                 </entryRelationship>
+                                 <entryRelationship typeCode="SUBJ">
+                                    <observation classCode="OBS" moodCode="EVN">
+                                       <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                                       <id nullFlavor="NI"/>
+                                       <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                       <statusCode code="completed"/>
+                                       <value xsi:type="CD" code="369751001" codeSystem="2.16.840.1.113883.6.96"
+                                              codeSystemName="SNOMED-CT"
+                                              displayName="tumor of indeterminate configuration">
+                                          <originalText>Indeterminate</originalText>
+                                       </value>
+                                    </observation>
+                                 </entryRelationship>
+                                 <entryRelationship typeCode="SUBJ">
+                                    <observation classCode="OBS" moodCode="EVN">
+                                       <templateId root="2.16.840.1.113883.10.20.1.28" assigningAuthorityName="CCD"/>
+                                       <id nullFlavor="NI"/>
+                                       <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                       <statusCode code="completed"/>
+                                       <value xsi:type="CD" code="426291003"
+                                              displayName="radiographic image correlates with tumor pathology finding"
+                                              codeSystem="2.16.840.1.113883.6.96"
+                                              codeSystemName="SNOMED-CT">
+                                          <originalText>imaging correlation</originalText>
+                                       </value>
+                                    </observation>
+                                 </entryRelationship>
+                              </observation>
+                           </entryRelationship>
+                        </act>
+                     </entry>
+                     <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.29" assigningAuthorityName="CCD"/>
+                           <id nullFlavor="NI"/>
+                           <code code="46662001" displayName="examination of breast"
+                                 codeSystem="2.16.840.1.113883.6.96"
+                                 codeSystemName="SNOMED-CT">
+                              <originalText>Breast Findings</originalText>
+                              <qualifier>
+                                 <name code="272741003" displayName="laterality" codeSystem="2.16.840.1.113883.6.96"
+                                       codeSystemName="SNOMED CT"/>
+                                 <value code="7771000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                        displayName="left">
+                                    <originalText>Left</originalText>
+                                 </value>
+                              </qualifier>
+                           </code>
+                           <text>
+                              <reference value="d8e1046"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime value="20110722"/>
+                           <entryRelationship typeCode="COMP">
+                              <observation classCode="OBS" moodCode="EVN">
+                                 <templateId root="2.16.840.1.113883.10.20.1.28" assigningAuthorityName="CCD"/>
+                                 <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                 <statusCode code="completed"/>
+                                 <value xsi:type="CD" code="30746006" codeSystem="2.16.840.1.113883.6.96"
+                                        codeSystemName="SNOMED-CT"
+                                        displayName="lymphadenopathy">
+                                    <originalText>Node</originalText>
+                                 </value>
+                                 <entryRelationship typeCode="SUBJ">
+                                    <observation classCode="OBS" moodCode="EVN">
+                                       <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                                       <id nullFlavor="NI"/>
+                                       <code code="248529005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                             displayName="lump size">
+                                          <originalText>size</originalText>
+                                       </code>
+                                       <statusCode code="completed"/>
+                                       <value xsi:type="ST">1.0 x 1.0 cm</value>
+                                    </observation>
+                                 </entryRelationship>
+                                 <entryRelationship typeCode="SUBJ">
+                                    <observation classCode="OBS" moodCode="EVN">
+                                       <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                                       <id nullFlavor="NI"/>
+                                       <code code="443772002" displayName="clockface position of tumor"
+                                             codeSystem="2.16.840.1.113883.6.96"
+                                             codeSystemName="SNOMED-CT">
+                                          <originalText>location</originalText>
+                                       </code>
+                                       <statusCode code="completed"/>
+                                       <value xsi:type="CD" nullFlavor="OTH">
+                                          <originalText>Axillary</originalText>
+                                       </value>
+                                    </observation>
+                                 </entryRelationship>
+                                 <entryRelationship typeCode="SUBJ">
+                                    <observation classCode="OBS" moodCode="EVN">
+                                       <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                                       <id nullFlavor="NI"/>
+                                       <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                       <statusCode code="completed"/>
+                                       <value xsi:type="CD" code="163485008" codeSystem="2.16.840.1.113883.6.96"
+                                              codeSystemName="SNOMED-CT"
+                                              displayName="O/E - breast lump hard">
+                                          <originalText>Hard</originalText>
+                                       </value>
+                                    </observation>
+                                 </entryRelationship>
+                                 <entryRelationship typeCode="SUBJ">
+                                    <observation classCode="OBS" moodCode="EVN">
+                                       <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                                       <id nullFlavor="NI"/>
+                                       <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                       <statusCode code="completed"/>
+                                       <value xsi:type="CD" nullFlavor="OTH">
+                                          <originalText>Matted</originalText>
+                                       </value>
+                                    </observation>
+                                 </entryRelationship>
+                                 <entryRelationship typeCode="SUBJ">
+                                    <observation classCode="OBS" moodCode="EVN">
+                                       <templateId root="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+                                       <id nullFlavor="NI"/>
+                                       <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                       <statusCode code="completed"/>
+                                       <value xsi:type="CD" code="163614007" codeSystem="2.16.840.1.113883.6.96"
+                                              codeSystemName="SNOMED-CT"
+                                              displayName="O/E - suspicious">
+                                          <originalText>Suspicious</originalText>
+                                       </value>
+                                    </observation>
+                                 </entryRelationship>
+                              </observation>
+                           </entryRelationship>
+                        </act>
+                     </entry>
+                  </section>
+               </component>
+            </section>
+         </component>
+         <component>
+            <section>
+               <templateId root="2.16.840.1.113883.3.88.11.83.124" assigningAuthorityName="HITSP/C83"/>
+               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.31" assigningAuthorityName="IHE PCC"/>
+               <templateId root="2.16.840.1.113883.10.20.2.7" assigningAuthorityName="HL7 HandP"/>
+               <templateId root="2.16.840.1.113883.10.20.1.10" assigningAuthorityName="HL7 CCD"/>
+               <code code="18776-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+                     displayName="Treatment plan"/>
+               <title>Plan of Care</title>
+               <text/>
+               <entry typeCode="DRIV">
+                  <act classCode="ACT" moodCode="INT">
+                     <templateId root="2.16.840.1.113883.10.20.1.25" assigningAuthorityName="CCD"/>
+                     <id nullFlavor="NI"/>
+                     <code nullFlavor="OTH">
+                        <originalText>Breast Work-up</originalText>
+                     </code>
+                     <statusCode code="new"/>
+                     <entryRelationship typeCode="COMP">
+                        <act classCode="ACT" moodCode="INT">
+                           <code code="47079000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                 displayName="ultrasonography of breast">
+                              <originalText>Ultrasound</originalText>
+                           </code>
+                        </act>
+                     </entryRelationship>
+                     <entryRelationship typeCode="COMP">
+                        <act classCode="ACT" moodCode="INT">
+                           <code code="71651007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                 displayName="mammography">
+                              <originalText>Mammogram</originalText>
+                           </code>
+                        </act>
+                     </entryRelationship>
+                     <entryRelationship typeCode="COMP">
+                        <act classCode="ACT" moodCode="INT">
+                           <code code="241615005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                 displayName="MRI of breast">
+                              <originalText>Breast MRI</originalText>
+                           </code>
+                        </act>
+                     </entryRelationship>
+                     <entryRelationship typeCode="COMP">
+                        <act classCode="ACT" moodCode="INT">
+                           <code code="363679005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                 displayName="imaging">
+                              <originalText>Other Imaging</originalText>
+                           </code>
+                        </act>
+                     </entryRelationship>
+                     <entryRelationship typeCode="COMP">
+                        <act classCode="ACT" moodCode="INT">
+                           <code code="86273004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                 displayName="biopsy">
+                              <originalText>Biopsy</originalText>
+                           </code>
+                        </act>
+                     </entryRelationship>
+                  </act>
+               </entry>
+               <entry typeCode="DRIV">
+                  <act classCode="ACT" moodCode="INT">
+                     <templateId root="2.16.840.1.113883.10.20.1.25" assigningAuthorityName="CCD"/>
+                     <id nullFlavor="NI"/>
+                     <code nullFlavor="OTH">
+                        <originalText>Metastatic Work-up</originalText>
+                     </code>
+                     <statusCode code="new"/>
+                     <entryRelationship typeCode="COMP">
+                        <act classCode="ACT" moodCode="INT">
+                           <code nullFlavor="OTH">
+                              <originalText>PET CT</originalText>
+                           </code>
+                        </act>
+                     </entryRelationship>
+                  </act>
+               </entry>
+               <entry typeCode="DRIV">
+                  <act classCode="ACT" moodCode="INT">
+                     <templateId root="2.16.840.1.113883.10.20.1.25" assigningAuthorityName="CCD"/>
+                     <id nullFlavor="NI"/>
+                     <code nullFlavor="OTH">
+                        <originalText>Non-Surgical Treatment</originalText>
+                     </code>
+                     <statusCode code="new"/>
+                     <entryRelationship typeCode="COMP">
+                        <act classCode="ACT" moodCode="INT">
+                           <code code="444061006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                 displayName="initial assessment for clinical trial">
+                              <originalText>Clinical trial screening</originalText>
+                           </code>
+                        </act>
+                     </entryRelationship>
+                  </act>
+               </entry>
+               <entry typeCode="DRIV">
+                  <act classCode="ACT" moodCode="INT">
+                     <templateId root="2.16.840.1.113883.10.20.1.25" assigningAuthorityName="CCD"/>
+                     <id nullFlavor="NI"/>
+                     <code nullFlavor="OTH">
+                        <originalText>Surgical Treatment</originalText>
+                     </code>
+                     <statusCode code="new"/>
+                     <entryRelationship typeCode="COMP">
+                        <act classCode="ACT" moodCode="INT">
+                           <code code="406505007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                 displayName="modified radical mastectomy">
+                              <originalText>Modified radical mastectomy</originalText>
+                           </code>
+                        </act>
+                     </entryRelationship>
+                  </act>
+               </entry>
+               <entry typeCode="DRIV">
+                  <act classCode="ACT" moodCode="INT">
+                     <templateId root="2.16.840.1.113883.10.20.1.25" assigningAuthorityName="CCD"/>
+                     <id nullFlavor="NI"/>
+                     <code nullFlavor="OTH">
+                        <originalText>Reconstructive Surgery</originalText>
+                     </code>
+                     <statusCode code="new"/>
+                     <entryRelationship typeCode="COMP">
+                        <act classCode="ACT" moodCode="INT">
+                           <code code="119853006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT"
+                                 displayName="breast implantation">
+                              <originalText>Expander implant</originalText>
+                           </code>
+                        </act>
+                     </entryRelationship>
+                  </act>
+               </entry>
+            </section>
+         </component>
+      </structuredBody>
+   </component>
+</ClinicalDocument>

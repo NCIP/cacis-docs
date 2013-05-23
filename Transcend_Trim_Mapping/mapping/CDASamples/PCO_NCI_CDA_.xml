@@ -1,0 +1,658 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="cda.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../CDA_XSD/cda/CDA.xsd">
+	<!--
+		Title: NCI_ClinicalStagingNoteCDA
+		Original Filename: PCO_NCI_CDA.xml
+		Version: 1.0
+		Revision History: 
+		Date: xx/xx/xxxx GD Finalized
+	-->
+	<!--   
+		This sample file validates for "Errors Only" against the NIST validator C83 sections and entries unless otherwise noted.
+		It is not validated against any standard header template.
+		
+		This sample document depicts a fictional character's health data. Any resemblance to a real person is coincidental. -->
+	<!-- 
+********************************************************
+CDA Header 
+********************************************************
+	-->
+	<realmCode code="US"/>
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+	<!-- C83 Clinical Document Template ID -->
+	<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.1" assigningAuthorityName="IHE PCC"/>
+	<id root="1.2.1.47003" extension="echr:patient-1079297:caseReportForm-1413226"/>
+	<code code="11542-8" codeSystem="2.16.840.1.113883.6.1"
+		displayName="Subsequent visit evaluation note"/>
+	<!-- Title of the note carries the TRIM name for the notes -->
+	<title>Registration</title>
+	<effectiveTime value="20110221201137-0800"/>
+	<confidentialityCode code="N"/>
+	<languageCode code="en-US"/>
+	<recordTarget>
+		<patientRole>
+			<id root="1.2.1.47003" extension="echr:patient-1079297"/>
+			<addr>
+				<postalCode>95220</postalCode>
+			</addr>
+			<telecom nullFlavor="NI"/>
+			<patient>
+				<name use="L">
+					<given>Minnie</given>
+					<given/>
+					<family>Mouse</family>
+				</name>
+				<administrativeGenderCode nullFlavor="OTH">
+					<originalText/>
+				</administrativeGenderCode>
+				<birthTime nullFlavor="NI"/>
+				<raceCode code="2106-3" codeSystem="2.16.840.1.113883.6.238"
+					codeSystemName="Race &amp; Ethnicity - CDC" displayName="White">
+					<originalText>White</originalText>
+				</raceCode>
+				<ethnicGroupCode code="2186-5" codeSystem="2.16.840.1.113883.6.238"
+					codeSystemName="Race &amp; Ethnicity - CDC" displayName="Not Hispanic or Latino">
+					<originalText>Not Hispanic or Latino</originalText>
+				</ethnicGroupCode>
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<author>
+		<time nullFlavor="NI"/>
+		<assignedAuthor>
+			<id root="1.2.1.47003" extension="julia.lyandres@ucsfmedctr.org"/>
+			<addr nullFlavor="NI"/>
+			<telecom nullFlavor="NI"/>
+			<assignedPerson>
+				<name nullFlavor="NI"/>
+			</assignedPerson>
+		</assignedAuthor>
+	</author>
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id root="2.16.840.1.113883.3.26.1.7" extension="TranscendTolven"/>
+				<name nullFlavor="NI"/>
+				<telecom nullFlavor="NI"/>
+				<addr nullFlavor="NI"/>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<documentationOf>
+		<serviceEvent classCode="CLNTRL">
+			<id root="2.16.840.1.113883.3.26.1.7" extension="theSiteIDNumber"/>
+			<code nullFlavor="OTH">
+				<originalText> Site specific component of clinical trial </originalText>
+			</code>
+		</serviceEvent>
+	</documentationOf>
+	<documentationOf>
+		<serviceEvent classCode="CLNTRL">
+			<id root="2.16.840.1.113883.3.26.1.7" extension="theStudyIDNumber"/>
+			<code nullFlavor="OTH">
+				<originalText> clinical trial </originalText>
+			</code>
+		</serviceEvent>
+	</documentationOf>
+	
+	<componentOf>
+		<encompassingEncounter>
+			<id nullFlavor="NI"/>
+			<code code="ONC" displayName="oncology" codeSystem="2.16.840.1.113883.5.4">
+				<originalText/>
+			</code>
+			<effectiveTime nullFlavor="UNK"/>
+		</encompassingEncounter>
+	</componentOf>
+
+
+	<!-- 
+********************************************************
+CDA Body - Gaye D note:6/2/2011 - Sections below are c32 compliant where noted
+********************************************************
+-->
+	<component>
+		<structuredBody>
+
+			<!--
+				********************************************************
+				Problems section (6/6 - not C3'd)
+				********************************************************
+			-->
+			<component>
+				<section>
+					<!-- CCD Problem section template -->
+					<templateId root="2.16.840.1.113883.10.20.1.11"/>
+					<!-- NCI Problem section template -->
+					<templateId root="NCITemp6"/>
+					<code code="11450-4" codeSystem="2.16.840.1.113883.6.1"/>
+					<title>Problems</title>
+
+					<text>
+						<table border="1" width="100%">
+							<tbody>
+								<tr>
+									<td>Diagnosis</td>
+									<td>Carcinoma in situ of breast</td>
+								</tr>
+								<tr>
+									<td>Date of diagnosis</td>
+									<td>Jan 4, 2010</td>
+								</tr>
+								<tr>
+									<td>Stage</td>
+									<td>IIA</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<!-- Example of Cancer diagnosis with stage (strawman - not necessarily all TRIM/PCO elements present -->
+					<!-- Cancer diagnosis  -->
+					<entry typeCode="DRIV">
+						<observation classCode="OBS" moodCode="EVN">
+							<!-- CCD Problem observation template -->
+							<templateId root="2.16.840.1.113883.10.20.1.28"/>
+							<!-- Cancer diagnosis template -->
+							<templateId root="2.16.840.1.113883.3.117.1.5.3.16"/>
+							<!-- Same ID as supporting result observations -->
+							<id root="7d5a02b0-67a4-11db-bd13-0800200c9a66"/>
+							<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+							<statusCode code="completed"/>
+							<!-- Date of diagnosis -->
+							<effectiveTime nullFlavor="NI"/>
+							<value xsi:type="CD" codeSystem="2.16.840.1.113883.6.96"
+								codeSystemName="SNOMED" code="109841003"
+								displayName="liver cell carcinoma "/>
+
+							<!-- The Stage at Diagnosis is further detailed on the diagnosis. -->
+
+							<entryRelationship typeCode="COMP">
+								<act classCode="ACT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.3.117.1.5.3.15"/>
+									<code codeSystem="2.16.840.1.113883.6.96"
+										codeSystemName="SNOMED-CT" code="443830009"
+										displayName="American Joint Commission on Cancer,
+										Cancer Staging Manual,
+										7th edition neoplasm staging system"/>
+									<entryRelationship typeCode="REFR" inversionInd="true">
+										<observation classCode="OBS" moodCode="EVN">
+											<code codeSystem="2.16.840.1.113883.6.96"
+												codeSystemName="SNOMED-CT" code="371508000"
+												displayName="Tumor stage"/>
+											<statusCode code="completed"/>
+											<value xsi:type="CD" codeSystem="2.16.840.1.113883.6.96"
+												codeSystemName="SNOMED-CT" code="261614003"
+												displayName="Stage IIA"/>
+										</observation>
+									</entryRelationship>
+								</act>
+							</entryRelationship>
+						</observation>
+					</entry>
+					<!-- Staging Method - /trim/act/relationship/act/relationship/act/relationship/[@name="modifiers"] (from Post Surgery summary-->
+					<entry typeCode="DRIV">
+						<observation classCode="OBS" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.28" assigningAuthorityName="CCD"/>
+							<id nullFlavor="NI"/>
+							<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+							<value xsi:type="CD" code="385356007" displayName="tumor stage finding" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT">
+								<originalText>Staging Modifiers</originalText>
+							</value>
+							<methodCode code="261023001"  displayName="pathological staging" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT">
+								<originalText>Pathologic Staging</originalText>
+							</methodCode>
+						</observation>
+					</entry>
+					
+					<!-- /trim/act/relationship/act/relationship/act/relationship/@name=["deathDetails"]-->
+					<entry typeCode="DRIV">
+						<observation classCode="OBS" moodCode="EVN">
+							<!-- Problem Observation template -->
+							<templateId root="2.16.840.1.113883.10.20.1.28"
+								assigningAuthorityName="CCD"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"
+								assigningAuthorityName="IHE PCC"/>
+							<id nullFlavor="NI"/>
+							<code code="184305005" displayName="cause of death"
+								codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
+								<originalText>Cause of death</originalText>
+							</code>
+							<text>
+								<reference value="pointer"/>
+							</text>
+							<statusCode code="completed"/>
+							<effectiveTime>
+								<low nullFlavor="UNK"/>
+							</effectiveTime>
+							<value xsi:type="CD" code="276239002" displayName="therapy"
+								codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT">
+								<originalText>Due to protocol treatment</originalText>
+							</value>
+							<entryRelationship typeCode="SPRT">
+								<observation classCode="OBS" moodCode="EVN">
+									<code code="406194006" displayName="death characteristics"
+										codeSystem="2.16.840.1.113883.6.96"
+										codeSystemName="SNOMED CT">
+										<originalText>Describe cause of death:</originalText>
+									</code>
+									<statusCode code="completed"/>
+									<value xsi:type="ST">Patient died from reaction to drug</value>
+								</observation>
+							</entryRelationship>
+						</observation>
+					</entry>
+					<!-- Lesion Number: /trim/act/relationship/act/relationship/@name=["lesionNo"]-->
+					<entry typeCode="DRIV">
+						<observation classCode="OBS" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.28"
+								assigningAuthorityName="CCD"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"
+								assigningAuthorityName="IHE PCC"/>
+							<id nullFlavor="NI"/>
+							<code nullFlavor="OTH">
+								<originalText>Target Lesion</originalText>
+							</code>
+							<value xsi:type="INT" value="1"/>
+						</observation>
+					</entry>
+					
+					<!-- Lesion Longest Diameter: /trim/act/relationship/act/relationship/@name=["longestDiameter]-->
+					<entry typeCode="DRIV">
+						<observation classCode="OBS" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.28"
+								assigningAuthorityName="CCD"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"
+								assigningAuthorityName="IHE PCC"/>
+							<id nullFlavor="NI"/>
+							<code code="396361002" displayName="lesion size, largest dimension" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
+								<originalText>Longest Diameter (LD)</originalText>
+							</code>
+							<!-- transform should transform whatever unit is indicated - could be either cm or mm - but it seems to be a free text entry (ST) -->
+							<value xsi:type="PQ" value="3.5" unit="cm"/>
+						</observation>
+					</entry>
+					
+					<!-- Survival status: /trim/act/relationship/act/relationship/@name=["survivalStatus"] -->
+					<entry typeCode="DRIV">
+						<observation classCode="OBS" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.28" assigningAuthorityName="CCD"/>
+							<id nullFlavor="NI"/>
+							<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+							<statusCode code="completed"/>
+							<effectiveTime nullFlavor="NI"/>
+							<value xsi:type="CD" code="309032007" displayName="research administrative status" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED" >
+								<originalText>Survival status</originalText>
+							</value>
+							<entryRelationship typeCode="REFR">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.28" assigningAuthorityName="CCD"/>
+									<id nullFlavor="NI"/>
+									<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+									<statusCode code="completed"/>
+									<effectiveTime nullFlavor="NI"/>
+									<value xsi:type="CD" code="444590007" displayName="subject in clinical trial unable to be contacted" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED" >
+										<originalText>Lost to follow-up</originalText>
+									</value>
+								</observation>
+							</entryRelationship>
+						</observation>
+					</entry>
+					
+					<!-- /trim/act/relationship/act/relationship/[@name="reportingPeriod"] -->
+					<entry>
+						<observation classCode="OBS" moodCode="EVN">
+							<!-- CCD social history observation template -->
+							<templateId root="2.16.840.1.113883.10.20.1.33" assigningAuthorityName="CCD"/>
+							<id nullFlavor="NI"/>
+							<code code="55187-9"  displayName="Reporting parameters" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" >
+								<originalText>Reporting Period</originalText>
+							</code>
+							<statusCode code="completed"/>
+							<effectiveTime>
+								<low value="20101101" /> <!-- From (last previous contact) -->
+								<high value="20110228" /> <!-- to (last contact or death) -->
+							</effectiveTime>
+							<value xsi:type="CD" nullFlavor="OTH">
+								<originalText>From (last previous contact)To (last contact or death)</originalText>
+							</value>
+						</observation>
+					</entry>
+				</section>
+			</component>
+			<!-- Procedures section -->
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.12" assigningAuthorityName="CCD"/>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.13.2.11"
+						assigningAuthorityName="IHE"/>
+					<templateId root="2.16.840.1.113883.3.88.11.83.145"
+						assigningAuthorityName="HITSP"/>
+					<code code="47519-4" codeSystem="2.16.840.1.113883.6.1"
+						displayName="History of procedures"/>
+					<title>Procedures</title>
+					<text/>
+				</section>
+			</component>
+			<!-- 
+********************************************************
+Vital Signs section 6/3 C32'd)
+********************************************************
+-->
+			<component>
+				<section>
+					<!-- CCD Vital signs section template -->
+					<templateId root="2.16.840.1.113883.10.20.1.16"/>
+					<!-- HITSP Vital signs section template -->
+					<templateId root="2.16.840.1.113883.3.88.11.83.119"/>
+					<!-- IHE Vital signs section template -->
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.25"/>
+					<!-- IHE CODED Vital signs section template -->
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.2"/>
+					<code code="8716-3" displayName="Physical Findings - Vital signs"
+						codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+					<title>Vital Signs</title>
+					<text>
+						<table border="1" width="100%">
+							<thead>
+								<tr>
+									<th align="right">Date / Time:</th>
+									<th>April 7, 2010 </th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th ID="O-3" align="left">Body Weight</th>
+
+									<td>86 pounds</td>
+								</tr>
+								<tr>
+									<th ID="O-4" align="left">Body Height</th>
+									<td>60 inches</td>
+								</tr>
+								<tr>
+									<th ID="O-5" align="left">Body Surface Area</th>
+									<td>1.31 m2</td>
+								</tr>
+
+
+							</tbody>
+						</table>
+					</text>
+
+					<!-- IHE Vital signs organizer - required by HITSP-->
+					<entry typeCode="DRIV">
+						<organizer classCode="CLUSTER" moodCode="EVN">
+							<!-- CCD  Results organizer template-->
+							<templateId root="2.16.840.1.113883.10.20.1.32"/>
+							<!-- CCD  Vital signs organizer template-->
+							<templateId root="2.16.840.1.113883.10.20.1.35"/>
+							<!-- IHE Vital signs organizer template -->
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.1"/>
+							<id root="c6f88320-67ad-11db-bd13-0800200c9a66"/>
+							<code code="46680005" codeSystem="2.16.840.1.113883.6.96"
+								displayName="Vital signs" codeSystemName="SNOMED CT"/>
+							<statusCode code="completed"/>
+							<effectiveTime value="20100407"/>
+							<!-- Body height in inches -->
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- CCD Result observation template Id -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<!-- HITSP Vital sign observation template Id -->
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<!-- IHE Simple observation template Id -->
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<!-- IHE Vital sign observation template Id -->
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<id root="c6f88321-67ad-11db-bd13-0800200c9a66"/>
+									<code code="8302-2" codeSystem="2.16.840.1.113883.6.1"
+										displayName="Body height (measured)"/>
+									<text><reference value="#O-3"/></text>
+									<statusCode code="completed"/>
+									<effectiveTime value="20100407"/>
+									<value xsi:type="PQ" value="60" unit="[in_us]"/>
+								</observation>
+							</component>
+							<!-- Body weight in pounds -->
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- CCD Result observation template Id -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<!-- HITSP Vital sign observation template Id -->
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<!-- IHE Simple observation template Id -->
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<!-- IHE Vital sign observation template Id -->
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<id root="c6f88322-67ad-11db-bd13-0800200c9a66"/>
+									<code code="3141-9" codeSystem="2.16.840.1.113883.6.1"
+										displayName="Body weight (measured)"/>
+									<text><reference value="#O-4"/></text>
+									<statusCode code="completed"/>
+									<effectiveTime value="20100407"/>
+									<value xsi:type="PQ" value="86" unit="[lb_av]"/>
+								</observation>
+							</component>
+							<!-- Note that BSA is not an "allowable" IHE (C32) VS - therefor will be a simple CCD result observation -->
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- CCD Result observation template Id -->
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="NCITemp1"/>
+									<id root="c6f88322-67ad-11db-bd13-0800200c9a66"/>
+									<code code="301898006" codeSystem="2.16.840.1.113883.6.96"
+										displayName="Body surface area"/>
+									<text><reference value="#O-5"/></text>
+									<statusCode code="completed"/>
+									<effectiveTime value="20100407"/>
+									<value xsi:type="PQ" value="1.31" unit="m2"/>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+				</section>
+			</component>
+			<!-- 
+				********************************************************
+				Functional Status section (6/2: not yet C32'd)
+				********************************************************
+			-->
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.5"/>
+					<!-- Functional status section template -->
+					<code code="47420-5" codeSystem="2.16.840.1.113883.6.1"/>
+					<title>Functional Status</title>
+					<text>
+						<table border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Performance Status</th>
+									<th>Level</th>
+									<th>Date</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>ECOG</td>
+									<td>1</td>
+									<td>Apr 7, 2010</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry typeCode="DRIV">
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.27"/>
+							<!-- CCD Problem act template -->
+							<id root="6z2fa88d-4174-4909-aece-db44b60a3abb"/>
+							<code nullFlavor="NA"/>
+							<entryRelationship typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<!-- CCD Problem observation template -->
+									<templateId root="NCITemp2"/>
+									<id root="fd07111a-b15b-4dce-8518-1274d07f142a"/>
+									<code code="423740007" codeSystem="2.16.840.1.113883.6.96"
+										displayName="ECOG performance status"/>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low value="20100407"/>
+									</effectiveTime>
+									<value xsi:type="INT" value="1"/>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+				</section>
+			</component>
+
+			<!--
+				********************************************************
+				Medications section (6/3 not yet C32)
+				********************************************************
+			-->
+			<!-- Chemotherapy regimens administered in this section -->
+
+			<component>
+				<section>
+					<!-- CCD Medications section template -->
+					<templateId root="2.16.840.1.113883.10.20.1.8"/>
+					<templateId root="NCITemp3"/>
+					<code code="10160-0" codeSystem="2.16.840.1.113883.6.1"/>
+					<title>Medications</title>
+
+					<text>
+						<table border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Chemotherapy Regimen</th>
+									<th>Drug</th>
+									<th colspan="2">Dates</th>
+
+								</tr>
+								<tr>
+									<td> </td>
+									<td> </td>
+									<td>START</td>
+									<td>END</td>
+
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th>TAC Regimen</th>
+									<th>For 4 months</th>
+									<th>1/6/10</th>
+									<th>5/6/10</th>
+								</tr>
+								<tr>
+									<td/>
+									<td>Docetaxel (Taxotere) every 21 days for 4 months</td>
+									<td>1/6/10</td>
+									<td>5/6/10</td>
+								</tr>
+								<tr>
+									<td/>
+									<td>Doxorubicin (Adriamycin)every 21 days for 4 months</td>
+									<td/>
+									<td/>
+								</tr>
+								<tr>
+									<td/>
+									<td>Cyclophosphamide every 21 days for 4 months</td>
+									<td/>
+									<td/>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<!-- Treatment Plan Name: "/trim/act/relationship/[@name=[“taxaneRegimens”] /trim/act/relationship/[@name=[“anthracyclineRegimens”]/trim/act/relationship/[@name=[“investigationalRegimens”]-->
+
+					<!-- Modeling: 69960004 cancer chemotherapy regimen (procedure)= Treatment Plan Name with
+						name of regimen in:originalText and component entryRelationships with the chemo agent (Treatment title)-->
+					<entry typeCode="DRIV">
+						<procedure classCode="PROC" moodCode="EVN">
+							<!-- Procedure templates -->
+							<templateId root="2.16.840.1.113883.10.20.1.29"
+								assigningAuthorityName="CCD"/>
+							<id root="230a5fb5-1ada-11e0-ac64-0800200c9a66"/>
+							<code code="69960004" codeSystem="2.16.840.1.113883.6.96"
+								displayName="cancer chemotherapy regimen">
+								<originalText>Treatment Plan Name: taxaneRegimens</originalText>
+							</code>
+							<statusCode code="completed"/>
+							<effectiveTime xsi:type="IVL_TS">
+								<!-- Treatment Regimen - start of cycle: (taxane/anthracycline/investigational) therapy -->
+								<low value="20100427"/>
+								<!-- Last Treatment Date of (taxane/anthracycline/investigational) therapy -->
+								<high value="20100713"/>
+							</effectiveTime>
+							<!-- Off Treatment reason -->
+							<entryRelationship typeCode="REFR">
+								<observation classCode="OBS" moodCode="EVN">
+									<code code="419617009"
+										displayName="reason for procedure cancelation"
+										codeSystem="2.16.840.1.113883.6.96"
+										codeSystemName="SNOMED-CT">
+										<originalText>Treatment end reason</originalText>
+									</code>
+									<statusCode code="completed"/>
+									<value xsi:type="CD" code="182834008"
+										displayName="drug course completed"
+										codeSystem="2.16.840.1.113883.6.96"
+										codeSystemName="SNOMED-CT">
+										<originalText>Treatment completed per protocol
+											criteria</originalText>
+									</value>
+								</observation>
+							</entryRelationship>
+							<!-- Treatment Regimen - title -->
+							<entryRelationship typeCode="COMP">
+								<substanceAdministration classCode="SBADM" moodCode="EVN">
+									<!-- CCD Medication activity template -->
+									<templateId root="2.16.840.1.113883.10.20.1.24"/>
+									<id root="230a5fb6-1ada-11e0-ac64-0800200c9a66"/>
+									<statusCode code="completed"/>
+									<!-- effectiveTimes are not available on the individual drugs ("regimen" inside the "regimenS") -->
+									<effectiveTime nullFlavor="NI"/>
+									<!-- Completed Cycles -->
+									<repeatNumber value="12"/>
+									<consumable>
+										<manufacturedProduct>
+											<!-- Product template -->
+											<templateId root="2.16.840.1.113883.10.20.1.53"/>
+											<manufacturedMaterial>
+												<code nullFlavor="OTH">
+												<!-- ST (text) entered drug name -->
+												<originalText>Doxorubicin
+												(Adriamycin)</originalText>
+												</code>
+											</manufacturedMaterial>
+										</manufacturedProduct>
+									</consumable>
+									<!-- Dose Modification -->
+									<entryRelationship typeCode="REFR">
+										<observation classCode="OBS" moodCode="EVN">
+											<code code="371133007"
+												displayName="treatment modification"
+												codeSystem="2.16.840.1.113883.6.96"
+												codeSystemName="SNOMED-CT">
+												<originalText>Dose modification</originalText>
+											</code>
+											<statusCode code="completed"/>
+											<value xsi:type="ST">Whatever gets written in</value>
+										</observation>
+									</entryRelationship>
+								</substanceAdministration>
+							</entryRelationship>
+						</procedure>
+					</entry>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

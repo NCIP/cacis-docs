@@ -1,0 +1,4598 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trim xmlns="urn:tolven-org:trim:4.0">
+  <extends>patientAct</extends>
+  <name>reg/evn/clinicalStaging</name>
+  <description>Clinical Staging</description>
+  <page>clinicalStaging.xhtml</page>
+  <drilldown>clinicalStagingDD.xhtml</drilldown>
+  <menu>global:clinicalStagingMenu</menu>
+  <tolvenEventId timestamp="20110722174303+0000" principal="sarah.davis@ucsfmedctr.org"
+    application="echr" path="echr:patient-1823431:clinicalNote-1833316" id="1833316"
+    accountId="173000"/>
+  <application signatureRequired="true" name="echr">
+    <instance>echr:patient:clinicalNote</instance>
+    <wip>echr:activity:all</wip>
+  </application>
+  <act moodCode="EVN" classCode="OBS">
+    <bind phase="create" application="echr">
+      <placeholder bindAction="create">
+        <path>echr:patient:clinicalNote</path>
+      </placeholder>
+    </bind>
+    <id>
+      <II>
+        <root>1.2.1.173000</root>
+        <extension>echr:patient-1823431:clinicalNote-1833315</extension>
+      </II>
+    </id>
+    <code>
+      <CD>
+        <code>OINT</code>
+        <codeSystemName>HL7</codeSystemName>
+        <codeSystemVersion>3.0</codeSystemVersion>
+      </CD>
+    </code>
+    <statusCode>active</statusCode>
+    <title>
+      <ST>Clinical Staging</ST>
+    </title>
+    <effectiveTime>
+      <label>Date of Exam</label>
+      <new function="now" datatype="TS"/>
+      <TS>
+        <value>20110722104303-0700</value>
+      </TS>
+    </effectiveTime>
+    <participation typeCode="SBJ" name="subject">
+      <role classCode="PAT">
+        <bind application="echr">
+          <placeholder>
+            <path>echr:patient</path>
+          </placeholder>
+        </bind>
+        <bind application="ephr">
+          <placeholder>
+            <path>ephr:patient</path>
+          </placeholder>
+        </bind>
+        <id>
+          <II>
+            <root>1.2.1.173000</root>
+            <extension>echr:patient-1823431</extension>
+          </II>
+        </id>
+        <player determinerCode="INSTANCE" classCode="PSN">
+          <name>
+            <label>Patient Name</label>
+            <EN>
+              <label>Legal Name</label>
+              <use>L</use>
+              <part>
+                <label>First Name</label>
+                <type>GIV</type>
+                <ST>Happy</ST>
+              </part>
+              <part>
+                <label>Middle Name</label>
+                <type>GIV</type>
+                <ST/>
+              </part>
+              <part>
+                <label>Last Name</label>
+                <type>FAM</type>
+                <ST>Birthday</ST>
+              </part>
+            </EN>
+          </name>
+        </player>
+      </role>
+    </participation>
+    <participation typeCode="ENT" name="dataEnterer">
+      <role classCode="ROL">
+        <id>
+          <II>
+            <root>1.2.1.173000</root>
+            <extension>sarah.davis@ucsfmedctr.org</extension>
+          </II>
+        </id>
+      </role>
+    </participation>
+    <relationship typeCode="PERT" direction="OUT" name="examDate">
+      <act moodCode="EVN" classCode="OBS">
+        <title>
+          <ST>Date of Exam</ST>
+        </title>
+        <effectiveTime>
+          <label>Date of Exam</label>
+          <new function="now" datatype="TS"/>
+          <TS>
+            <value>20110722</value>
+          </TS>
+        </effectiveTime>
+      </act>
+    </relationship>
+    <relationship typeCode="PERT" direction="OUT" name="timePoint">
+      <act moodCode="EVN" classCode="OBS">
+        <title>
+          <ST>Time Point</ST>
+        </title>
+        <observation>
+          <value>
+            <label>Time Point</label>
+            <valueSet>timePoint</valueSet>
+            <CE>
+              <displayName>Final Staging</displayName>
+              <code>C0183106</code>
+              <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+              <codeSystemVersion>2007AA</codeSystemVersion>
+            </CE>
+          </value>
+        </observation>
+      </act>
+    </relationship>
+    <relationship typeCode="NAME" direction="IN" name="stagingStatus">
+      <act moodCode="EVN" classCode="ENTRY">
+        <title>
+          <ST>Staging Status</ST>
+        </title>
+        <observation>
+          <value>
+            <label> Physical Exam </label>
+            <valueSet>stagingStatus</valueSet>
+            <CE>
+              <displayName>Done</displayName>
+              <code>C0183108</code>
+              <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+              <codeSystemVersion>2007AA</codeSystemVersion>
+            </CE>
+          </value>
+          <value>
+            <label> Breast Imaging </label>
+            <valueSet>stagingStatus</valueSet>
+            <CE>
+              <displayName>Done</displayName>
+              <code>C0183108</code>
+              <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+              <codeSystemVersion>2007AA</codeSystemVersion>
+            </CE>
+          </value>
+          <value>
+            <label> Diagnostic Index Biopsy </label>
+            <valueSet>stagingStatus</valueSet>
+            <CE>
+              <displayName>Done</displayName>
+              <code>C0183108</code>
+              <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+              <codeSystemVersion>2007AA</codeSystemVersion>
+            </CE>
+          </value>
+          <value>
+            <label> Metastatic workup </label>
+            <valueSet>stagingStatus</valueSet>
+            <CE>
+              <displayName>Done</displayName>
+              <code>C0183108</code>
+              <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+              <codeSystemVersion>2007AA</codeSystemVersion>
+            </CE>
+          </value>
+          <value>
+            <label> Additional diagnostic workup </label>
+            <valueSet>stagingStatus</valueSet>
+            <CE>
+              <displayName>Done</displayName>
+              <code>C0183108</code>
+              <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+              <codeSystemVersion>2007AA</codeSystemVersion>
+            </CE>
+          </value>
+        </observation>
+      </act>
+    </relationship>
+    <relationship typeCode="NAME" direction="IN" name="breastExam">
+      <act moodCode="EVN" classCode="ENTRY">
+        <observation>
+          <value>
+            <label> Breast Exam </label>
+            <valueSet>breastExam</valueSet>
+            <CE>
+              <displayName>Exam done</displayName>
+              <code>C0183108</code>
+              <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+              <codeSystemVersion>2007AA</codeSystemVersion>
+            </CE>
+          </value>
+        </observation>
+      </act>
+    </relationship>
+    <relationship typeCode="PERT" direction="OUT" name="findings">
+      <act moodCode="EVN" classCode="OBS">
+        <title>
+          <ST>Findings</ST>
+        </title>
+        <relationship typeCode="PERT" direction="OUT" name="finding"
+          sourceTrim="path/clinicalFindingTemplate">
+          <act moodCode="EVN" classCode="OBS">
+            <title>
+              <ST/>
+            </title>
+            <relationship typeCode="PERT" direction="OUT" name="laterality">
+              <act moodCode="EVN" classCode="OBS">
+                <observation>
+                  <value>
+                    <label>Laterality</label>
+                    <CE>
+                      <displayName>Left</displayName>
+                      <code>C0183108</code>
+                      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                      <codeSystemVersion>2007AA</codeSystemVersion>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="abnormality">
+              <act moodCode="EVN" classCode="OBS">
+                <observation>
+                  <value>
+                    <label>Abnormality</label>
+                    <CE>
+                      <displayName>Mass</displayName>
+                      <code>C0183108</code>
+                      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                      <codeSystemVersion>2007AA</codeSystemVersion>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="size">
+              <act moodCode="EVN" classCode="OBS">
+                <observation>
+                  <value>
+                    <label>Size</label>
+                    <PQ>
+                      <value>4.0</value>
+                    </PQ>
+                  </value>
+                  <value>
+                    <label/>
+                    <PQ>
+                      <value>4.1</value>
+                    </PQ>
+                  </value>
+                  <value>
+                    <label>CM</label>
+                    <CE>
+                      <displayName>cm</displayName>
+                      <code>278292003</code>
+                      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+                      <codeSystemVersion>2007AA</codeSystemVersion>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="location">
+              <act moodCode="EVN" classCode="OBS">
+                <observation>
+                  <value>
+                    <ST>4 o'clock</ST>
+                  </value>
+                  <value>
+                    <CE/>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="indexLesion" enabled="true">
+              <act moodCode="EVN" classCode="OBS"/>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="quality">
+              <act moodCode="EVN" classCode="OBS">
+                <observation>
+                  <value>
+                    <label>Quality</label>
+                    <CE>
+                      <displayName>Firm</displayName>
+                      <code>278292004</code>
+                      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+                      <codeSystemVersion>2007AA</codeSystemVersion>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="mobility">
+              <act moodCode="EVN" classCode="OBS">
+                <observation>
+                  <value>
+                    <label>Mobility</label>
+                    <CE>
+                      <displayName>Fixed</displayName>
+                      <code>278292003</code>
+                      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+                      <codeSystemVersion>2007AA</codeSystemVersion>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="suspicion">
+              <act moodCode="EVN" classCode="OBS">
+                <observation>
+                  <value>
+                    <label>Clinical Suspicion</label>
+                    <CE>
+                      <displayName>Suspicious</displayName>
+                      <code>278292005</code>
+                      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+                      <codeSystemVersion>2007AA</codeSystemVersion>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="biospy">
+              <act moodCode="EVN" classCode="OBS">
+                <observation>
+                  <value>
+                    <label>Biospy</label>
+                    <CE>
+                      <displayName>Yes</displayName>
+                      <code>C0183107</code>
+                      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                      <codeSystemVersion>2007AA</codeSystemVersion>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="correlation">
+              <act moodCode="EVN" classCode="OBS">
+                <observation>
+                  <value>
+                    <label>Imaging correlation</label>
+                    <CE>
+                      <displayName>Yes</displayName>
+                      <code>C0183107</code>
+                      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                      <codeSystemVersion>2007AA</codeSystemVersion>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="finding"
+          sourceTrim="path/clinicalFindingTemplate">
+          <act moodCode="EVN" classCode="OBS">
+            <title>
+              <ST/>
+            </title>
+            <relationship typeCode="PERT" direction="OUT" name="laterality">
+              <act moodCode="EVN" classCode="OBS">
+                <observation>
+                  <value>
+                    <label>Laterality</label>
+                    <CE>
+                      <displayName>Right</displayName>
+                      <code>C0183107</code>
+                      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                      <codeSystemVersion>2007AA</codeSystemVersion>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="abnormality">
+              <act moodCode="EVN" classCode="OBS">
+                <observation>
+                  <value>
+                    <label>Abnormality</label>
+                    <CE>
+                      <displayName>Density</displayName>
+                      <code>C0183107</code>
+                      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                      <codeSystemVersion>2007AA</codeSystemVersion>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="size">
+              <act moodCode="EVN" classCode="OBS">
+                <observation>
+                  <value>
+                    <label>Size</label>
+                    <PQ>
+                      <value>2.0</value>
+                    </PQ>
+                  </value>
+                  <value>
+                    <label/>
+                    <PQ>
+                      <value>3.3</value>
+                    </PQ>
+                  </value>
+                  <value>
+                    <label>CM</label>
+                    <CE>
+                      <displayName>cm</displayName>
+                      <code>278292003</code>
+                      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+                      <codeSystemVersion>2007AA</codeSystemVersion>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="location">
+              <act moodCode="EVN" classCode="OBS">
+                <observation>
+                  <value>
+                    <ST>6:00</ST>
+                  </value>
+                  <value>
+                    <CE/>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="indexLesion" enabled="false">
+              <act moodCode="EVN" classCode="OBS"/>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="quality">
+              <act moodCode="EVN" classCode="OBS">
+                <observation>
+                  <value>
+                    <label>Quality</label>
+                    <CE>
+                      <displayName>Rubbery</displayName>
+                      <code>278292006</code>
+                      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+                      <codeSystemVersion>2007AA</codeSystemVersion>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="mobility">
+              <act moodCode="EVN" classCode="OBS">
+                <observation>
+                  <value>
+                    <label>Mobility</label>
+                    <CE>
+                      <displayName>Mobile</displayName>
+                      <code>278292004</code>
+                      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+                      <codeSystemVersion>2007AA</codeSystemVersion>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="suspicion">
+              <act moodCode="EVN" classCode="OBS">
+                <observation>
+                  <value>
+                    <label>Clinical Suspicion</label>
+                    <CE>
+                      <displayName>Indeterminate</displayName>
+                      <code>278292004</code>
+                      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+                      <codeSystemVersion>2007AA</codeSystemVersion>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="biospy">
+              <act moodCode="EVN" classCode="OBS">
+                <observation>
+                  <value>
+                    <label>Biospy</label>
+                    <CE>
+                      <displayName>No</displayName>
+                      <code>C0183108</code>
+                      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                      <codeSystemVersion>2007AA</codeSystemVersion>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="correlation">
+              <act moodCode="EVN" classCode="OBS">
+                <observation>
+                  <value>
+                    <label>Imaging correlation</label>
+                    <CE>
+                      <displayName>Yes</displayName>
+                      <code>C0183107</code>
+                      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                      <codeSystemVersion>2007AA</codeSystemVersion>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="finding"
+          sourceTrim="path/clinicalFindingTemplate">
+          <act moodCode="EVN" classCode="OBS">
+            <title>
+              <ST/>
+            </title>
+            <relationship typeCode="PERT" direction="OUT" name="laterality">
+              <act moodCode="EVN" classCode="OBS">
+                <observation>
+                  <value>
+                    <label>Laterality</label>
+                    <CE>
+                      <displayName>Left</displayName>
+                      <code>C0183108</code>
+                      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                      <codeSystemVersion>2007AA</codeSystemVersion>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="abnormality">
+              <act moodCode="EVN" classCode="OBS">
+                <observation>
+                  <value>
+                    <label>Abnormality</label>
+                    <CE>
+                      <displayName>Node</displayName>
+                      <code>C0183106</code>
+                      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                      <codeSystemVersion>2007AA</codeSystemVersion>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="size">
+              <act moodCode="EVN" classCode="OBS">
+                <observation>
+                  <value>
+                    <label>Size</label>
+                    <PQ>
+                      <value>1.0</value>
+                    </PQ>
+                  </value>
+                  <value>
+                    <label/>
+                    <PQ>
+                      <value>1.0</value>
+                    </PQ>
+                  </value>
+                  <value>
+                    <label>CM</label>
+                    <CE>
+                      <displayName>cm</displayName>
+                      <code>278292003</code>
+                      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+                      <codeSystemVersion>2007AA</codeSystemVersion>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="location">
+              <act moodCode="EVN" classCode="OBS">
+                <observation>
+                  <value>
+                    <ST/>
+                  </value>
+                  <value>
+                    <CE>
+                      <displayName>Axillary</displayName>
+                      <code>C0183101</code>
+                      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                      <codeSystemVersion>2007AA</codeSystemVersion>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="indexLesion" enabled="false">
+              <act moodCode="EVN" classCode="OBS"/>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="quality">
+              <act moodCode="EVN" classCode="OBS">
+                <observation>
+                  <value>
+                    <label>Quality</label>
+                    <CE>
+                      <displayName>Hard</displayName>
+                      <code>278292003</code>
+                      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+                      <codeSystemVersion>2007AA</codeSystemVersion>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="mobility">
+              <act moodCode="EVN" classCode="OBS">
+                <observation>
+                  <value>
+                    <label>Mobility</label>
+                    <CE>
+                      <displayName>Matted</displayName>
+                      <code>278292005</code>
+                      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+                      <codeSystemVersion>2007AA</codeSystemVersion>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="suspicion">
+              <act moodCode="EVN" classCode="OBS">
+                <observation>
+                  <value>
+                    <label>Clinical Suspicion</label>
+                    <CE>
+                      <displayName>Suspicious</displayName>
+                      <code>278292005</code>
+                      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+                      <codeSystemVersion>2007AA</codeSystemVersion>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="biospy">
+              <act moodCode="EVN" classCode="OBS">
+                <observation>
+                  <value>
+                    <label>Biospy</label>
+                    <CE>
+                      <displayName>No</displayName>
+                      <code>C0183108</code>
+                      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                      <codeSystemVersion>2007AA</codeSystemVersion>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="correlation">
+              <act moodCode="EVN" classCode="OBS">
+                <observation>
+                  <value>
+                    <label>Imaging correlation</label>
+                    <CE>
+                      <displayName>No</displayName>
+                      <code>C0183108</code>
+                      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                      <codeSystemVersion>2007AA</codeSystemVersion>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+          </act>
+        </relationship>
+      </act>
+      <choice include="path/clinicalFindingTemplate" title="findingTemplate" name="findingTemplate"
+      />
+    </relationship>
+    <relationship typeCode="NAME" direction="IN" name="nipple">
+      <act moodCode="EVN" classCode="ENTRY">
+        <title>
+          <ST>Nipple</ST>
+        </title>
+        <observation>
+          <value>
+            <label> Nipple Characteristics: </label>
+            <valueSet>nippleCharacteristics</valueSet>
+            <CE>
+              <displayName>Everted</displayName>
+              <code>C0183107</code>
+              <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+              <codeSystemVersion>2007AA</codeSystemVersion>
+            </CE>
+          </value>
+          <value>
+            <label> Nipple Discharge: </label>
+            <valueSet>booleanStatus</valueSet>
+            <CE>
+              <displayName>Yes</displayName>
+              <code>C0183107</code>
+              <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+              <codeSystemVersion>2007AA</codeSystemVersion>
+            </CE>
+          </value>
+          <value>
+            <label>YesValueText</label>
+            <ST>discharge text box</ST>
+          </value>
+        </observation>
+      </act>
+    </relationship>
+    <relationship typeCode="NAME" direction="IN" name="skin">
+      <act moodCode="EVN" classCode="ENTRY">
+        <title>
+          <ST>Skin</ST>
+        </title>
+        <observation>
+          <value>
+            <label>Skin changes</label>
+            <valueSet>booleanStatus</valueSet>
+            <CE>
+              <displayName>Yes</displayName>
+              <code>C0183107</code>
+              <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+              <codeSystemVersion>2007AA</codeSystemVersion>
+            </CE>
+          </value>
+          <value>
+            <label/>
+            <valueSet>skinChangesValues</valueSet>
+            <SETCE>
+              <displayName>Ulceration</displayName>
+              <code>C0183108</code>
+              <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+              <codeSystemVersion>2007AA</codeSystemVersion>
+            </SETCE>
+            <SETCE>
+              <displayName>Nodular</displayName>
+              <code>C0183107</code>
+              <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+              <codeSystemVersion>2007AA</codeSystemVersion>
+            </SETCE>
+            <SETCE>
+              <displayName>Erythema</displayName>
+              <code>C0183106</code>
+              <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+              <codeSystemVersion>2007AA</codeSystemVersion>
+            </SETCE>
+            <SETCE>
+              <displayName>Edema</displayName>
+              <code>C0183105</code>
+              <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+              <codeSystemVersion>2007AA</codeSystemVersion>
+            </SETCE>
+            <SETCE>
+              <displayName>Peau d'Orange</displayName>
+              <code>C0183104</code>
+              <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+              <codeSystemVersion>2007AA</codeSystemVersion>
+            </SETCE>
+          </value>
+        </observation>
+        <relationship typeCode="PERT" direction="OUT" name="dimensions">
+          <act moodCode="EVN" classCode="OBS">
+            <title>
+              <ST>Dimension</ST>
+            </title>
+            <observation>
+              <value>
+                <label>Dimension</label>
+                <ST>1</ST>
+              </value>
+              <value>
+                <ST>4</ST>
+              </value>
+              <value>
+                <valueSet>units</valueSet>
+                <CE>
+                  <displayName>cm</displayName>
+                  <code>278292003</code>
+                  <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+                  <codeSystemVersion>2007AA</codeSystemVersion>
+                </CE>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="location">
+          <act moodCode="EVN" classCode="OBS">
+            <title>
+              <ST>Location</ST>
+            </title>
+            <observation>
+              <value>
+                <label>o'clock/distance from nipple</label>
+                <ST>2 o'clock about 2cm from nipple</ST>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+      </act>
+    </relationship>
+    <relationship typeCode="PERT" direction="OUT" name="metastasisEvidence">
+      <act moodCode="EVN" classCode="OBS">
+        <title>
+          <ST>Evidence of metastasis</ST>
+        </title>
+        <observation>
+          <value>
+            <valueSet>metastasisEvidence</valueSet>
+            <CE>
+              <displayName>Yes</displayName>
+              <code>C0183107</code>
+              <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+              <codeSystemVersion>2007AA</codeSystemVersion>
+            </CE>
+          </value>
+        </observation>
+      </act>
+    </relationship>
+    <relationship typeCode="PERT" direction="OUT" name="metastasisWorkUps">
+      <act moodCode="EVN" classCode="OBS">
+        <title>
+          <ST>Metastatic Work-up</ST>
+        </title>
+        <relationship typeCode="PERT" direction="OUT" name="metastasisWorkUp" enabled="true">
+          <act moodCode="EVN" classCode="OBS">
+            <title>
+              <ST>Bone</ST>
+            </title>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="true">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>PET CT</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                    <CE>
+                      <displayName>Negative</displayName>
+                      <code>C0183101</code>
+                      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                      <codeSystemVersion>2007AA</codeSystemVersion>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>PET</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>CT</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>MRI</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>Bone Scan</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>Plain Xray</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>Other</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+                <relationship typeCode="PERT" direction="OUT" name="otherText">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <ST/>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="biopsy">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>Biopsy</ST>
+                </title>
+                <observation>
+                  <value>
+                    <valueSet>metaStaticBiopsyValues</valueSet>
+                    <CE>
+                      <displayName>Not performed</displayName>
+                      <code>C0183103</code>
+                      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                      <codeSystemVersion>2007AA</codeSystemVersion>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="metastasisWorkUp" enabled="true">
+          <act moodCode="EVN" classCode="OBS">
+            <title>
+              <ST>Brain</ST>
+            </title>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="true">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>PET CT</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                    <CE>
+                      <displayName>Negative</displayName>
+                      <code>C0183101</code>
+                      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                      <codeSystemVersion>2007AA</codeSystemVersion>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>PET</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>CT</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>MRI</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>Plain Xray</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>Other</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+                <relationship typeCode="PERT" direction="OUT" name="otherText">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <ST/>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="biopsy">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>Biopsy</ST>
+                </title>
+                <observation>
+                  <value>
+                    <valueSet>metaStaticBiopsyValues</valueSet>
+                    <CE>
+                      <displayName>Not performed</displayName>
+                      <code>C0183103</code>
+                      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                      <codeSystemVersion>2007AA</codeSystemVersion>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="metastasisWorkUp" enabled="true">
+          <act moodCode="EVN" classCode="OBS">
+            <title>
+              <ST>Liver</ST>
+            </title>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="true">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>PET CT</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                    <CE>
+                      <displayName>Inconclusive</displayName>
+                      <code>C0183105</code>
+                      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                      <codeSystemVersion>2007AA</codeSystemVersion>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>PET</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>CT</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>MRI</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>Plain Xray</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>Other</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+                <relationship typeCode="PERT" direction="OUT" name="otherText">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <ST/>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="biopsy">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>Biopsy</ST>
+                </title>
+                <observation>
+                  <value>
+                    <valueSet>metaStaticBiopsyValues</valueSet>
+                    <CE>
+                      <displayName>Unable to perform</displayName>
+                      <code>C0183104</code>
+                      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                      <codeSystemVersion>2007AA</codeSystemVersion>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="metastasisWorkUp" enabled="true">
+          <act moodCode="EVN" classCode="OBS">
+            <title>
+              <ST>Chest(including Lung)</ST>
+            </title>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="true">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>PET CT</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                    <CE>
+                      <displayName>Negative</displayName>
+                      <code>C0183101</code>
+                      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                      <codeSystemVersion>2007AA</codeSystemVersion>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>PET</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>CT</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>MRI</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>Plain Xray</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>Other</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+                <relationship typeCode="PERT" direction="OUT" name="otherText">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <ST/>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="biopsy">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>Biopsy</ST>
+                </title>
+                <observation>
+                  <value>
+                    <valueSet>metaStaticBiopsyValues</valueSet>
+                    <CE>
+                      <displayName>Not performed</displayName>
+                      <code>C0183103</code>
+                      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                      <codeSystemVersion>2007AA</codeSystemVersion>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="metastasisWorkUp" enabled="false">
+          <act moodCode="EVN" classCode="OBS">
+            <title>
+              <ST>Adnexal</ST>
+            </title>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>PET CT</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>PET</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>CT</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>MRI</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>Plain Xray</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>Other</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+                <relationship typeCode="PERT" direction="OUT" name="otherText">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <ST/>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="biopsy">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>Biopsy</ST>
+                </title>
+                <observation>
+                  <value>
+                    <valueSet>metaStaticBiopsyValues</valueSet>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="metastasisWorkUp" enabled="false">
+          <act moodCode="EVN" classCode="OBS">
+            <title>
+              <ST>Peri-aortic</ST>
+            </title>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>PET CT</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>PET</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>CT</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>MRI</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>Plain Xray</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>Other</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+                <relationship typeCode="PERT" direction="OUT" name="otherText">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <ST/>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="biopsy">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>Biopsy</ST>
+                </title>
+                <observation>
+                  <value>
+                    <valueSet>metaStaticBiopsyValues</valueSet>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="metastasisWorkUp" enabled="false">
+          <act moodCode="EVN" classCode="OBS">
+            <title>
+              <ST>Other</ST>
+            </title>
+            <observation>
+              <value>
+                <ST/>
+              </value>
+            </observation>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>PET CT</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>PET</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>CT</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>MRI</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>Plain Xray</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="imaging" enabled="false">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>Other</ST>
+                </title>
+                <observation>
+                  <value>
+                    <label>Results</label>
+                    <valueSet>metastaticValues</valueSet>
+                  </value>
+                </observation>
+                <relationship typeCode="PERT" direction="OUT" name="otherText">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <ST/>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="biopsy">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST>Biopsy</ST>
+                </title>
+                <observation>
+                  <value>
+                    <valueSet>metaStaticBiopsyValues</valueSet>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+          </act>
+        </relationship>
+      </act>
+    </relationship>
+    <relationship typeCode="PERT" direction="OUT" name="studies">
+      <act moodCode="EVN" classCode="OBS">
+        <title>
+          <ST>Breast Studies</ST>
+        </title>
+        <relationship typeCode="PERT" direction="OUT" name="ultraSounds" enabled="true">
+          <act moodCode="EVN" classCode="OBS">
+            <title>
+              <ST>Ultrasound</ST>
+            </title>
+            <relationship typeCode="PERT" direction="OUT" name="ultraSound"
+              sourceTrim="path/clinicalStudyTemplate">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST/>
+                </title>
+                <effectiveTime>
+                  <label>Date</label>
+                  <new function="now" datatype="TS"/>
+                  <TS>
+                    <value>20110704000000-0700</value>
+                  </TS>
+                </effectiveTime>
+                <relationship typeCode="PERT" direction="OUT" name="size">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <label>Size</label>
+                        <ST/>
+                        <PQ>
+                          <value>3.0</value>
+                        </PQ>
+                      </value>
+                      <value>
+                        <label/>
+                        <ST/>
+                        <PQ>
+                          <value>3.0</value>
+                        </PQ>
+                      </value>
+                      <value>
+                        <label>CM</label>
+                        <CE>
+                          <displayName>cm</displayName>
+                          <code>278292003</code>
+                          <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+                          <codeSystemVersion>2007AA</codeSystemVersion>
+                        </CE>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+                <relationship typeCode="PERT" direction="OUT" name="finding">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <label>Finding</label>
+                        <SETCE>
+                          <displayName>High suspicion</displayName>
+                          <code>C0183105</code>
+                          <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                          <codeSystemVersion>2007AA</codeSystemVersion>
+                        </SETCE>
+                        <CE/>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+                <relationship typeCode="PERT" direction="OUT" name="laterality">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <label>Laterality</label>
+                        <CE>
+                          <displayName>Left</displayName>
+                          <code>C0183108</code>
+                          <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                          <codeSystemVersion>2007AA</codeSystemVersion>
+                        </CE>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+                <relationship typeCode="PERT" direction="OUT" name="location">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <ST>outer quandrant</ST>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+              </act>
+            </relationship>
+          </act>
+          <choice include="path/clinicalStudyTemplate" title="ultraSoundTemplate"
+            name="ultraSoundTemplate"/>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="mammograms" enabled="true">
+          <act moodCode="EVN" classCode="OBS">
+            <title>
+              <ST>Mammogram</ST>
+            </title>
+            <relationship typeCode="PERT" direction="OUT" name="mammogram"
+              sourceTrim="path/clinicalStudyTemplate">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST/>
+                </title>
+                <effectiveTime>
+                  <label>Date</label>
+                  <new function="now" datatype="TS"/>
+                  <TS>
+                    <value>20110627000000-0700</value>
+                  </TS>
+                </effectiveTime>
+                <relationship typeCode="PERT" direction="OUT" name="size">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <label>Size</label>
+                        <ST/>
+                        <PQ>
+                          <value>2.0</value>
+                        </PQ>
+                      </value>
+                      <value>
+                        <label/>
+                        <ST/>
+                        <PQ>
+                          <value>2.0</value>
+                        </PQ>
+                      </value>
+                      <value>
+                        <label>CM</label>
+                        <CE>
+                          <displayName>cm</displayName>
+                          <code>278292003</code>
+                          <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+                          <codeSystemVersion>2007AA</codeSystemVersion>
+                        </CE>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+                <relationship typeCode="PERT" direction="OUT" name="finding">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <label>Finding</label>
+                        <SETCE>
+                          <displayName>Spiculated mass</displayName>
+                          <code>C0183105</code>
+                          <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                          <codeSystemVersion>2007AA</codeSystemVersion>
+                        </SETCE>
+                        <CE/>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+                <relationship typeCode="PERT" direction="OUT" name="birads">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <label>BIRADS</label>
+                        <ST>5</ST>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+                <relationship typeCode="PERT" direction="OUT" name="presentOnPrior">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <label>Present on prior exam</label>
+                        <CE>
+                          <displayName>No</displayName>
+                          <code>C0183108</code>
+                          <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                          <codeSystemVersion>2007AA</codeSystemVersion>
+                        </CE>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+                <relationship typeCode="PERT" direction="OUT" name="changeFromPrior">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <label>Change from prior exam</label>
+                        <CE>
+                          <displayName>Yes</displayName>
+                          <code>C0183107</code>
+                          <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                          <codeSystemVersion>2007AA</codeSystemVersion>
+                        </CE>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+                <relationship typeCode="PERT" direction="OUT" name="stable">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <label>Yrs. Stable</label>
+                        <ST>0</ST>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+              </act>
+            </relationship>
+          </act>
+          <choice include="path/clinicalStudyTemplate" title="mammogramTemplate"
+            name="mammogramTemplate"/>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="breastMRIs" enabled="true">
+          <act moodCode="EVN" classCode="OBS">
+            <title>
+              <ST>Breast MRI</ST>
+            </title>
+            <relationship typeCode="PERT" direction="OUT" name="breastMRI"
+              sourceTrim="path/clinicalStudyTemplate">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST/>
+                </title>
+                <effectiveTime>
+                  <label>Date</label>
+                  <new function="now" datatype="TS"/>
+                  <TS>
+                    <value>20110713000000-0700</value>
+                  </TS>
+                </effectiveTime>
+                <relationship typeCode="PERT" direction="OUT" name="size">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <label>Size</label>
+                        <PQ>
+                          <value>4.0</value>
+                        </PQ>
+                      </value>
+                      <value>
+                        <label/>
+                        <PQ>
+                          <value>4.0</value>
+                        </PQ>
+                      </value>
+                      <value>
+                        <label>CM</label>
+                        <CE>
+                          <displayName>cm</displayName>
+                          <code>278292003</code>
+                          <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+                          <codeSystemVersion>2007AA</codeSystemVersion>
+                        </CE>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+                <relationship typeCode="PERT" direction="OUT" name="finding">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <label>Finding</label>
+                        <SETCE>
+                          <displayName>High suspicion</displayName>
+                          <code>C0183105</code>
+                          <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                          <codeSystemVersion>2007AA</codeSystemVersion>
+                        </SETCE>
+                        <CE/>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+                <relationship typeCode="PERT" direction="OUT" name="laterality">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <label>Laterality</label>
+                        <CE>
+                          <displayName>Left</displayName>
+                          <code>C0183108</code>
+                          <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                          <codeSystemVersion>2007AA</codeSystemVersion>
+                        </CE>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+                <relationship typeCode="PERT" direction="OUT" name="location">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <ST>outer quandarnt</ST>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+              </act>
+            </relationship>
+          </act>
+          <choice include="path/clinicalStudyTemplate" title="breastMRITemplate"
+            name="breastMRITemplate"/>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="others" enabled="true">
+          <act moodCode="EVN" classCode="OBS">
+            <title>
+              <ST>Other</ST>
+            </title>
+            <observation>
+              <value>
+                <label>Other</label>
+                <ST>thermography</ST>
+              </value>
+            </observation>
+            <relationship typeCode="PERT" direction="OUT" name="other"
+              sourceTrim="path/clinicalStudyTemplate">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST/>
+                </title>
+                <effectiveTime>
+                  <label>Date</label>
+                  <new function="now" datatype="TS"/>
+                  <TS>
+                    <value>20110718000000-0700</value>
+                  </TS>
+                </effectiveTime>
+                <relationship typeCode="PERT" direction="OUT" name="size">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <label>Size</label>
+                        <ST/>
+                        <PQ>
+                          <value>2.0</value>
+                        </PQ>
+                      </value>
+                      <value>
+                        <label/>
+                        <ST/>
+                        <PQ>
+                          <value>2.0</value>
+                        </PQ>
+                      </value>
+                      <value>
+                        <label>CM</label>
+                        <CE>
+                          <displayName>cm</displayName>
+                          <code>278292003</code>
+                          <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+                          <codeSystemVersion>2007AA</codeSystemVersion>
+                        </CE>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+                <relationship typeCode="PERT" direction="OUT" name="finding">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <label>Finding</label>
+                        <ST>finding text box</ST>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+                <relationship typeCode="PERT" direction="OUT" name="laterality">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <label>Laterality</label>
+                        <CE>
+                          <displayName>Left</displayName>
+                          <code>C0183108</code>
+                          <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                          <codeSystemVersion>2007AA</codeSystemVersion>
+                        </CE>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+                <relationship typeCode="PERT" direction="OUT" name="location">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <ST>location text box</ST>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+              </act>
+            </relationship>
+          </act>
+          <choice include="path/clinicalStudyTemplate" title="otherTemplate" name="otherTemplate"/>
+        </relationship>
+      </act>
+    </relationship>
+    <relationship typeCode="PERT" direction="OUT" name="rightStudies">
+      <act moodCode="EVN" classCode="OBS">
+        <title>
+          <ST>Breast Studies</ST>
+        </title>
+        <relationship typeCode="PERT" direction="OUT" name="ultraSounds" enabled="false">
+          <act moodCode="EVN" classCode="OBS">
+            <title>
+              <ST>Ultrasound</ST>
+            </title>
+          </act>
+          <choice include="path/clinicalStudyTemplate" title="ultraSoundTemplate"
+            name="ultraSoundTemplate"/>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="mammograms" enabled="true">
+          <act moodCode="EVN" classCode="OBS">
+            <title>
+              <ST>Mammogram</ST>
+            </title>
+            <relationship typeCode="PERT" direction="OUT" name="mammogram"
+              sourceTrim="path/clinicalStudyTemplate">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST/>
+                </title>
+                <effectiveTime>
+                  <label>Date</label>
+                  <new function="now" datatype="TS"/>
+                  <TS>
+                    <value>20110627000000-0700</value>
+                  </TS>
+                </effectiveTime>
+                <relationship typeCode="PERT" direction="OUT" name="size">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <label>Size</label>
+                        <ST/>
+                        <PQ>
+                          <value>0.0</value>
+                        </PQ>
+                      </value>
+                      <value>
+                        <label/>
+                        <ST/>
+                        <PQ>
+                          <value>0.0</value>
+                        </PQ>
+                      </value>
+                      <value>
+                        <label>CM</label>
+                        <CE>
+                          <displayName>cm</displayName>
+                          <code>278292003</code>
+                          <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+                          <codeSystemVersion>2007AA</codeSystemVersion>
+                        </CE>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+                <relationship typeCode="PERT" direction="OUT" name="finding">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <label>Finding</label>
+                        <CE/>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+                <relationship typeCode="PERT" direction="OUT" name="birads">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <label>BIRADS</label>
+                        <ST>1</ST>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+                <relationship typeCode="PERT" direction="OUT" name="presentOnPrior">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <label>Present on prior exam</label>
+                        <CE>
+                          <displayName>No</displayName>
+                          <code>C0183108</code>
+                          <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                          <codeSystemVersion>2007AA</codeSystemVersion>
+                        </CE>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+                <relationship typeCode="PERT" direction="OUT" name="changeFromPrior">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <label>Change from prior exam</label>
+                        <CE>
+                          <displayName>No</displayName>
+                          <code>C0183108</code>
+                          <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                          <codeSystemVersion>2007AA</codeSystemVersion>
+                        </CE>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+                <relationship typeCode="PERT" direction="OUT" name="stable">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <label>Yrs. Stable</label>
+                        <ST/>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+              </act>
+            </relationship>
+          </act>
+          <choice include="path/clinicalStudyTemplate" title="mammogramTemplate"
+            name="mammogramTemplate"/>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="breastMRIs" enabled="true">
+          <act moodCode="EVN" classCode="OBS">
+            <title>
+              <ST>Breast MRI</ST>
+            </title>
+            <relationship typeCode="PERT" direction="OUT" name="breastMRI"
+              sourceTrim="path/clinicalStudyTemplate">
+              <act moodCode="EVN" classCode="OBS">
+                <title>
+                  <ST/>
+                </title>
+                <effectiveTime>
+                  <label>Date</label>
+                  <new function="now" datatype="TS"/>
+                  <TS>
+                    <value>20110713000000-0700</value>
+                  </TS>
+                </effectiveTime>
+                <relationship typeCode="PERT" direction="OUT" name="size">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <label>Size</label>
+                        <PQ>
+                          <value>2.0</value>
+                        </PQ>
+                      </value>
+                      <value>
+                        <label/>
+                        <PQ>
+                          <value>2.0</value>
+                        </PQ>
+                      </value>
+                      <value>
+                        <label>CM</label>
+                        <CE>
+                          <displayName>cm</displayName>
+                          <code>278292003</code>
+                          <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+                          <codeSystemVersion>2007AA</codeSystemVersion>
+                        </CE>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+                <relationship typeCode="PERT" direction="OUT" name="finding">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <label>Finding</label>
+                        <SETCE>
+                          <displayName>Low suspicion</displayName>
+                          <code>C0183106</code>
+                          <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                          <codeSystemVersion>2007AA</codeSystemVersion>
+                        </SETCE>
+                        <CE/>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+                <relationship typeCode="PERT" direction="OUT" name="laterality">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <label>Laterality</label>
+                        <CE>
+                          <displayName>Right</displayName>
+                          <code>C0183107</code>
+                          <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                          <codeSystemVersion>2007AA</codeSystemVersion>
+                        </CE>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+                <relationship typeCode="PERT" direction="OUT" name="location">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <ST>central breast</ST>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+              </act>
+            </relationship>
+          </act>
+          <choice include="path/clinicalStudyTemplate" title="breastMRITemplate"
+            name="breastMRITemplate"/>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="others" enabled="false">
+          <act moodCode="EVN" classCode="OBS">
+            <title>
+              <ST>Other</ST>
+            </title>
+            <observation>
+              <value>
+                <label>Other</label>
+                <ST/>
+              </value>
+            </observation>
+          </act>
+          <choice include="path/clinicalStudyTemplate" title="otherTemplate" name="otherTemplate"/>
+        </relationship>
+      </act>
+    </relationship>
+    <relationship typeCode="PERT" direction="OUT" name="priorProcedures">
+      <act moodCode="EVN" classCode="OBS">
+        <title>
+          <ST>Prior Procedures</ST>
+        </title>
+        <relationship typeCode="PERT" direction="OUT" name="priorProcedure">
+          <act moodCode="EVN" classCode="PROC">
+            <effectiveTime>
+              <label>Date of Procedure</label>
+              <TS>
+                <value>20110721</value>
+              </TS>
+            </effectiveTime>
+            <observation>
+              <value>
+                <label>Procedure</label>
+                <ST>Sentinel Lymph Node Dissection</ST>
+              </value>
+              <value>
+                <label>Surgeon</label>
+                <ST>Dr. Surgeon Jr.</ST>
+              </value>
+              <value>
+                <label>Laterality</label>
+                <ST>Left</ST>
+              </value>
+              <value>
+                <label>Location</label>
+                <ST>Unknown/Not indicated</ST>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="priorProcedure">
+          <act moodCode="EVN" classCode="PROC">
+            <effectiveTime>
+              <label>Date of Procedure</label>
+              <TS>
+                <value>20110715</value>
+              </TS>
+            </effectiveTime>
+            <observation>
+              <value>
+                <label>Procedure</label>
+                <ST>Partial Mastectomy</ST>
+              </value>
+              <value>
+                <label>Surgeon</label>
+                <ST>Dr. Surgeon</ST>
+              </value>
+              <value>
+                <label>Laterality</label>
+                <ST>Right</ST>
+              </value>
+              <value>
+                <label>Location</label>
+                <ST>Upper outer quadrant (breast)</ST>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+      </act>
+    </relationship>
+    <relationship typeCode="PERT" direction="OUT" name="procedures">
+      <act moodCode="EVN" classCode="OBS">
+        <title>
+          <ST>Surgical Procedures</ST>
+        </title>
+        <relationship typeCode="PERT" direction="OUT" name="procedure"
+          sourceTrim="path/clinicalStagingBiopsyTemplate">
+          <act moodCode="EVN" classCode="PROC">
+            <bind phase="create" application="echr">
+              <placeholder bindAction="create">
+                <path>echr:patient:clinicalNote:sugicalProcedure</path>
+              </placeholder>
+            </bind>
+            <id>
+              <II>
+                <root>1.2.1.173000</root>
+                <extension>echr:patient-1823431:clinicalNote-1833315:sugicalProcedure-1833318</extension>
+              </II>
+            </id>
+            <code>
+              <CD>
+                <code>111736000</code>
+                <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+              </CD>
+            </code>
+            <title>
+              <ST>FNA</ST>
+            </title>
+            <effectiveTime>
+              <label>Date of Procedure</label>
+              <TS>
+                <value>20110718000000-0700</value>
+              </TS>
+            </effectiveTime>
+            <participation typeCode="ATND" name="surgeon">
+              <role classCode="ASSIGNED">
+                <bind phase="request" application="echr">
+                  <list cardinality="multiple">
+                    <path>echr:admin:staff:all</path>
+                  </list>
+                </bind>
+                <bind phase="request" application="ephr">
+                  <list cardinality="multiple">
+                    <path>ephr:admin:staff:all</path>
+                  </list>
+                </bind>
+                <id>
+                  <II>
+                    <extension>Select</extension>
+                  </II>
+                </id>
+                <player determinerCode="INSTANCE" classCode="PSN">
+                  <name>
+                    <label/>
+                    <EN>
+                      <label/>
+                      <use>L</use>
+                      <part>
+                        <label>Other Surgeon</label>
+                        <ST/>
+                      </part>
+                    </EN>
+                  </name>
+                </player>
+              </role>
+            </participation>
+            <relationship typeCode="PERT" direction="OUT" name="laterality">
+              <act moodCode="EVN" classCode="OBS">
+                <observation>
+                  <value>
+                    <label/>
+                    <CE>
+                      <displayName>Left</displayName>
+                      <code>7771000</code>
+                      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+                    </CE>
+                  </value>
+                </observation>
+                <relationship typeCode="PERT" direction="OUT" name="location">
+                  <act moodCode="EVN" classCode="OBS">
+                    <observation>
+                      <value>
+                        <label/>
+                        <CE>
+                          <displayName>Axillary (lymph node)</displayName>
+                          <code>279807002</code>
+                          <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+                        </CE>
+                      </value>
+                    </observation>
+                  </act>
+                </relationship>
+              </act>
+            </relationship>
+          </act>
+        </relationship>
+      </act>
+      <choice include="path/clinicalStagingBiopsyTemplate" title="FNA" name="ProcedureTemplate"/>
+      <choice include="path/clinicalStagingCoreBiopsyTemplate" title="Core biopsy"
+        name="procedureTemplate"/>
+      <choice include="path/clinicalStagingBiopsyTemplate" title="Excisional biopsy"
+        name="procedureTemplate"/>
+      <choice include="path/clinicalStagingBiopsyTemplate" title="Surgical biopsy"
+        name="procedureTemplate"/>
+      <choice include="path/clinicalStagingBiopsyTemplate" title="Re-excision"
+        name="procedureTemplate"/>
+      <choice include="path/clinicalStagingBiopsyTemplate" title="Partial Mastectomy"
+        name="procedureTemplate"/>
+      <choice include="path/clinicalStagingBiopsyTemplate" title="Other" name="procedureTemplate"/>
+      <choice include="path/clinicalStagingDissectionTemplate"
+        title="Sentinel Lymph Node Dissection" name="procedureTemplate"/>
+      <choice include="path/clinicalStagingMastectomyTemplate" title="Therapeutic Mastectomy"
+        name="procedureTemplate"/>
+      <choice include="path/clinicalStagingMastectomyTemplate" title="Prophylactic Mastectomy"
+        name="procedureTemplate"/>
+      <choice include="path/clinicalStagingMastectomyTemplate" title="Skin Sparing Mastectomy"
+        name="procedureTemplate"/>
+      <choice include="path/clinicalStagingMastectomyTemplate" title="Total Skin Sparing Mastectomy"
+        name="procedureTemplate"/>
+      <choice include="path/clinicalStagingMastectomyTemplate" title="Modified Radical Mastectomy"
+        name="procedureTemplate"/>
+      <choice include="path/clinicalStagingMastectomyTemplate" title="Thoracentesis"
+        name="procedureTemplate"/>
+      <choice include="path/clinicalStagingMastectomyTemplate" title="Lung" name="procedureTemplate"/>
+      <choice include="path/clinicalStagingEmptyTemplate" title="Paracentesis"
+        name="procedureTemplate"/>
+      <choice include="path/clinicalStagingEmptyTemplate" title="Liver" name="procedureTemplate"/>
+      <choice include="path/clinicalStagingEmptyTemplate" title="Bone" name="procedureTemplate"/>
+    </relationship>
+    <relationship typeCode="PERT" direction="OUT" name="LeftSentinelLymphNodes" enabled="true">
+      <act moodCode="EVN" classCode="OBS">
+        <id/>
+        <title>
+          <ST>Sentinel nodes</ST>
+        </title>
+        <relationship typeCode="PERT" direction="OUT" name="laterality">
+          <act moodCode="EVN" classCode="OBS">
+            <title>
+              <ST>Left</ST>
+            </title>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="location">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>Location</label>
+                <valueSet>sentinelLymphNodeLocation</valueSet>
+                <CE>
+                  <displayName>Axillary (lymph node)</displayName>
+                  <code>68171009</code>
+                  <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+                </CE>
+              </value>
+              <methodCode>
+                <valueSet>lymphNodeLevel</valueSet>
+              </methodCode>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="positiveNodes">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>positive</label>
+                <INT>
+                  <value>1</value>
+                </INT>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="examinedNodes">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>examined</label>
+                <INT>
+                  <value>2</value>
+                </INT>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="detectionMethod">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>Method of detection</label>
+                <valueSet>lymphNodeDetectionMethod</valueSet>
+                <CE>
+                  <displayName>IHC only</displayName>
+                  <code>117617002</code>
+                  <codeSystem>2.16.840.1.113883.6.59</codeSystem>
+                </CE>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="detectionMethodCellType">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>Method of detection</label>
+                <valueSet>nodeDetectionCellTypeValues</valueSet>
+                <SETCE xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">Not
+                  Reported</SETCE>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="detectionMethodSize" enabled="false">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>Size of largest tumor deposit</label>
+                <valueSet>tumorSizeValues</valueSet>
+                <ST/>
+                <PQ>
+                  <originalText/>
+                  <value>0.0</value>
+                  <unit>mm</unit>
+                </PQ>
+                <CE>
+                  <displayName>Not reported</displayName>
+                  <code>C0183110</code>
+                  <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                  <codeSystemVersion>2007AA</codeSystemVersion>
+                </CE>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="extention">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>Extranodal extention</label>
+                <valueSet>extranodalExtention</valueSet>
+                <CE>
+                  <displayName>Not reported</displayName>
+                  <code>_NOT_</code>
+                  <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+                </CE>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+      </act>
+    </relationship>
+    <relationship typeCode="PERT" direction="OUT" name="LeftAxillaryLymphNodes" enabled="false">
+      <act moodCode="EVN" classCode="OBS">
+        <id/>
+        <title>
+          <ST>Sentinel nodes</ST>
+        </title>
+        <relationship typeCode="PERT" direction="OUT" name="laterality">
+          <act moodCode="EVN" classCode="OBS">
+            <title>
+              <ST>Left</ST>
+            </title>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="positiveNodes">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>positive</label>
+                <INT>
+                  <value>0</value>
+                </INT>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="examinedNodes">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>examined</label>
+                <INT>
+                  <value>0</value>
+                </INT>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="detectionMethod">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>Method of detection</label>
+                <valueSet>lymphNodeDetectionMethod</valueSet>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="detectionMethodCellType">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>Method of detection</label>
+                <valueSet>nodeDetectionCellTypeValues</valueSet>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="detectionMethodSize" enabled="false">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>Size of largest tumor deposit</label>
+                <valueSet>tumorSizeValues</valueSet>
+                <ST/>
+                <PQ>
+                  <originalText/>
+                  <value>0.0</value>
+                  <unit>mm</unit>
+                </PQ>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="extention">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>Extranodal extention</label>
+                <valueSet>extranodalExtention</valueSet>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+      </act>
+    </relationship>
+    <relationship typeCode="PERT" direction="OUT" name="LeftAdditionalNodes" enabled="false">
+      <act moodCode="EVN" classCode="OBS">
+        <id/>
+        <title>
+          <ST>Additional nodes</ST>
+        </title>
+        <relationship typeCode="PERT" direction="OUT" name="laterality">
+          <act moodCode="EVN" classCode="OBS">
+            <title>
+              <ST>Left</ST>
+            </title>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="location">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>Location</label>
+                <valueSet>additionalLymphNodeLocation</valueSet>
+              </value>
+              <methodCode>
+                <valueSet>lymphNodeLevel</valueSet>
+              </methodCode>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="positiveNodes">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>positive</label>
+                <INT>
+                  <value>0</value>
+                </INT>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="examinedNodes">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>examined</label>
+                <INT>
+                  <value>0</value>
+                </INT>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="detectionMethodSize">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>Size of largest tumor deposit</label>
+                <ST/>
+                <PQ>
+                  <originalText/>
+                  <value>0.0</value>
+                  <unit>mm</unit>
+                </PQ>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="extention">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>Extranodal extention</label>
+                <valueSet>extranodalExtention</valueSet>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+      </act>
+    </relationship>
+    <relationship typeCode="PERT" direction="OUT" name="LeftTotalPositiveNodes">
+      <act moodCode="EVN" classCode="OBS">
+        <observation>
+          <value>
+            <INT>
+              <value>1</value>
+            </INT>
+          </value>
+        </observation>
+      </act>
+    </relationship>
+    <relationship typeCode="PERT" direction="OUT" name="LeftTotalExaminedNodes">
+      <act moodCode="EVN" classCode="OBS">
+        <observation>
+          <value>
+            <INT>
+              <value>2</value>
+            </INT>
+          </value>
+        </observation>
+      </act>
+    </relationship>
+    <relationship typeCode="PERT" direction="OUT" name="RightSentinelLymphNodes" enabled="false">
+      <act moodCode="EVN" classCode="OBS">
+        <id/>
+        <title>
+          <ST>Sentinel nodes</ST>
+        </title>
+        <relationship typeCode="PERT" direction="OUT" name="laterality">
+          <act moodCode="EVN" classCode="OBS">
+            <title>
+              <ST>Right</ST>
+            </title>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="location">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>Location</label>
+                <valueSet>sentinelLymphNodeLocation</valueSet>
+              </value>
+              <methodCode>
+                <valueSet>lymphNodeLevel</valueSet>
+              </methodCode>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="positiveNodes">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>positive</label>
+                <INT>
+                  <value>0</value>
+                </INT>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="examinedNodes">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>examined</label>
+                <INT>
+                  <value>0</value>
+                </INT>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="detectionMethod">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>Method of detection</label>
+                <valueSet>lymphNodeDetectionMethod</valueSet>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="detectionMethodCellType">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>Method of detection</label>
+                <valueSet>nodeDetectionCellTypeValues</valueSet>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="detectionMethodSize" enabled="false">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>Size of largest tumor deposit</label>
+                <valueSet>tumorSizeValues</valueSet>
+                <ST/>
+                <PQ>
+                  <originalText/>
+                  <value>0.0</value>
+                  <unit>mm</unit>
+                </PQ>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="extention">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>Extranodal extention</label>
+                <valueSet>extranodalExtention</valueSet>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+      </act>
+    </relationship>
+    <relationship typeCode="PERT" direction="OUT" name="RightAxillaryLymphNodes" enabled="false">
+      <act moodCode="EVN" classCode="OBS">
+        <id/>
+        <title>
+          <ST>Sentinel nodes</ST>
+        </title>
+        <relationship typeCode="PERT" direction="OUT" name="laterality">
+          <act moodCode="EVN" classCode="OBS">
+            <title>
+              <ST>Right</ST>
+            </title>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="positiveNodes">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>positive</label>
+                <INT>
+                  <value>0</value>
+                </INT>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="examinedNodes">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>examined</label>
+                <INT>
+                  <value>0</value>
+                </INT>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="detectionMethod">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>Method of detection</label>
+                <valueSet>lymphNodeDetectionMethod</valueSet>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="detectionMethodCellType">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>Method of detection</label>
+                <valueSet>nodeDetectionCellTypeValues</valueSet>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="detectionMethodSize" enabled="false">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>Size of largest tumor deposit</label>
+                <valueSet>tumorSizeValues</valueSet>
+                <ST/>
+                <PQ>
+                  <originalText/>
+                  <value>0.0</value>
+                  <unit>mm</unit>
+                </PQ>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="extention">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>Extranodal extention</label>
+                <valueSet>extranodalExtention</valueSet>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+      </act>
+    </relationship>
+    <relationship typeCode="PERT" direction="OUT" name="RightAdditionalNodes" enabled="false">
+      <act moodCode="EVN" classCode="OBS">
+        <id/>
+        <title>
+          <ST>Additional nodes</ST>
+        </title>
+        <relationship typeCode="PERT" direction="OUT" name="laterality">
+          <act moodCode="EVN" classCode="OBS">
+            <title>
+              <ST>Right</ST>
+            </title>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="location">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>Location</label>
+                <valueSet>additionalLymphNodeLocation</valueSet>
+              </value>
+              <methodCode>
+                <valueSet>lymphNodeLevel</valueSet>
+              </methodCode>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="positiveNodes">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>positive</label>
+                <INT>
+                  <value>0</value>
+                </INT>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="examinedNodes">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>examined</label>
+                <INT>
+                  <value>0</value>
+                </INT>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="detectionMethodSize">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>Size of largest tumor deposit</label>
+                <ST/>
+                <PQ>
+                  <originalText/>
+                  <value>0.0</value>
+                  <unit>mm</unit>
+                </PQ>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="extention">
+          <act moodCode="EVN" classCode="OBS">
+            <observation>
+              <value>
+                <label>Extranodal extention</label>
+                <valueSet>extranodalExtention</valueSet>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+      </act>
+    </relationship>
+    <relationship typeCode="PERT" direction="OUT" name="RightTotalPositiveNodes">
+      <act moodCode="EVN" classCode="OBS">
+        <observation>
+          <value>
+            <INT>
+              <value>0</value>
+            </INT>
+          </value>
+        </observation>
+      </act>
+    </relationship>
+    <relationship typeCode="PERT" direction="OUT" name="RightTotalExaminedNodes">
+      <act moodCode="EVN" classCode="OBS">
+        <observation>
+          <value>
+            <INT>
+              <value>0</value>
+            </INT>
+          </value>
+        </observation>
+      </act>
+    </relationship>
+    <relationship typeCode="PERT" direction="OUT" name="LeftHistologyCalcification">
+      <act moodCode="EVN" classCode="OBS">
+        <id/>
+        <code>
+          <CD>
+            <displayName>Calcification</displayName>
+            <code>30807003</code>
+            <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+          </CD>
+        </code>
+        <title>
+          <ST>Are calcifications present?</ST>
+        </title>
+        <observation>
+          <value>
+            <label>Are calcifications present?</label>
+            <valueSet>histologyResultsOptionsVS</valueSet>
+          </value>
+        </observation>
+      </act>
+    </relationship>
+    <relationship typeCode="PERT" direction="OUT" name="staging">
+      <act moodCode="EVN" classCode="OBS">
+        <title>
+          <ST>Staging</ST>
+        </title>
+        <observation>
+          <value>
+            <label>T2</label>
+            <ST>T2</ST>
+          </value>
+          <value>
+            <label>N2</label>
+            <ST>N2</ST>
+          </value>
+          <value>
+            <label>M</label>
+            <ST/>
+          </value>
+          <value>
+            <label>Mobility Status</label>
+            <ST>Fixed</ST>
+          </value>
+        </observation>
+      </act>
+    </relationship>
+    <relationship typeCode="PERT" direction="OUT" name="calculatedStaging">
+      <act moodCode="EVN" classCode="OBS">
+        <title>
+          <ST>Calculated Stage: </ST>
+        </title>
+        <observation>
+          <value>
+            <ST>Stage IV</ST>
+          </value>
+        </observation>
+      </act>
+    </relationship>
+    <relationship typeCode="PERT" direction="OUT" name="adjucatedStging">
+      <act moodCode="EVN" classCode="OBS">
+        <code>
+          <CD>
+            <displayName>Staging</displayName>
+            <code>254326001</code>
+            <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+          </CD>
+        </code>
+        <title>
+          <ST>Adjudicated Stage:</ST>
+        </title>
+        <observation>
+          <value>
+            <valueSet>staging</valueSet>
+            <CE>
+              <displayName>Stage IIA</displayName>
+              <code>_IIA_</code>
+              <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+            </CE>
+          </value>
+        </observation>
+      </act>
+    </relationship>
+    <relationship typeCode="PERT" direction="OUT" name="surgeon">
+      <act moodCode="EVN" classCode="OBS">
+        <title>
+          <ST>Adjudicated by:</ST>
+        </title>
+        <participation typeCode="ATND" name="surgeon">
+          <role classCode="ASSIGNED">
+            <bind phase="request" application="echr">
+              <list cardinality="multiple">
+                <path>echr:admin:staff:all</path>
+              </list>
+            </bind>
+            <bind phase="request" application="ephr">
+              <list cardinality="multiple">
+                <path>ephr:admin:staff:all</path>
+              </list>
+            </bind>
+            <id>
+              <II>
+                <root>1.2.1.173000</root>
+              </II>
+            </id>
+            <player determinerCode="INSTANCE" classCode="PSN">
+              <name>
+                <label/>
+                <EN>
+                  <label/>
+                  <use>L</use>
+                  <part>
+                    <label>Other Surgeon</label>
+                    <ST>Other surgeon text box</ST>
+                  </part>
+                </EN>
+              </name>
+            </player>
+          </role>
+        </participation>
+      </act>
+    </relationship>
+    <relationship typeCode="PERT" direction="OUT" name="t4TumorStatus">
+      <act moodCode="EVN" classCode="OBS">
+        <title>
+          <ST>If patient diagnosed with T4 at baseline, indicate current status of T4 tumor:</ST>
+        </title>
+        <observation>
+          <value>
+            <label/>
+            <valueSet>tumorStatus</valueSet>
+          </value>
+        </observation>
+      </act>
+    </relationship>
+    <relationship typeCode="NAME" direction="IN" name="stagingModifier">
+      <act moodCode="EVN" classCode="ENTRY">
+        <observation>
+          <value>
+            <label>Staging Modifiers</label>
+            <valueSet>stagingModifier</valueSet>
+          </value>
+        </observation>
+      </act>
+    </relationship>
+    <relationship typeCode="NAME" direction="IN" name="stagingModifier1" enabled="false">
+      <act moodCode="EVN" classCode="ENTRY">
+        <observation>
+          <value>
+            <label/>
+            <valueSet/>
+          </value>
+        </observation>
+      </act>
+    </relationship>
+    <relationship typeCode="NAME" direction="IN" name="stagingModifier2" enabled="false">
+      <act moodCode="EVN" classCode="ENTRY">
+        <observation>
+          <value>
+            <label/>
+            <valueSet/>
+          </value>
+        </observation>
+      </act>
+    </relationship>
+    <relationship typeCode="NAME" direction="IN" name="stagingModifier3" enabled="false">
+      <act moodCode="EVN" classCode="ENTRY">
+        <observation>
+          <value>
+            <label/>
+            <valueSet/>
+          </value>
+        </observation>
+      </act>
+    </relationship>
+    <relationship typeCode="PERT" direction="OUT" name="impressions">
+      <act moodCode="EVN" classCode="OBS">
+        <title>
+          <ST>Impression</ST>
+        </title>
+        <relationship typeCode="PERT" direction="OUT" name="impression"
+          sourceTrim="path/clinicalImpressionTemplate">
+          <act moodCode="EVN" classCode="OBS">
+            <title>
+              <ST/>
+            </title>
+            <effectiveTime>
+              <label>Date</label>
+              <new function="now" datatype="TS"/>
+              <TS>
+                <value>20110722000000-0700</value>
+              </TS>
+            </effectiveTime>
+            <participation typeCode="ATND" name="clinician">
+              <role classCode="ASSIGNED">
+                <bind phase="request" application="echr">
+                  <list cardinality="multiple">
+                    <path>echr:admin:staff:all</path>
+                  </list>
+                </bind>
+                <bind phase="request" application="ephr">
+                  <list cardinality="multiple">
+                    <path>ephr:admin:staff:all</path>
+                  </list>
+                </bind>
+                <id>
+                  <II>
+                    <extension>Select</extension>
+                  </II>
+                </id>
+                <player determinerCode="INSTANCE" classCode="PSN">
+                  <name>
+                    <label>Patient Name</label>
+                    <EN>
+                      <label>Legal Name</label>
+                      <use>L</use>
+                      <part>
+                        <label>First Name</label>
+                        <type>GIV</type>
+                        <ST>Leslie</ST>
+                      </part>
+                      <part>
+                        <label>Middle Name</label>
+                        <type>GIV</type>
+                        <ST>Paz</ST>
+                      </part>
+                      <part>
+                        <label>Last Name</label>
+                        <type>FAM</type>
+                        <ST>Masingale</ST>
+                      </part>
+                    </EN>
+                  </name>
+                </player>
+              </role>
+            </participation>
+            <relationship typeCode="PERT" direction="OUT" name="staging">
+              <act moodCode="EVN" classCode="OBS">
+                <observation>
+                  <value>
+                    <label>Staging</label>
+                    <CE>
+                      <displayName>Stage IIA</displayName>
+                      <code>_IIA_</code>
+                      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="diagnosis">
+              <act moodCode="EVN" classCode="OBS">
+                <observation>
+                  <value>
+                    <label>Diagnosis</label>
+                    <CE>
+                      <displayName>Invasive cancer</displayName>
+                      <code>C0183103</code>
+                      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                      <codeSystemVersion>2007AA</codeSystemVersion>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+            <relationship typeCode="PERT" direction="OUT" name="status">
+              <act moodCode="EVN" classCode="OBS">
+                <observation>
+                  <value>
+                    <label>Status</label>
+                    <CE>
+                      <displayName>Final</displayName>
+                      <code>C0183103</code>
+                      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                      <codeSystemVersion>2007AA</codeSystemVersion>
+                    </CE>
+                  </value>
+                </observation>
+              </act>
+            </relationship>
+          </act>
+        </relationship>
+      </act>
+      <choice include="path/clinicalImpressionTemplate" title="impressionTemplate"
+        name="impressionTemplate"/>
+    </relationship>
+    <relationship typeCode="PERT" direction="OUT" name="impressionPlan">
+      <act moodCode="EVN" classCode="OBS">
+        <title>
+          <ST>Plan</ST>
+        </title>
+        <relationship typeCode="PERT" direction="OUT" name="breastWorkUp" enabled="true">
+          <act moodCode="EVN" classCode="OBS">
+            <title>
+              <ST>Breast Work-up</ST>
+            </title>
+            <observation>
+              <value>
+                <valueSet>breastWorkUp</valueSet>
+                <SETCE>
+                  <displayName>Ultrasound</displayName>
+                  <code>C0183108</code>
+                  <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                  <codeSystemVersion>2007AA</codeSystemVersion>
+                </SETCE>
+                <SETCE>
+                  <displayName>Mammogram</displayName>
+                  <code>C0183107</code>
+                  <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                  <codeSystemVersion>2007AA</codeSystemVersion>
+                </SETCE>
+                <SETCE>
+                  <displayName>Breast MRI</displayName>
+                  <code>C0183106</code>
+                  <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                  <codeSystemVersion>2007AA</codeSystemVersion>
+                </SETCE>
+                <SETCE>
+                  <displayName>Other Imaging</displayName>
+                  <code>C0183105</code>
+                  <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                  <codeSystemVersion>2007AA</codeSystemVersion>
+                </SETCE>
+                <SETCE>
+                  <displayName>Biopsy</displayName>
+                  <code>C0183104</code>
+                  <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                  <codeSystemVersion>2007AA</codeSystemVersion>
+                </SETCE>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="metastaticWorkUp" enabled="true">
+          <act moodCode="EVN" classCode="OBS">
+            <title>
+              <ST>Metastatic Work-up</ST>
+            </title>
+            <observation>
+              <value>
+                <valueSet>metastaticWorkUp</valueSet>
+                <SETCE>
+                  <displayName>PET CT</displayName>
+                  <code>C0183113</code>
+                  <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                  <codeSystemVersion>2007AA</codeSystemVersion>
+                </SETCE>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="nonSurgicalTreatment" enabled="true">
+          <act moodCode="EVN" classCode="OBS">
+            <title>
+              <ST>Non-Surgical Treatment</ST>
+            </title>
+            <observation>
+              <value>
+                <valueSet>nonSurgicalTreatment</valueSet>
+                <SETCE>
+                  <displayName>Clinical trial screening</displayName>
+                  <code>C0183105</code>
+                  <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                  <codeSystemVersion>2007AA</codeSystemVersion>
+                </SETCE>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="surgicalTreatment" enabled="true">
+          <act moodCode="EVN" classCode="OBS">
+            <title>
+              <ST>Surgical Treatment</ST>
+            </title>
+            <observation>
+              <value>
+                <valueSet>surgicalTreatment</valueSet>
+                <SETCE>
+                  <displayName>Modified radical mastectomy</displayName>
+                  <code>C0183104</code>
+                  <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                  <codeSystemVersion>2007AA</codeSystemVersion>
+                </SETCE>
+              </value>
+              <value>
+                <ST/>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="reconstructiveSurgery" enabled="true">
+          <act moodCode="EVN" classCode="OBS">
+            <title>
+              <ST>Reconstructive Surgery</ST>
+            </title>
+            <observation>
+              <value>
+                <valueSet>reconstructiveSurgery</valueSet>
+                <SETCE>
+                  <displayName>Expander implant</displayName>
+                  <code>C0183108</code>
+                  <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+                  <codeSystemVersion>2007AA</codeSystemVersion>
+                </SETCE>
+              </value>
+              <value>
+                <ST/>
+              </value>
+            </observation>
+          </act>
+        </relationship>
+      </act>
+    </relationship>
+    <compute>
+      <type>org.tolven.process.ClinicalPrior</type>
+      <property name="enabled">
+        <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:boolean">false</value>
+      </property>
+      <property name="action">
+        <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">clinicalStaging</value>
+      </property>
+      <property name="path">
+        <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string"
+          >echr:patient:procedures:sugicalProcedures</value>
+      </property>
+      <property name="template">
+        <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string"
+          >path/clinicalStagingPriorProcedureTemplate</value>
+      </property>
+    </compute>
+  </act>
+  <valueSet name="mammogramFinding">
+    <CE>
+      <displayName>Calcs</displayName>
+      <code>C0183108</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>FAD</displayName>
+      <code>C0183107</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Scar</displayName>
+      <code>C0183106</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Spiculated mass</displayName>
+      <code>C0183105</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Architectural distortion</displayName>
+      <code>C0183104</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Abnormal node</displayName>
+      <code>C0183103</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+  </valueSet>
+  <valueSet name="breastMRIFinding">
+    <CE>
+      <displayName>Negative</displayName>
+      <code>C0183108</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Cyst</displayName>
+      <code>C0183107</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Low suspicion</displayName>
+      <code>C0183106</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>High suspicion</displayName>
+      <code>C0183105</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+  </valueSet>
+  <valueSet name="ultraSoundFinding">
+    <CE>
+      <displayName>Negative</displayName>
+      <code>C0183108</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Cyst</displayName>
+      <code>C0183107</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Low suspicion</displayName>
+      <code>C0183106</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>High suspicion</displayName>
+      <code>C0183105</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+  </valueSet>
+  <valueSet name="laterality">
+    <CE>
+      <displayName>Left</displayName>
+      <code>C0183108</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Right</displayName>
+      <code>C0183107</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+  </valueSet>
+  <valueSet name="abnormality">
+    <CE>
+      <displayName>Mass</displayName>
+      <code>C0183108</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Density</displayName>
+      <code>C0183107</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Node</displayName>
+      <code>C0183106</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+  </valueSet>
+  <valueSet name="units">
+    <CE>
+      <displayName>cm</displayName>
+      <code>278292003</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+  </valueSet>
+  <valueSet name="quality">
+    <null type="UNK">
+      <label>Select</label>
+    </null>
+    <CE>
+      <displayName>Hard</displayName>
+      <code>278292003</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Firm</displayName>
+      <code>278292004</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Soft</displayName>
+      <code>278292005</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Rubbery</displayName>
+      <code>278292006</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+  </valueSet>
+  <valueSet name="mobility">
+    <null type="UNK">
+      <label>Select</label>
+    </null>
+    <CE>
+      <displayName>Fixed</displayName>
+      <code>278292003</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Mobile</displayName>
+      <code>278292004</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Matted</displayName>
+      <code>278292005</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+  </valueSet>
+  <valueSet name="suspicion">
+    <null type="UNK">
+      <label>Select</label>
+    </null>
+    <CE>
+      <displayName>Benign</displayName>
+      <code>278292003</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Indeterminate</displayName>
+      <code>278292004</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Suspicious</displayName>
+      <code>278292005</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+  </valueSet>
+  <valueSet name="booleanStatus">
+    <CE>
+      <displayName>No</displayName>
+      <code>C0183108</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Yes</displayName>
+      <code>C0183107</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+  </valueSet>
+  <valueSet name="timePoint">
+    <CE>
+      <displayName>Initial Visit</displayName>
+      <code>C0183108</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Follow-Up Visit</displayName>
+      <code>C0183107</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Final Staging</displayName>
+      <code>C0183106</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+  </valueSet>
+  <valueSet name="stagingStatus">
+    <CE>
+      <displayName>Done</displayName>
+      <code>C0183108</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Planned</displayName>
+      <code>C0183107</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Not planned</displayName>
+      <code>C0183106</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+  </valueSet>
+  <valueSet name="breastExam">
+    <CE>
+      <displayName>Exam done</displayName>
+      <code>C0183108</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Not done</displayName>
+      <code>C0183107</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+  </valueSet>
+  <valueSet name="nippleCharacteristics">
+    <CE>
+      <displayName>Inverted</displayName>
+      <code>C0183108</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Everted</displayName>
+      <code>C0183107</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Flat</displayName>
+      <code>C0183106</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+  </valueSet>
+  <valueSet name="skinChangesValues">
+    <CE>
+      <displayName>Ulceration</displayName>
+      <code>C0183108</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Nodular</displayName>
+      <code>C0183107</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Erythema</displayName>
+      <code>C0183106</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Edema</displayName>
+      <code>C0183105</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Peau d'Orange</displayName>
+      <code>C0183104</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+  </valueSet>
+  <valueSet name="metastasisEvidence">
+    <CE>
+      <displayName>Yes</displayName>
+      <code>C0183107</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>No</displayName>
+      <code>C0183104</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Suspicious</displayName>
+      <code>C0183103</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Not reported</displayName>
+      <code>C0183102</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+  </valueSet>
+  <valueSet name="breastWorkUp">
+    <CE>
+      <displayName>Ultrasound</displayName>
+      <code>C0183108</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Mammogram</displayName>
+      <code>C0183107</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Breast MRI</displayName>
+      <code>C0183106</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Other Imaging</displayName>
+      <code>C0183105</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Biopsy</displayName>
+      <code>C0183104</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+  </valueSet>
+  <valueSet name="metastaticWorkUp">
+    <CE>
+      <displayName>Chest X-Ray</displayName>
+      <code>C0183108</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>CT Chest</displayName>
+      <code>C0183107</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>CT Abdomen</displayName>
+      <code>C0183106</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>CT Pelvis</displayName>
+      <code>C0183104</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Abd.U/S</displayName>
+      <code>C0183103</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>MRI Abdomen</displayName>
+      <code>C0183102</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Targeted MR</displayName>
+      <code>C0183101</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Bone Scan</displayName>
+      <code>C0183111</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>PET</displayName>
+      <code>C0183112</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>PET CT</displayName>
+      <code>C0183113</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Serum liver function tests</displayName>
+      <code>C0183114</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Plain X-rays</displayName>
+      <code>C0183115</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Biopsy</displayName>
+      <code>C0183116</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+  </valueSet>
+  <valueSet name="nonSurgicalTreatment">
+    <CE>
+      <displayName>Chemotherapy</displayName>
+      <code>C0183108</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Radiation</displayName>
+      <code>C0183107</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Hormone therapy</displayName>
+      <code>C0183106</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Clinical trial screening</displayName>
+      <code>C0183105</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+  </valueSet>
+  <valueSet name="surgicalTreatment">
+    <CE>
+      <displayName>Lumpectomy-imaging</displayName>
+      <code>C0183108</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Lumpectomy-palpation</displayName>
+      <code>C0183107</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Reduction</displayName>
+      <code>C0183106</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Mastectomy-Skin sparing</displayName>
+      <code>C0183105</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Modified radical mastectomy</displayName>
+      <code>C0183104</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Reduction incision</displayName>
+      <code>C0183103</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Other</displayName>
+      <code>C0183102</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+  </valueSet>
+  <valueSet name="reconstructiveSurgery">
+    <CE>
+      <displayName>Expander implant</displayName>
+      <code>C0183108</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>TRAM</displayName>
+      <code>C0183107</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Latissimus</displayName>
+      <code>C0183106</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>DIEP</displayName>
+      <code>C0183105</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Other</displayName>
+      <code>C0183104</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+  </valueSet>
+  <valueSet name="metastaticValues">
+    <CE>
+      <displayName>Negative</displayName>
+      <code>C0183101</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Positive</displayName>
+      <code>C0183104</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Inconclusive</displayName>
+      <code>C0183105</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+  </valueSet>
+  <valueSet name="metaStaticBiopsyValues">
+    <CE>
+      <displayName>Negative</displayName>
+      <code>C0183101</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Positive</displayName>
+      <code>C0183102</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Not performed</displayName>
+      <code>C0183103</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Unable to perform</displayName>
+      <code>C0183104</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+  </valueSet>
+  <valueSet name="staging">
+    <CE>
+      <displayName>Select</displayName>
+      <code>_SEL_</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+    <CE>
+      <displayName>Stage 0</displayName>
+      <code>_CD_</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+    <CE>
+      <displayName>Stage I</displayName>
+      <code>_I_</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+    <CE>
+      <displayName>Stage IIA</displayName>
+      <code>_IIA_</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+    <CE>
+      <displayName>Stage IIB</displayName>
+      <code>_IIB_</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+    <CE>
+      <displayName>Stage IIIA</displayName>
+      <code>_IIIA_</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+    <CE>
+      <displayName>Stage IIIB</displayName>
+      <code>_IIIB_</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+    <CE>
+      <displayName>Stage IIIC</displayName>
+      <code>_IIIC_</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+    <CE>
+      <displayName>Stage IV</displayName>
+      <code>_IV_</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+  </valueSet>
+  <valueSet name="diagnosis">
+    <CE>
+      <displayName>In situ disease</displayName>
+      <code>C0183101</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Suspicious for cancer</displayName>
+      <code>C0183102</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Invasive cancer</displayName>
+      <code>C0183103</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Other</displayName>
+      <code>C0183104</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+  </valueSet>
+  <valueSet name="status">
+    <CE>
+      <displayName>Preliminary</displayName>
+      <code>C0183101</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Interim</displayName>
+      <code>C0183102</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Final</displayName>
+      <code>C0183103</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+  </valueSet>
+  <valueSet name="nodeLocation">
+    <CE>
+      <displayName>Axillary</displayName>
+      <code>C0183101</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Supraclavicular</displayName>
+      <code>C0183102</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Infraclavicular</displayName>
+      <code>C0183103</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Internal mammary</displayName>
+      <code>C0183104</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+  </valueSet>
+  <valueSet name="tumorStatus">
+    <CE>
+      <displayName>Skin only</displayName>
+      <code>C0183108</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Chest wall</displayName>
+      <code>C0183107</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Skin and chest wall</displayName>
+      <code>C0183106</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Inflammatory</displayName>
+      <code>C0183105</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>No skin involvement</displayName>
+      <code>C0183104</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+  </valueSet>
+  <valueSet name="stagingModifier">
+    <CE>
+      <displayName>m-multiple primary tumors in a single site</displayName>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>y-classification done during or following initial therapy</displayName>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>r-indicates a recurrent tumor</displayName>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+  </valueSet>
+  <valueSet name="sentinelLymphNodeLocation">
+    <CE>
+      <displayName>Unknown/Not indicated</displayName>
+      <code>_UNK_</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+    <CE>
+      <displayName>Axillary (lymph node)</displayName>
+      <code>68171009</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+    <CE>
+      <displayName>Infraclavicular (lymph node)</displayName>
+      <code>279807001</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+    <CE>
+      <displayName>Internal mammary (lymph node)</displayName>
+      <code>245282001</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+    <CE>
+      <displayName>Supraclavicular (lymph node)</displayName>
+      <code>245265003</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+  </valueSet>
+  <valueSet name="addtLymphLocation">
+    <CE>
+      <displayName>Unknown/Not indicated</displayName>
+      <code>_UNK_</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+    <CE>
+      <displayName>Axillary (lymph node)</displayName>
+      <code>68171009</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+    <CE>
+      <displayName>Infraclavicular (lymph node)</displayName>
+      <code>279807001</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+    <CE>
+      <displayName>Internal mammary (lymph node)</displayName>
+      <code>245282001</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+    <CE>
+      <displayName>Supraclavicular (lymph node)</displayName>
+      <code>245265003</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+    <CE>
+      <displayName>Upper inner quadrant(breast)</displayName>
+      <code>110504006</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+    <CE>
+      <displayName>Upper outer quadrant(breast)</displayName>
+      <code>110505007</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+    <CE>
+      <displayName>Lower inner quadrant(breast)</displayName>
+      <code>110506008</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+    <CE>
+      <displayName>Lower outer quadrant(breast)</displayName>
+      <code>110507004</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+    <CE>
+      <displayName>Axillary tail of breast</displayName>
+      <code>38412008</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+    <CE>
+      <displayName>Overlapping lesion of breast</displayName>
+      <code>188157005</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+    <CE>
+      <displayName>Central(breast)</displayName>
+      <code>110503000</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+    <CE>
+      <displayName>Subareolar region(breast)</displayName>
+      <code>245525003</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+    <CE>
+      <displayName>Nipple</displayName>
+      <code>361081001</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+  </valueSet>
+  <valueSet name="lymphNodeDetectionMethod">
+    <CE>
+      <displayName>IHC only</displayName>
+      <code>117617002</code>
+      <codeSystem>2.16.840.1.113883.6.59</codeSystem>
+    </CE>
+    <CE>
+      <displayName>IHC + HE</displayName>
+      <code>_IHH_</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+    <CE>
+      <displayName>HE only</displayName>
+      <code>_HE_</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+  </valueSet>
+  <valueSet name="extranodalExtention">
+    <CE>
+      <displayName>Yes</displayName>
+      <code>_YES_</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+    <CE>
+      <displayName>No</displayName>
+      <code>_NO_</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+    <CE>
+      <displayName>Not reported</displayName>
+      <code>_NOT_</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+  </valueSet>
+  <valueSet name="lymphNodeDetectionMethod">
+    <CE>
+      <displayName>IHC only</displayName>
+      <code>117617002</code>
+      <codeSystem>2.16.840.1.113883.6.59</codeSystem>
+    </CE>
+    <CE>
+      <displayName>IHC + HE</displayName>
+      <code>_IHH_</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+    <CE>
+      <displayName>HE only</displayName>
+      <code>_HE_</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+  </valueSet>
+  <valueSet name="nodeDetectionCellTypeValues">
+    <CE>
+      <displayName>Single Cell(s)</displayName>
+      <code>C0183108</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Cluster</displayName>
+      <code>C0183109</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Focus</displayName>
+      <code>C0183110</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Not Reported</displayName>
+      <code>C0183112</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+  </valueSet>
+  <valueSet name="tumorSizeValues">
+    <CE>
+      <displayName>&lt;1mm</displayName>
+      <code>C0183108</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>&gt;1cm</displayName>
+      <code>C0183109</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Not reported</displayName>
+      <code>C0183110</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Specify: </displayName>
+      <code>C0183112</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+  </valueSet>
+  <valueSet name="tumorSizeUnits">
+    <CE>
+      <displayName>MM</displayName>
+      <code>C0183108</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>CM</displayName>
+      <code>C0183109</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+  </valueSet>
+  <valueSet name="additionalLymphNodeLocation">
+    <CE>
+      <displayName>Unknown/not indicated</displayName>
+      <code>C0205090</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Axillary</displayName>
+      <code>C0205091</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Infraclavicular</displayName>
+      <code>C0205092</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Internal mammary</displayName>
+      <code>C0205093</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Supraclavicular</displayName>
+      <code>C0205094</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Upper inner quadrant (breast)</displayName>
+      <code>C0205095</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Upper outer quadrant (breast)</displayName>
+      <code>C0205096</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Lower inner quadrant (breast)</displayName>
+      <code>C0205097</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Lower outer quadrant (breast)</displayName>
+      <code>C0205098</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Axillary tail of breast</displayName>
+      <code>C0205100</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Overlapping lesion of breast</displayName>
+      <code>C0205101</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Central (breast)</displayName>
+      <code>C0205102</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+    <CE>
+      <displayName>Subareolar region (breast)</displayName>
+      <code>C0205103</code>
+      <codeSystem>2.16.840.1.113883.6.56</codeSystem>
+      <codeSystemVersion>2007AA</codeSystemVersion>
+    </CE>
+  </valueSet>
+  <valueSet name="coreBiopsyMethod">
+    <CE>
+      <displayName>Ultrasound</displayName>
+      <code>278292003</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+    <CE>
+      <displayName>Palpation guided</displayName>
+      <code>129434008</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+    <CE>
+      <displayName>Mammography</displayName>
+      <code>71651007</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+    <CE>
+      <displayName>MRI</displayName>
+      <code>312250003</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+    <CE>
+      <displayName>Stereotactic</displayName>
+      <code>399710006</code>
+      <codeSystem>2.16.840.1.113883.6.96</codeSystem>
+    </CE>
+  </valueSet>
+</trim>

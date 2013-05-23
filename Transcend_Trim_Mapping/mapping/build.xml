@@ -1,0 +1,249 @@
+<?xml version="1.0"?>
+<project default="runTransformTest">
+	<property name="testFolder" value="Testing" />
+	<property name="folder" value="TrimSamples" />
+	<property name="vocMappingFile" value="XSLT/TRIM-codes.xml" />
+	<property name="testFileName1" value="BaselineEvaluationNote" />
+	<property name="testFileName2" value="ClinicalStagingNote" />
+	<property name="testFileName3" value="SurgicalStudyVisitNote" />
+	<property name="testFileName4" value="MedicalStudyVisitNote" />
+	<property name="pco1" value="Registration Minnie Mouse" />
+	<property name="pco2" value="On Study Pathology" />
+	<property name="pco3" value="On Study Eligibility" />
+	<property name="pco4" value="Chemo Treatment Form Cycle 1" />
+	<property name="pco5" value="Adverse Event Form cycle 1" />
+	<property name="pco6" value="Follow Up Form 1" />
+	<property name="pco7" value="Response Evaluation Form Baseline" />
+	<property name="pco8" value="Post Surgery Summary" />
+	<property name="pco9" value="Chemo Summary Form" />
+	<property name="pco10" value="Lab and Test Form cycle 1" />
+	<property name="Prefix" value="CDA" />
+	<property name="Narr" value="Narrative" />
+	<property name="baseLineTx" value="XSLT/BaselineNote.xslt" />
+	<property name="clinicalStagingTx" value="XSLT/ClinicalStagingNote.xslt" />
+	<property name="surgicalStudyTx" value="XSLT/SurgicalStudyVisitNote.xslt" />
+	<property name="medicalStudyTx" value="XSLT/MedicalStudyVisitNote.xslt" />
+	<property name="pcoTx" value="XSLT/PCO.xslt" />
+	<property name="CDA2Narr" value="XSLT/generate-narrative.xslt" />
+	<property name="trimSch" value="Schematron/Trim" />
+	<property name="isoSch" value="Schematron/ISO" />
+
+	<path id="transform.class.path">
+		<pathelement location="saxon9he.jar" />
+	</path>
+
+	<!-- run this target to produce NCI vocabulary mapping file -->
+	<target name="generateVocMapping">
+		<java jar="NCIVocBuilder.jar" fork="true">
+			<arg value="TRIM_CDA.xls" />
+			<arg value="${vocMappingFile}" />
+		</java>
+	</target>
+
+	<!-- Default For QA and Testing purpose:
+ 	 run this target to transform TRIM xml to  entry only CDA XML,
+ 	 and then to C83 CDA XML with narrative block -->
+	<target name="runTransformTest">
+
+		<java jar="NCIXMLTrx.jar" fork="true">
+			<arg value="${testFolder}/${testFileName1}.xml" />
+			<arg value="${testFolder}/${Prefix}_${testFileName1}.xml" />
+			<arg value="${baseLineTx}" />
+		</java>
+		<java jar="NCIXMLTrx.jar" fork="true">
+			<arg value="${testFolder}/${Prefix}_${testFileName1}.xml" />
+			<arg value="${testFolder}/${Prefix}_${testFileName1}_${Narr}.xml" />
+			<arg value="${CDA2Narr}" />
+		</java>
+
+		<java jar="NCIXMLTrx.jar" fork="true">
+			<arg value="${testFolder}/${testFileName2}.xml" />
+			<arg value="${testFolder}/${Prefix}_${testFileName2}.xml" />
+			<arg value="${clinicalStagingTx}" />
+		</java>
+		<java jar="NCIXMLTrx.jar" fork="true">
+			<arg value="${testFolder}/${Prefix}_${testFileName2}.xml" />
+			<arg value="${testFolder}/${Prefix}_${testFileName2}_${Narr}.xml" />
+			<arg value="${CDA2Narr}" />
+		</java>
+
+		<java jar="NCIXMLTrx.jar" fork="true">
+			<arg value="${testFolder}/${testFileName3}.xml" />
+			<arg value="${testFolder}/${Prefix}_${testFileName3}.xml" />
+			<arg value="${surgicalStudyTx}" />
+		</java>
+		<java jar="NCIXMLTrx.jar" fork="true">
+			<arg value="${testFolder}/${Prefix}_${testFileName3}.xml" />
+			<arg value="${testFolder}/${Prefix}_${testFileName3}_${Narr}.xml" />
+			<arg value="${CDA2Narr}" />
+		</java>
+
+		<java jar="NCIXMLTrx.jar" fork="true">
+			<arg value="${testFolder}/${testFileName4}.xml" />
+			<arg value="${testFolder}/${Prefix}_${testFileName4}.xml" />
+			<arg value="${medicalStudyTx}" />
+		</java>
+		<java jar="NCIXMLTrx.jar" fork="true">
+			<arg value="${testFolder}/${Prefix}_${testFileName4}.xml" />
+			<arg value="${testFolder}/${Prefix}_${testFileName4}_${Narr}.xml" />
+			<arg value="${CDA2Narr}" />
+		</java>
+		
+		<java jar="NCIXMLTrx.jar" fork="true">
+			<arg value="${testFolder}/${pco1}.xml" />
+			<arg value="${testFolder}/${Prefix}_${pco1}.xml" />
+			<arg value="${pcoTx}" />
+		</java>
+		
+		<!--
+		<java jar="NCIXMLTrx.jar" fork="true">
+			<arg value="${testFolder}/${Prefix}_${pco1}.xml" />
+			<arg value="${testFolder}/${Prefix}_${pco1}_${Narr}.xml" />
+			<arg value="${CDA2Narr}" />
+		</java>
+		-->
+
+		<java jar="NCIXMLTrx.jar" fork="true">
+			<arg value="${testFolder}/${pco2}.xml" />
+			<arg value="${testFolder}/${Prefix}_${pco2}.xml" />
+			<arg value="${pcoTx}" />
+		</java>
+		<java jar="NCIXMLTrx.jar" fork="true">
+			<arg value="${testFolder}/${Prefix}_${pco2}.xml" />
+			<arg value="${testFolder}/${Prefix}_${pco2}_${Narr}.xml" />
+			<arg value="${CDA2Narr}" />
+		</java>
+
+		<java jar="NCIXMLTrx.jar" fork="true">
+			<arg value="${testFolder}/${pco3}.xml" />
+			<arg value="${testFolder}/${Prefix}_${pco3}.xml" />
+			<arg value="${pcoTx}" />
+		</java>
+		<java jar="NCIXMLTrx.jar" fork="true">
+			<arg value="${testFolder}/${Prefix}_${pco3}.xml" />
+			<arg value="${testFolder}/${Prefix}_${pco3}_${Narr}.xml" />
+			<arg value="${CDA2Narr}" />
+		</java>
+
+		<java jar="NCIXMLTrx.jar" fork="true">
+			<arg value="${testFolder}/${pco4}.xml" />
+			<arg value="${testFolder}/${Prefix}_${pco4}.xml" />
+			<arg value="${pcoTx}" />
+		</java>
+		<java jar="NCIXMLTrx.jar" fork="true">
+			<arg value="${testFolder}/${Prefix}_${pco4}.xml" />
+			<arg value="${testFolder}/${Prefix}_${pco4}_${Narr}.xml" />
+			<arg value="${CDA2Narr}" />
+		</java>
+		
+		<java jar="NCIXMLTrx.jar" fork="true">
+			<arg value="${testFolder}/${pco5}.xml" />
+			<arg value="${testFolder}/${Prefix}_${pco5}.xml" />
+			<arg value="${pcoTx}" />
+		</java>
+		<!--
+		<java jar="NCIXMLTrx.jar" fork="true">
+			<arg value="${testFolder}/${Prefix}_${pco5}.xml" />
+			<arg value="${testFolder}/${Prefix}_${pco5}_${Narr}.xml" />
+			<arg value="${CDA2Narr}" />
+		</java>
+		-->		
+
+		<java jar="NCIXMLTrx.jar" fork="true">
+			<arg value="${testFolder}/${pco6}.xml" />
+			<arg value="${testFolder}/${Prefix}_${pco6}.xml" />
+			<arg value="${pcoTx}" />
+		</java>
+		<java jar="NCIXMLTrx.jar" fork="true">
+			<arg value="${testFolder}/${Prefix}_${pco6}.xml" />
+			<arg value="${testFolder}/${Prefix}_${pco6}_${Narr}.xml" />
+			<arg value="${CDA2Narr}" />
+		</java>
+		
+		<java jar="NCIXMLTrx.jar" fork="true">
+			<arg value="${testFolder}/${pco7}.xml" />
+			<arg value="${testFolder}/${Prefix}_${pco7}.xml" />
+			<arg value="${pcoTx}" />
+		</java>
+		<java jar="NCIXMLTrx.jar" fork="true">
+			<arg value="${testFolder}/${Prefix}_${pco7}.xml" />
+			<arg value="${testFolder}/${Prefix}_${pco7}_${Narr}.xml" />
+			<arg value="${CDA2Narr}" />
+		</java>
+		
+		<java jar="NCIXMLTrx.jar" fork="true">
+			<arg value="${testFolder}/${pco8}.xml" />
+			<arg value="${testFolder}/${Prefix}_${pco8}.xml" />
+			<arg value="${pcoTx}" />
+		</java>
+		<java jar="NCIXMLTrx.jar" fork="true">
+			<arg value="${testFolder}/${Prefix}_${pco8}.xml" />
+			<arg value="${testFolder}/${Prefix}_${pco8}_${Narr}.xml" />
+			<arg value="${CDA2Narr}" />
+		</java>
+
+		<java jar="NCIXMLTrx.jar" fork="true">
+			<arg value="${testFolder}/${pco9}.xml" />
+			<arg value="${testFolder}/${Prefix}_${pco9}.xml" />
+			<arg value="${pcoTx}" />
+		</java>
+		<java jar="NCIXMLTrx.jar" fork="true">
+			<arg value="${testFolder}/${Prefix}_${pco9}.xml" />
+			<arg value="${testFolder}/${Prefix}_${pco9}_${Narr}.xml" />
+			<arg value="${CDA2Narr}" />
+		</java>		
+
+		<java jar="NCIXMLTrx.jar" fork="true">
+			<arg value="${testFolder}/${pco10}.xml" />
+			<arg value="${testFolder}/${Prefix}_${pco10}.xml" />
+			<arg value="${pcoTx}" />
+		</java>
+		
+		<!--
+		<java jar="NCIXMLTrx.jar" fork="true">
+			<arg value="${testFolder}/${Prefix}_${pco10}.xml" />
+			<arg value="${testFolder}/${Prefix}_${pco10}_${Narr}.xml" />
+			<arg value="${CDA2Narr}" />
+		</java> -->		
+
+		<tstamp>
+			<format property="buildTime" pattern="yyyyMMdd hh:mm" timezone="GMT-4" />
+		</tstamp>
+		<echo message="run on ${buildTime}" />
+	</target>
+
+	<target name="trimSchGen">
+		<!-- expand inclusions -->
+		<xslt style="${isoSch}/iso_dsdl_include.xsl" in="${trimSch}/NCITrim.sch" out="${trimSch}/NCITrim1.sch">
+			<classpath refid="transform.class.path" />
+			<param name="phase" expression="errors" />
+		</xslt>
+		<!-- expand abstract patterns -->
+		<xslt style="${isoSch}/iso_abstract_expand.xsl" in="${trimSch}/NCITrim1.sch" out="${trimSch}/NCITrim2.sch">
+			<classpath refid="transform.class.path" />
+			<param name="phase" expression="errors" />
+		</xslt>
+		<delete file="${trimSch}/NCITrim1.sch"/>
+		<!-- compile it -->
+		<xslt style="${isoSch}/iso_svrl_for_xslt2.xsl" in="${trimSch}/NCITrim2.sch" out="${trimSch}/TrimCDAValidation.xsl">
+			<classpath refid="transform.class.path" />
+			<param name="phase" expression="errors" />
+		</xslt>
+		<delete file="${trimSch}/NCITrim2.sch"/>
+	</target>
+
+	<target name="dist">
+		<tstamp>
+			<format property="buildDate" pattern="yyyyMMdd" timezone="GMT-5" />
+		</tstamp>
+		<zip destfile="../delivered/NCI_delivery_${buildDate}.zaap">
+			<zipfileset dir="XSLT" prefix="XSLT" />
+			<zipfileset dir="Testing" prefix="Testing" />
+			<zipfileset dir="CDA_XSD" prefix="CDA_XSD" />
+			<zipfileset dir="CDASamples" prefix="CDASamples" excludes="CDASamples/PCO_NCI_CDA_.xml" />
+			<zipfileset dir="Schematron/Trim" prefix="Schematron" />
+			<fileset dir="." includes="ReadMe.txt" />
+			<fileset dir="." includes="TRIM_CDA.xls" />
+		</zip>
+	</target>
+</project>

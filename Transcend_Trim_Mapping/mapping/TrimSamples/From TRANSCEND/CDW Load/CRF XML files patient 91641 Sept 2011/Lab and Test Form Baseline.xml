@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<trim xmlns="urn:tolven-org:trim:4.0">
+    <extends>patientAct</extends>
+    <name>obs/evn/labAndTest</name>
+    <description>Lab And Test Form</description>
+    <page>labAndTest.xhtml</page>
+    <drilldown>labAndTestDD.xhtml</drilldown>
+    <menu>global:caseReportFormMenu</menu>
+    <tolvenEventId timestamp="20100420011025+0000" principal="julia.lyandres@ucsfmedctr.org" application="echr" path="echr:patient-1079297:caseReportForm-1079849" id="1079849" accountId="47003"/>
+    <reference>http://wikihit.org/wiki/index.php</reference>
+    <application signatureRequired="true" name="echr">
+        <instance>echr:patient:caseReportForm</instance>
+        <wip>echr:activity:all</wip>
+    </application>
+    <act moodCode="EVN" classCode="OBS">
+        <bind phase="create" application="echr">
+            <placeholder bindAction="merge">
+                <path>echr:patient:caseReportForm</path>
+            </placeholder>
+        </bind>
+        <id>
+            <II>
+                <root>1.2.1.47003</root>
+                <extension>echr:patient-1079297:caseReportForm-1079848</extension>
+            </II>
+        </id>
+        <code>
+            <CD>
+                <code>OINT</code>
+                <codeSystemName>HL7</codeSystemName>
+                <codeSystemVersion>3.0</codeSystemVersion>
+            </CD>
+        </code>
+        <statusCode>active</statusCode>
+        <title>
+            <ST>Lab And Test Form</ST>
+        </title>
+        <effectiveTime>
+            <new function="now" datatype="TS"/>
+            <TS>
+                <value>20100419181025-0700</value>
+            </TS>
+        </effectiveTime>
+        <participation typeCode="SBJ" name="subject">
+            <role classCode="PAT">
+                <bind application="echr">
+                    <placeholder>
+                        <path>echr:patient</path>
+                    </placeholder>
+                </bind>
+                <bind application="ephr">
+                    <placeholder>
+                        <path>ephr:patient</path>
+                    </placeholder>
+                </bind>
+                <id>
+                    <II>
+                        <root>1.2.1.47003</root>
+                        <extension>echr:patient-1079297</extension>
+                    </II>
+                </id>
+                <player determinerCode="INSTANCE" classCode="PSN">
+                    <name>
+                        <label>Patient Name</label>
+                        <EN>
+                            <label>Legal Name</label>
+                            <use>L</use>
+                            <part>
+<label>First Name</label>
+<type>GIV</type>
+<ST>Roya</ST>
+                            </part>
+                            <part>
+<label>Middle Name</label>
+<type>GIV</type>
+<ST></ST>
+                            </part>
+                            <part>
+<label>Last Name</label>
+<type>FAM</type>
+<ST>Main</ST>
+                            </part>
+                        </EN>
+                    </name>
+                </player>
+            </role>
+        </participation>
+        <participation typeCode="ENT" name="dataEnterer">
+            <role classCode="ROL">
+                <id>
+                    <II>
+                        <root>1.2.1.47003</root>
+                        <extension>julia.lyandres@ucsfmedctr.org</extension>
+                    </II>
+                </id>
+            </role>
+        </participation>
+        <relationship typeCode="PERT" direction="OUT" name="labTests">
+            <act moodCode="EVN" classCode="OBS">
+                <title>
+                    <ST>Lab Tests</ST>
+                </title>
+                <effectiveTime>
+                    <label>Collection Date: </label>
+                    <TS>
+                        <value>20100413</value>
+                    </TS>
+                </effectiveTime>
+                <relationship typeCode="PERT" direction="OUT" name="routineTest1" enabled="true">
+                    <act moodCode="EVN" classCode="OBS">
+                        <title>
+                            <ST>Leukocytes</ST>
+                        </title>
+                        <observation>
+                            <value>
+<label>Result</label>
+<PQ>
+    <value>6.9</value>
+    <unit>x10⁹/L</unit>
+</PQ>
+                            </value>
+                            <value>
+<label>Institutional Reference Range</label>
+<ST>3.4-10</ST>
+                            </value>
+                        </observation>
+                    </act>
+                </relationship>
+                <relationship typeCode="PERT" direction="OUT" name="routineTest2" enabled="true">
+                    <act moodCode="EVN" classCode="OBS">
+                        <title>
+                            <ST>Absolute Neutrophil Count (ANC)</ST>
+                        </title>
+                        <observation>
+                            <value>
+<label>Result</label>
+<PQ>
+    <value>3.42</value>
+    <unit>x10⁹/L</unit>
+</PQ>
+                            </value>
+                            <value>
+<label>Institutional Reference Range</label>
+<ST>1.8-6.8</ST>
+                            </value>
+                        </observation>
+                    </act>
+                </relationship>
+                <relationship typeCode="PERT" direction="OUT" name="routineTest3" enabled="true">
+                    <act moodCode="EVN" classCode="OBS">
+                        <title>
+                            <ST>Platelets</ST>
+                        </title>
+                        <observation>
+                            <value>
+<label>Result</label>
+<PQ>
+    <value>312.0</value>
+    <unit>x10⁹/L</unit>
+</PQ>
+                            </value>
+                            <value>
+<label>Institutional Reference Range</label>
+<ST>140-450</ST>
+                            </value>
+                        </observation>
+                    </act>
+                </relationship>
+                <relationship typeCode="PERT" direction="OUT" name="routineTest4" enabled="true">
+                    <act moodCode="EVN" classCode="OBS">
+                        <title>
+                            <ST>Total Bilirubin</ST>
+                        </title>
+                        <observation>
+                            <value>
+<label>Result</label>
+<PQ>
+    <value>0.7</value>
+    <unit>mg/dL</unit>
+</PQ>
+                            </value>
+                            <value>
+<label>Institutional Reference Range</label>
+<ST>0.3-1.3</ST>
+                            </value>
+                        </observation>
+                    </act>
+                </relationship>
+                <relationship typeCode="PERT" direction="OUT" name="routineTest5" enabled="true">
+                    <act moodCode="EVN" classCode="OBS">
+                        <title>
+                            <ST>AST</ST>
+                        </title>
+                        <observation>
+                            <value>
+<label>Result</label>
+<PQ>
+    <value>17.0</value>
+    <unit>U/L</unit>
+</PQ>
+                            </value>
+                            <value>
+<label>Institutional Reference Range</label>
+<ST>16-41</ST>
+                            </value>
+                        </observation>
+                    </act>
+                </relationship>
+                <relationship typeCode="PERT" direction="OUT" name="routineTest6" enabled="true">
+                    <act moodCode="EVN" classCode="OBS">
+                        <title>
+                            <ST>ALT</ST>
+                        </title>
+                        <observation>
+                            <value>
+<label>Result</label>
+<PQ>
+    <value>10.0</value>
+    <unit>U/L</unit>
+</PQ>
+                            </value>
+                            <value>
+<label>Institutional Reference Range</label>
+<ST>11-54</ST>
+                            </value>
+                        </observation>
+                    </act>
+                </relationship>
+                <relationship typeCode="PERT" direction="OUT" name="routineTest7" enabled="true">
+                    <act moodCode="EVN" classCode="OBS">
+                        <title>
+                            <ST>Creatinine</ST>
+                        </title>
+                        <observation>
+                            <value>
+<label>Result</label>
+<PQ>
+    <value>0.57</value>
+    <unit>mg/dL</unit>
+</PQ>
+                            </value>
+                            <value>
+<label>Institutional Reference Range</label>
+<ST>0.42-1.06</ST>
+                            </value>
+                        </observation>
+                    </act>
+                </relationship>
+            </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="cardiacFunctionTests">
+            <act moodCode="EVN" classCode="OBS">
+                <title>
+                    <ST>Cardiac Function Tests</ST>
+                </title>
+                <relationship typeCode="PERT" direction="OUT" name="cardiacFunctionTest1" enabled="false">
+                    <act moodCode="EVN" classCode="OBS">
+                        <title>
+                            <ST>MUGA Scan</ST>
+                        </title>
+                        <effectiveTime>
+                            <label>Date of Procedure</label>
+                            <TS/>
+                        </effectiveTime>
+                        <observation>
+                            <value>
+<label>LVEF%</label>
+<PQ>
+    <unit>%</unit>
+</PQ>
+                            </value>
+                            <value>
+<label>LVEF % Institutional Lower Limit of Normal</label>
+<ST></ST>
+                            </value>
+                        </observation>
+                    </act>
+                </relationship>
+                <relationship typeCode="PERT" direction="OUT" name="cardiacFunctionTest2" enabled="true">
+                    <act moodCode="EVN" classCode="OBS">
+                        <title>
+                            <ST>Cardiac Echo</ST>
+                        </title>
+                        <effectiveTime>
+                            <label>Date of Procedure</label>
+                            <TS>
+<value>20100413</value>
+                            </TS>
+                        </effectiveTime>
+                        <observation>
+                            <value>
+<label>LVEF%</label>
+<PQ>
+    <value>66.0</value>
+    <unit>%</unit>
+</PQ>
+                            </value>
+                            <value>
+<label>LVEF % Institutional Lower Limit of Normal</label>
+<ST>55</ST>
+                            </value>
+                        </observation>
+                    </act>
+                </relationship>
+            </act>
+        </relationship>
+        <relationship typeCode="PERT" direction="OUT" name="investigativeAgentSpecificTests">
+            <act moodCode="EVN" classCode="OBS">
+                <title>
+                    <ST>Investigative Agent-Specific Tests</ST>
+                </title>
+                <effectiveTime>
+                    <label>Collection Date: </label>
+                    <TS/>
+                </effectiveTime>
+                <observation>
+                    <value>
+                        <label>Treatment Arm: </label>
+                        <ST></ST>
+                    </value>
+                </observation>
+                <relationship typeCode="PERT" direction="OUT" name="investigativeAgentSpecificTestTemplate">
+                    <act moodCode="EVN" classCode="OBS">
+                        <title>
+                            <ST></ST>
+                        </title>
+                        <observation>
+                            <value>
+<label>Result</label>
+<PQ>
+    <unit></unit>
+</PQ>
+                            </value>
+                            <value>
+<label>Institutional Reference Range</label>
+<ST></ST>
+                            </value>
+                        </observation>
+                    </act>
+                </relationship>
+            </act>
+        </relationship>
+        <relationship typeCode="APND" direction="IN" name="registrationInfo">
+            <act moodCode="EVN" classCode="OBS">
+                <observation>
+                    <value>
+                        <label>Study ID</label>
+                        <ST>91641</ST>
+                    </value>
+                    <value>
+                        <label>Patient initials</label>
+                        <ST>RM</ST>
+                    </value>
+                    <value>
+                        <label>Patient DOB/Age</label>
+                        <ST>6/7/1977 - 32 Years</ST>
+                    </value>
+                    <value>
+                        <label>Patient Gender</label>
+                        <ST>Female</ST>
+                    </value>
+                    <value>
+                        <label>Race</label>
+                        <ST>White</ST>
+                    </value>
+                    <value>
+                        <label>Ethnicity</label>
+                        <ST>Not Hispanic or Latino</ST>
+                    </value>
+                    <value>
+                        <label>Country of Birth</label>
+                        <ST></ST>
+                    </value>
+                    <value>
+                        <label>Institution</label>
+                        <ST>University of California San Francisco (UCSF)</ST>
+                    </value>
+                </observation>
+            </act>
+        </relationship>
+        <relationship typeCode="APND" direction="IN" name="poolAccount">
+            <act moodCode="EVN" classCode="OBS">
+                <observation>
+                    <value>
+                        <label>Account ID</label>
+                        <ST>62000</ST>
+                    </value>
+                    <value>
+                        <label>Account Name</label>
+                        <ST>I-SPY 2 Data Coordinating Center</ST>
+                    </value>
+                    <value>
+                        <label>Account Email</label>
+                        <ST>sarah.davis@ucsfmedctr.org</ST>
+                    </value>
+                </observation>
+            </act>
+        </relationship>
+        <relationship typeCode="APND" direction="IN" name="patientAccount">
+            <act moodCode="EVN" classCode="OBS">
+                <observation>
+                    <value>
+                        <label>Account Email</label>
+                        <ST>julia.lyandres@ucsfmedctr.org</ST>
+                    </value>
+                </observation>
+            </act>
+        </relationship>
+        <compute>
+            <type>org.tolven.process.RetrieveRegistrationDetails</type>
+            <property name="enabled">
+                <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:boolean">false</value>
+            </property>
+        </compute>
+        <compute>
+            <type>org.tolven.process.CRFPrior</type>
+            <property name="enabled">
+                <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:boolean">false</value>
+            </property>
+            <property name="action">
+                <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">labAndTest</value>
+            </property>
+            <property name="template">
+                <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">obs/evn/labAndTest</value>
+            </property>
+        </compute>
+    </act>
+</trim>

@@ -1,0 +1,241 @@
+From: <Saved by Windows Internet Explorer 8>
+Subject: Execution Report
+Date: Fri, 8 Apr 2011 15:35:39 -0400
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file://C:\Documents and Settings\piercejc2\Local Settings\Temp\TD_80\163c77aa\Reports\14641620.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5994
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Execution Report</TITLE>
+<STYLE>H1 {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; COLOR: #485464; =
+FONT-SIZE: 11px; FONT-WEIGHT: bold
+}
+H2 {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; COLOR: #8e001d; =
+FONT-SIZE: 13px; FONT-WEIGHT: bold
+}
+H3 {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; COLOR: white; =
+FONT-SIZE: 11px; FONT-WEIGHT: bold
+}
+TR {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; COLOR: #000000; =
+FONT-SIZE: 12px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal
+}
+TD {
+	BORDER-BOTTOM: dimgray 0px solid; BORDER-LEFT: dimgray 0px solid; =
+FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; COLOR: #000000; =
+FONT-SIZE: 11px; BORDER-TOP: dimgray 0px solid; FONT-WEIGHT: normal; =
+BORDER-RIGHT: dimgray 0px solid
+}
+HR {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; COLOR: #a3a9b1; =
+FONT-SIZE: 12px; FONT-WEIGHT: normal
+}
+BODY {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; COLOR: #000000; =
+FONT-SIZE: 11px; FONT-WEIGHT: normal
+}
+TABLE {
+	BORDER-BOTTOM: dimgray 0px solid; BORDER-LEFT: dimgray 0px solid; =
+FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; COLOR: #000000; =
+FONT-SIZE: 11px; BORDER-TOP: dimgray 0px solid; FONT-WEIGHT: normal; =
+BORDER-RIGHT: dimgray 0px solid
+}
+</STYLE>
+
+<META content=3D"text/html; charset=3DISO-8859-1" =
+http-equiv=3DContent-Type>
+<META name=3DGENERATOR content=3D"MSHTML 8.00.6001.19019"></HEAD>
+<BODY=20
+style=3D"BORDER-BOTTOM: #f3f3f3 0px hidden; BORDER-LEFT: #f3f3f3 0px =
+hidden; BORDER-TOP: #f3f3f3 0px hidden; BORDER-RIGHT: #f3f3f3 0px =
+hidden"=20
+bgColor=3D#f3f3f3>
+<TABLE width=3D"100%" align=3Dcenter>
+  <CENTER>
+  <H2>Execution Report</H2>
+  <TBODY>
+  <TR>
+    <TD=20
+    style=3D"BORDER-BOTTOM: #8e001d 1px solid; BORDER-LEFT: #8e001d 1px =
+solid; BACKGROUND-COLOR: white; VERTICAL-ALIGN: top; BORDER-TOP: #8e001d =
+1px solid; BORDER-RIGHT: #8e001d 1px solid">
+      <TABLE=20
+      style=3D"BORDER-RIGHT-WIDTH: 0pt; BORDER-TOP-WIDTH: 0pt; =
+BORDER-BOTTOM-WIDTH: 0pt; BORDER-LEFT-WIDTH: 0pt"=20
+      cellSpacing=3D4 cellPadding=3D4 width=3D"100%" align=3Dcenter>
+        <TBODY>
+        <TR>
+          <TD colSpan=3D4>&lt;Cross Filter Test Instance-Test =
+Set&gt;Target=20
+            Cycle[^Releases\caBIG Clinical Information Suite\Release=20
+            4\RC4-I2\RC4-I2-S1^]; Sort By: Plan: Test=20
+        Name[Ascending]</TD></TR></TBODY></TABLE>
+      <TABLE=20
+      style=3D"BORDER-BOTTOM: #f3f3f3 0px solid; BACKGROUND-COLOR: =
+white; PADDING-LEFT: 4px; PADDING-RIGHT: 3px; VERTICAL-ALIGN: top; =
+PADDING-TOP: 3px">
+        <TBODY>
+        <TR bgColor=3D#f3f3f3>
+          <TD style=3D"COLOR: #000000">Plan: Test Name</TD>
+          <TD style=3D"COLOR: #000000">Plan: Category</TD>
+          <TD style=3D"COLOR: #000000">Exec Date</TD>
+          <TD style=3D"COLOR: #000000">JIRA Defect ID</TD>
+          <TD style=3D"COLOR: #000000">Plan: Priority</TD>
+          <TD style=3D"COLOR: #000000">Status</TD>
+          <TD style=3D"COLOR: #000000">Tester</TD></TR>
+        <TR style=3D"bgcolor: White">
+          <TD>[1]ARC-CFSS-S01-003</TD>
+          <TD></TD>
+          <TD>03/08/2011</TD>
+          <TD>ARCH-1920</TD>
+          <TD>Level 1</TD>
+          <TD style=3D"COLOR: #ff3333">Failed</TD>
+          <TD>bbell</TD></TR>
+        <TR bgColor=3D#f3f3f3>
+          <TD style=3D"BORDER-TOP-WIDTH: 1pt" colSpan=3D8>
+            <TABLE width=3D"95%" align=3Dright>
+              <TBODY>
+              <TR vAlign=3Dtop align=3Dleft>
+                <TD style=3D"COLOR: #485464">Plan: Description: =
+</TD></TR>
+              <TR>
+                <TD colSpan=3D4>
+                  <TABLE=20
+                  style=3D"BORDER-RIGHT-WIDTH: 0pt; BORDER-TOP-WIDTH: =
+0pt; BORDER-BOTTOM-WIDTH: 0pt; BORDER-LEFT-WIDTH: 0pt"=20
+                  cellSpacing=3D0 cellPadding=3D4 width=3D"100%" =
+align=3Dright>
+                    <TBODY>
+                    <TR>
+                      <TD>Is section 1 (Overview and Business Case) =
+present=20
+                        including scope=20
+              =
+definition?</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>=
+
+        <TR style=3D"bgcolor: White">
+          <TD>[1]ARC-CFSS-S01-003</TD>
+          <TD></TD>
+          <TD>03/08/2011</TD>
+          <TD></TD>
+          <TD>Level 1</TD>
+          <TD style=3D"COLOR: #66cc00">Passed</TD>
+          <TD>amordetsky (Aviva Mordetsky)</TD></TR>
+        <TR bgColor=3D#e6e6e6>
+          <TD style=3D"BORDER-TOP-WIDTH: 1pt" colSpan=3D8>
+            <TABLE width=3D"95%" align=3Dright>
+              <TBODY>
+              <TR vAlign=3Dtop align=3Dleft>
+                <TD style=3D"COLOR: #485464">Plan: Description: =
+</TD></TR>
+              <TR>
+                <TD colSpan=3D4>
+                  <TABLE=20
+                  style=3D"BORDER-RIGHT-WIDTH: 0pt; BORDER-TOP-WIDTH: =
+0pt; BORDER-BOTTOM-WIDTH: 0pt; BORDER-LEFT-WIDTH: 0pt"=20
+                  cellSpacing=3D0 cellPadding=3D4 width=3D"100%" =
+align=3Dright>
+                    <TBODY>
+                    <TR>
+                      <TD>Is section 1 (Overview and Business Case) =
+present=20
+                        including scope=20
+              =
+definition?</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>=
+
+        <TR style=3D"bgcolor: White">
+          <TD>[1]ARC-CFSS-S01-003</TD>
+          <TD></TD>
+          <TD>03/07/2011</TD>
+          <TD>ARCH-1912</TD>
+          <TD>Level 1</TD>
+          <TD style=3D"COLOR: #ff3333">Failed</TD>
+          <TD>bbell</TD></TR>
+        <TR bgColor=3D#f3f3f3>
+          <TD style=3D"BORDER-TOP-WIDTH: 1pt" colSpan=3D8>
+            <TABLE width=3D"95%" align=3Dright>
+              <TBODY>
+              <TR vAlign=3Dtop align=3Dleft>
+                <TD style=3D"COLOR: #485464">Plan: Description: =
+</TD></TR>
+              <TR>
+                <TD colSpan=3D4>
+                  <TABLE=20
+                  style=3D"BORDER-RIGHT-WIDTH: 0pt; BORDER-TOP-WIDTH: =
+0pt; BORDER-BOTTOM-WIDTH: 0pt; BORDER-LEFT-WIDTH: 0pt"=20
+                  cellSpacing=3D0 cellPadding=3D4 width=3D"100%" =
+align=3Dright>
+                    <TBODY>
+                    <TR>
+                      <TD>Is section 1 (Overview and Business Case) =
+present=20
+                        including scope=20
+              =
+definition?</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>=
+
+        <TR style=3D"bgcolor: White">
+          <TD>[1]ARC-CFSS-S01-003</TD>
+          <TD></TD>
+          <TD></TD>
+          <TD></TD>
+          <TD>Level 1</TD>
+          <TD style=3D"COLOR: #ffaf04">No Run</TD>
+          <TD></TD></TR>
+        <TR bgColor=3D#e6e6e6>
+          <TD style=3D"BORDER-TOP-WIDTH: 1pt" colSpan=3D8>
+            <TABLE width=3D"95%" align=3Dright>
+              <TBODY>
+              <TR vAlign=3Dtop align=3Dleft>
+                <TD style=3D"COLOR: #485464">Plan: Description: =
+</TD></TR>
+              <TR>
+                <TD colSpan=3D4>
+                  <TABLE=20
+                  style=3D"BORDER-RIGHT-WIDTH: 0pt; BORDER-TOP-WIDTH: =
+0pt; BORDER-BOTTOM-WIDTH: 0pt; BORDER-LEFT-WIDTH: 0pt"=20
+                  cellSpacing=3D0 cellPadding=3D4 width=3D"100%" =
+align=3Dright>
+                    <TBODY>
+                    <TR>
+                      <TD>Is section 1 (Overview and Business Case) =
+present=20
+                        including scope=20
+              =
+definition?</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>=
+
+        <TR style=3D"bgcolor: White">
+          <TD>[1]ARC-CFSS-S01-003</TD>
+          <TD></TD>
+          <TD></TD>
+          <TD></TD>
+          <TD>Level 1</TD>
+          <TD style=3D"COLOR: #ffaf04">No Run</TD>
+          <TD></TD></TR>
+        <TR bgColor=3D#f3f3f3>
+          <TD style=3D"BORDER-TOP-WIDTH: 1pt" colSpan=3D8>
+            <TABLE width=3D"95%" align=3Dright>
+              <TBODY>
+              <TR vAlign=3Dtop align=3Dleft>
+                <TD style=3D"COLOR: #485464">Plan: Description: =
+</TD></TR>
+              <TR>
+                <TD colSpan=3D4>
+                  <TABLE=20
+                  style=3D"BORDER-RIGHT-WIDTH: 0pt; BORDER-TOP-WIDTH: =
+0pt; BORDER-BOTTOM-WIDTH: 0pt; BORDER-LEFT-WIDTH: 0pt"=20
+                  cellSpacing=3D0 cellPadding=3D4 width=3D"100%" =
+align=3Dright>
+                    <TBODY>
+                    <TR>
+                      <TD>Is section 1 (Overview and Business Case) =
+present=20
+                        including scope=20
+              =
+definition?</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>=
+</TBODY></TABLE><BR></TD></CENTER></TR></TBODY></TABLE></BODY></HTML>
