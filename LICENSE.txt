@@ -1,5 +1,5 @@
-Copyright (c) 2010, Ekagra Software Technologies Ltd., SAIC Inc., 5AM Solutions
-and SemanticBits Technolgies
+Copyright (c) 2010, 5AM Solutions Inc, SemanticBits LLC, AgileX Technologies, Inc, 
+and Ekagra Software Technologies Ltd
 
 All rights reserved.
 
@@ -27,6 +27,3 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-
-
